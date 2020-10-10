@@ -8,5 +8,5 @@
 
 
 <p align="center">
-  <img width="460" height="300" src="https://giffiles.alphacoders.com/822/8223.gif">
+  <img src="https://giffiles.alphacoders.com/822/8223.gif">
 </p>
