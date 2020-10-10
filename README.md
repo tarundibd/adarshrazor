@@ -1,6 +1,5 @@
 ### Hi there 👋
 
-Here are some ideas to get you started:
 
 - 🔭 I’m currently working on Data Structures and ML Projects if want to ask something on these topics
 - 💬 Ask me about the repoisitories I have and I am pretty sure you will get the answers.
