@@ -7,9 +7,5 @@
 - ⚡ Fun fact: I do streaming so if you are interested [Youtube](https://www.youtube.com/channel/UCgWYhUU0JbTQ5eaghgXPmZA) or [Facebook](https://www.facebook.com/RazorCloak)
 
 <p align="center">
- 
-![alt text](https://giffiles.alphacoders.com/822/8223.gif "Eat sleep Code repeat")
-
-<img width="460" height="300" src="https://giffiles.alphacoders.com/822/8223.gif">
-
- </p>
+  ![alt text](https://giffiles.alphacoders.com/822/8223.gif "Eat sleep Code repeat")
+</p>
