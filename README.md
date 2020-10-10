@@ -9,3 +9,7 @@
 <p align="center">
   ![alt text](https://giffiles.alphacoders.com/822/8223.gif "Eat sleep Code repeat")
 </p>
+
+<p align="center">
+  <img width="460" height="300" src="https://giffiles.alphacoders.com/822/8223.gif">
+</p>
