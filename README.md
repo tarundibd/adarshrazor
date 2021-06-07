@@ -28,7 +28,7 @@
 <a href="https://github.com/adarshrazor">
   <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=AdarshRazor&show_icons=true&theme=react&include_all_commits=true&count_private=true"/>
   <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=AdarshRazor&layout=compact&langs_count=8&theme=react"/>
-</a><br>
+</a><br><br>
   <img src="https://komarev.com/ghpvc/?username=adarshrazor&style=flat" alt="felirox" />
 </p>
 
