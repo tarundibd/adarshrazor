@@ -9,10 +9,30 @@
     flex-grow: 1;
 }
 
+.home-row-bio {
+    flex-grow: 1;
+}
+
 .text-section {
     padding: 2rem 0;
     font-size: 2rem;
     color: #333; /* Dark gray for text */
+}
+
+.text-section-bio {
+    padding-top: 4rem;
+    font-size: 1.1rem;
+    color: #333; /* Dark gray for text */
+    font-family: "Segoe UI";
+}
+
+.text-section-bio span {
+    font-size: 3rem;
+    font-family: 'Dancing Script';
+}
+
+.text-section-bio a {
+    text-decoration: none;
 }
 
 .name-tag{
