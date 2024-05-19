@@ -1,7 +1,7 @@
 ### Hi there 👋
 
 
-- 🔭 I’m currently working on **Data Structures** and **ML Projects** if you feel like asking something please go ahead with the questions.
+- 🔭 I’m currently working on **Web Development** and **DS** if you feel like asking something please go ahead with the questions.
 - 💬 Ask me about the repoisitories I have and I am pretty sure you will get the answers.
 - 📫 Apart from coding - I am kinda **Wanderlust** and **Guitarist.** Indoor I will be more of a **Content Creator.**
 - ⚡ Fun fact: I do streaming so if you are interested **[Youtube](https://www.youtube.com/channel/UCgWYhUU0JbTQ5eaghgXPmZA)** or **[Facebook](https://www.facebook.com/RazorCloak)**
