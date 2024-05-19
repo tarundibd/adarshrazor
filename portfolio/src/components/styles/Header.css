@@ -17,7 +17,7 @@ nav .navbar-brand {
     margin: 1.5rem 4rem; /*give Adarsh top and bottom margin 1.5 and side 5*/
     font-weight: bold;
     text-decoration: none;
-    color: rgb(14, 14, 14);
+    color: black;
 }
 
 nav ul {

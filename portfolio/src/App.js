@@ -9,6 +9,7 @@ import NonTech from './components/pages/NonTech';
 import Footer from './components/Footer';
 import BucketList from './components/pages/bucketlist';
 import { BrowserRouter } from 'react-router-dom';
+import Misc from './components/pages/misc';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/nontech" element={<NonTech />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/bucketlist" element={<BucketList />} />
+          <Route path="/misc" element={<Misc />} />
         </Routes>
       <Footer/>
       </BrowserRouter>
