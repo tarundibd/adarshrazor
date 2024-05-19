@@ -1,0 +1,128 @@
+{
+    "projects":[
+        {
+            "name":"Spektra Systems (Full Time)",
+            "role": "Cloud Developer (DEV)",
+            "date":"June 2021 - October 2023",
+            "badges" :[
+                {
+                "tag": "HTML | CSS | JS",
+                "color":"danger"
+                },
+                {
+                "tag": "ReactJS",
+                "text" : "light",
+                "color":"primary"
+                },
+                {
+                "tag": "JSON",
+                "color":"warning",
+                "text": "dark"
+                },
+                {
+                "tag": "Azure",
+                "text": "dark",
+                "color":"info"
+                },
+                {
+                    "tag": "Linux",
+                    "color":"dark",
+                    "text": "light"
+                }
+            ],
+            "description": "• Developed efficient and reusable components, enhancing performance by 20-40%. Strong proficiency in React hooks, Router and DOM Manipulation.\n• Utilized state management libraries, including Redux or Content API, to streamline application state.\n• Automated cloud product deployments through custom scripts using shell scripting and JSON",
+            "image":""
+        },
+        {
+            "name":"REVA University (Education)",
+            "role": "Computer Science (CSE)",
+            "date":"August 2017 - September 2021",
+            "badges" :[
+                {
+                "tag": "BTECH",
+                "color":"secondary"
+                },
+                {
+                    "tag": "GPA: 8.0",
+                    "color":"dark",
+                    "text": "light"
+                }
+            ],
+            "description":"• B. Tech in Computer Science and Engineering - GPA: 8.0\n• IEEE Webmaster RU (2018 - 2020)\n• ACM Chairperson 2019\n• Research Paper Publish 2020",
+            "image":"",
+            "blogLink":"http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317"
+        },
+        {
+            "name":"REVA NEST (Internship)",
+            "role": "Software Development Engineer (SDE)",
+            "date":"January 2020 - March 2020",
+            "badges" :[
+                {
+                    "tag": "JavaScript",
+                    "color":"danger"
+                },
+                {
+                "tag": "Context API",
+                "color":"secondary"
+                },
+                {
+                    "tag": "Twitter Scraper",
+                    "color":"dark",
+                    "text": "light"
+                }
+            ],
+            "description":"• Increased tweet scraping tool search to 40% faster for the hashtags\n• Implementation of ML to filter out the COVID tweets sentiments.",
+            "image":""
+        },
+        {
+            "name":"IEEE Bangalore (Internship)",
+            "role": "Frontend Developer (UI/UX)",
+            "date":"January 2020 - March 2020",
+            "badges" :[
+                {
+                    "tag": "HTML | CSS | JS",
+                    "color":"danger"
+                },
+                {
+                    "tag": "WordPress",
+                    "color":"primary",
+                    "text": "light"
+                }
+            ],
+            "description":"• Worked on maintained IEEE website of Bangalore Section.\n• Contributed to IEEE Individual Chapters\n‎ ∘ CS Society\n‎ ∘ IEEE Wie\n‎ ∘ IISc Reimagine Health events.",
+            "image":""
+        },
+        {
+            "name":"Malik Ventures (Internship)",
+            "role": "LAMP Stack Developer (LAMP DEV)",
+            "date":"June 2017 - December 2017",
+            "badges" :[
+                {
+                    "tag": "JavaScript",
+                    "color":"danger"
+                },
+                {
+                    "tag": "NodeJS",
+                    "color":"success"
+                },
+                {
+                    "tag": "SQL",
+                    "color":"info",
+                    "text": "light"
+                },
+                {
+                    "tag": "WordPress",
+                    "color":"primary",
+                    "text": "light"
+                },
+                {
+                    "tag": "Linux",
+                    "color":"dark",
+                    "text": "light"
+                }
+            ],
+            "description":"• Developed various website based on WordPress:\n‎ ∘ Radix Healthcare\n‎ ∘ Harvin Academy\n‎ ∘ Dr Shruti Malik Website\n• Worked and practised NodeJS and MySQL to maintain the backend server.",
+            "image":""
+        }
+    ]
+}

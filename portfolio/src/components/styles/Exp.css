@@ -1,0 +1,43 @@
+.project-row {
+    margin-bottom: 20px;
+}
+
+.project-image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project-card {
+    border: none;
+    box-shadow: none;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.project-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 1rem;
+}
+
+.project-button-group {
+    margin-top: 10px;
+}
+
+.project-button {
+    margin: 0 5px;
+}

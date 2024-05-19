@@ -1,0 +1,97 @@
+.active {
+    color: rgb(165, 165, 165);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /*left and right will align*/
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    position: top; /*stick to the place but where ?*/ /*sticky is not working*/
+    top: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+nav .navbar-brand {
+    font-size: 1.5rem; 
+    margin: 1.5rem 4rem; /*give Adarsh top and bottom margin 1.5 and side 5*/
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(14, 14, 14);
+}
+
+nav ul {
+    display: flex; /*this will put all the items in straight line*/
+}
+
+nav ul li {
+    list-style: none; /*remove the dots infront on the list*/
+}
+
+nav ul li a {
+    display: block; /*provide height and width*/
+    text-decoration: none;
+    padding: 0.1rem 0.7rem; /*give spaces in between*/
+    margin: 0 1rem; /*give space horizontally*/
+    margin-top: 1rem;
+    color: rgb(14, 14, 14);
+}
+
+/*this will make sure the hover effect wont apply on active link*/
+nav ul li a:not(.active):hover {
+    /* border-bottom: 1px solid black;  */
+}
+
+
+/*display bamburger sign*/
+nav .menu {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+}
+
+nav .menu span {
+    height: 0.3rem;
+    width: 100%;
+    background-color: black;
+    border-radius: 0.2rem;
+}
+
+/*This will trigger when the width will be less than 480px*/
+@media (max-width: 480px){
+    nav .menu {
+        display: flex;
+    }
+
+    /*this will make the items align*/
+    nav {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a{
+        margin: 0.2rem 0.5rem;
+    }
+}
+
