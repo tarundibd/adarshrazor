@@ -4,7 +4,7 @@
             "name":"Domain Enumeration",
             "date":"August, 2021",
             "description":"Domain enumeration is the URL extraction and scanning tool for Linux OS. It is a combination of multiple tools which provide information about the URL by scanning them with multiple enumeration tools and provide information as much as possible about the sub-domain, login pages, any vulnerable pages on the webiste etc. ",
-            "image":"",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/domainenum.png",
             "codeLink": "https://github.com/AdarshRazor/Domain_Enumeration"
         },
         {
@@ -12,27 +12,27 @@
             "date":"July, 2021",
             "description":"A basic script to encrypt and decrypt your data. Where the main catch is to deliver the encrypted file to the receiver. It divides the encrypted file multiple parts and then send it to the receiver. Even if a hacker manages to get his/her hands on the file, in order to decrypt it, other files will be required as it will make the file more secured from hackers.",
             "codeLink":"https://github.com/AdarshRazor/NightFury_Decrypto",
-            "image":""
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/decrypto.png"
         },
         {
             "name":"Smart Seach Engine",
             "date":"Febuary 2021",
             "description":"SSE is the basic model of Seach Engine or what people say 'Google Search'. The working of the model is based on Wikipedia content and the second part of the program use the words from content and use to learn and train the search for better understanding.",
             "codeLink":"https://github.com/AdarshRazor/Smart-Search-Engine",
-            "image":""
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/sse.png"
         },
         {
             "name":"Twitter Scraper",
             "date":"March, 2020",
             "description":"A simple javascript to web scrap the twitter tweets and then it may be useful for the text analysis",
             "codeLink": "https://github.com/AdarshRazor/TweetScrap",
-            "image":""
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/TS.png"
         },
         {
             "name":"Dynamic Intelligent Virtual Assistant (D.I.V.A)",
             "date":"Febuary, 2020",
             "description":"D.I.V.A is a virtual assistant which is more dynamic than the pre-existing vitual assistants and more personalized at understanding the user. Our motivation is to keep track of our activities and time, given that we had told it about categories that we dicide our time into (Study, Gaming, Watching series etc).",
-            "image":"",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/ai.png",
             "codeLink": "https://github.com/AdarshRazor/D.I.V.A",
             "blogLink": "http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317"
         }
