@@ -1,16 +1,104 @@
-import {Component} from 'react';
 import '../styles/Home.css'
 import Avatar from '../static/avatar.jpg'
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ReactTyped } from "react-typed";
 
+import { useCallback } from "react";
+import Particles from "react-particles";
+//import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`
 
-class Home extends Component {
-    render() {
+const Home = () => {
+
+    const particlesInit = useCallback(async engine => {
+        console.log(engine);
+        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+        // starting from v2 you can add only the features you need reducing the bundle size
+        //await loadFull(engine);
+        await loadSlim(engine);
+    }, []);
+
+    const particlesLoaded = useCallback(async container => {
+        await console.log(container);
+    }, []);
         return (
             <Container className='home-container'>
             <Row className='align-items-center home-row'>
+            <Particles
+            id="tsparticles"
+            init={particlesInit}
+            loaded={particlesLoaded}
+            options={{
+                background: {
+                    opacity: 0,
+                },
+                fpsLimit: 520,
+                interactivity: {
+                    events: {
+                        onClick: {
+                            enable: true,
+                            mode: "push",
+                        },
+                        onHover: {
+                            enable: true,
+                            mode: "repulse",
+                        },
+                        resize: true,
+                    },
+                    modes: {
+                        push: {
+                            quantity: 4,
+                        },
+                        repulse: {
+                            distance: 150,
+                            duration: 0.4,
+                        },
+                    },
+                },
+                particles: {
+                    color: {
+                        value: ["#0000FF","#008000","#FF0000"],
+
+                    },
+                    links: {
+                        color: "#000000",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.3,
+                        width: 1,
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce",
+                        },
+                        random: false,
+                        speed: 1,
+                        straight: false,
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            area: 800,
+                        },
+                        value: 80,
+                    },
+                    opacity: {
+                        value: 0.5,
+                    },
+                    shape: {
+                        type: "circle",
+                    },
+                    size: {
+                        value: { min: 1, max: 3 },
+                    },
+                },
+                detectRetina: true,
+            }}
+        />
                 <Col md={6} className='image-section'>
                 <Image src={Avatar} alt="Adarsh Anand Image" className="Hero-Image" roundedCircle fluid />
                 </Col>
@@ -23,9 +111,9 @@ class Home extends Component {
             </Row>
             <Row className='align-items-center home-row-bio'>
                 <p className='text-section-bio'>
-                    <span className='home-row-bio-capitalized'>I</span> am a <a href="https://en.wikipedia.org/wiki/Hacker" target="_black">hacker</a> 👋🏻. Deeply curious about technology and social-engineering, I graduated from <a href="https://www.reva.edu.in/" target="_blank">Reva University</a> as an Engineer with a Bachelor's in computer science.
+                    <span className='home-row-bio-capitalized'>I</span> am a <a href="https://en.wikipedia.org/wiki/Hacker" target="_black" rel="noopener noreferrer">hacker</a> 👋🏻. Deeply curious about technology and social-engineering, I graduated from <a href="https://www.reva.edu.in/" target="_blank" rel="noopener noreferrer">Reva University</a> as an Engineer with a Bachelor's in computer science.
                     <br /><br />
-                    I started developing websites at an early age for various startups, became a webmaster for various universities, IEEE, and IISc Bangalore events, and also wrote a research paper on <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317" target='_blank'>Virtual Assitants based on User Preferences</a>
+                    I started developing websites at an early age for various startups, became a webmaster for various universities, IEEE, and IISc Bangalore events, and also wrote a research paper on <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317" target='_blank' rel="noopener noreferrer">Virtual Assitants based on User Preferences</a>
                     <br /><br />
                     I started my <i>career</i> as a frontend developer, but the latter of my curiosities learned about cloud technologies. Currently, I am seeking job oppurtunities as a full stack developer.
                     <br /><br />
@@ -36,7 +124,6 @@ class Home extends Component {
             </Row>
             </Container>
         );
-    }
 }
 
 export default Home;

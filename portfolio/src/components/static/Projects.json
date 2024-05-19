@@ -3,35 +3,35 @@
         {
             "name":"Domain Enumeration",
             "date":"August, 2021",
-            "description":"Domain enumeration is the URL extraction and scanning tool for Linux OS. It is a combination of multiple tools which provide information about the URL by scanning them with multiple enumeration tools and provide information as much as possible about the sub-domain, login pages, any vulnerable pages on the webiste etc. ",
+            "description":"Domain enumeration, designed for Linux OS, is a comprehensive tool for extracting and scanning URLs. It amalgamates various tools to gather extensive information about URLs by employing multiple enumeration techniques. Its functionality extends to identifying sub-domains, login pages, and potentially vulnerable areas within websites.",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/domainenum.png",
             "codeLink": "https://github.com/AdarshRazor/Domain_Enumeration"
         },
         {
             "name":"Nightfury Decrypto",
             "date":"July, 2021",
-            "description":"A basic script to encrypt and decrypt your data. Where the main catch is to deliver the encrypted file to the receiver. It divides the encrypted file multiple parts and then send it to the receiver. Even if a hacker manages to get his/her hands on the file, in order to decrypt it, other files will be required as it will make the file more secured from hackers.",
+            "description":"This script offers a simple method for encrypting and decrypting data, with a key feature being the delivery of encrypted files to recipients. It achieves this by dividing the encrypted file into multiple parts and transmitting them to the receiver. In the event that a hacker gains access to the file, decryption would necessitate additional files, enhancing its security against unauthorized access.",
             "codeLink":"https://github.com/AdarshRazor/NightFury_Decrypto",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/decrypto.png"
         },
         {
             "name":"Smart Seach Engine",
             "date":"Febuary 2021",
-            "description":"SSE is the basic model of Seach Engine or what people say 'Google Search'. The working of the model is based on Wikipedia content and the second part of the program use the words from content and use to learn and train the search for better understanding.",
+            "description":"SSE, also known as the fundamental framework of Search Engines or colloquially referred to as 'Google Search', operates by utilizing Wikipedia content as its foundation. The subsequent phase of the program employs words extracted from this content to refine and enhance search capabilities, facilitating continual learning and improvement for better comprehension.",
             "codeLink":"https://github.com/AdarshRazor/Smart-Search-Engine",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/sse.png"
         },
         {
             "name":"Twitter Scraper",
             "date":"March, 2020",
-            "description":"A simple javascript to web scrap the twitter tweets and then it may be useful for the text analysis",
+            "description":"A JavaScript code that extracts tweets from Twitter using hashtags, then analyzes the text to determine sentiment, employing machine learning to discern public sentiment by geographical location",
             "codeLink": "https://github.com/AdarshRazor/TweetScrap",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/TS.png"
         },
         {
             "name":"Dynamic Intelligent Virtual Assistant (D.I.V.A)",
             "date":"Febuary, 2020",
-            "description":"D.I.V.A is a virtual assistant which is more dynamic than the pre-existing vitual assistants and more personalized at understanding the user. Our motivation is to keep track of our activities and time, given that we had told it about categories that we dicide our time into (Study, Gaming, Watching series etc).",
+            "description":"D.I.V.A stands out as a virtual assistant, offering greater dynamism than existing counterparts and a heightened ability to understand users on a personal level. Our aim is to effectively manage our time and activities by inputting categorized time allocations such as Study, Gaming, or Watching series.",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/ai.png",
             "codeLink": "https://github.com/AdarshRazor/D.I.V.A",
             "blogLink": "http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317"
