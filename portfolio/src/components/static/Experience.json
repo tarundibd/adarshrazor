@@ -72,7 +72,7 @@
                 }
             ],
             "description":"• Increased tweet scraping tool search to 40% faster for the hashtags\n• Implementation of ML to filter out the COVID tweets sentiments.",
-            "image":""
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/RN.png"
         },
         {
             "name":"IEEE Bangalore (Internship)",
@@ -90,7 +90,7 @@
                 }
             ],
             "description":"• Worked on maintained IEEE website of Bangalore Section.\n• Contributed to IEEE Individual Chapters\n‎ ∘ CS Society\n‎ ∘ IEEE Wie\n‎ ∘ IISc Reimagine Health events.",
-            "image":""
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/IEEE.png"
         },
         {
             "name":"Malik Ventures (Internship)",
@@ -122,7 +122,7 @@
                 }
             ],
             "description":"• Developed various website based on WordPress:\n‎ ∘ Radix Healthcare\n‎ ∘ Harvin Academy\n‎ ∘ Dr Shruti Malik Website\n• Worked and practised NodeJS and MySQL to maintain the backend server.",
-            "image":""
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/MV.png"
         }
     ]
 }
