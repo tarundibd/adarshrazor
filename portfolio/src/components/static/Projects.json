@@ -1,6 +1,13 @@
 {
     "projects":[
         {
+            "name":"Sorting Algorithm Visualizer",
+            "date":"May, 2024",
+            "description":"Welcome to Sorting Visualizer! I built this application to learn JS as well as practice my DSA. I was fascinated by sorting algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. I will be adding cool features to this application in the upcoming future.",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/sorting.png",
+            "codeLink": "https://github.com/AdarshRazor/Sorting_Visualizer"
+        },
+        {
             "name":"Domain Enumeration",
             "date":"August, 2021",
             "description":"Domain enumeration, designed for Linux OS, is a comprehensive tool for extracting and scanning URLs. It amalgamates various tools to gather extensive information about URLs by employing multiple enumeration techniques. Its functionality extends to identifying sub-domains, login pages, and potentially vulnerable areas within websites.",
