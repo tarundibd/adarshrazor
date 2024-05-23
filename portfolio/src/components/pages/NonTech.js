@@ -84,10 +84,55 @@ class NonTech extends React.Component {
                         <ListGroup.Item><a href="https://open.spotify.com/show/02fM1JHpt9HmHGp482K71b?si=d27fba75fbf14a09">Developer Tea</a></ListGroup.Item>
                     </Col>
                 </Row>
+                <Row>
+                    <Col md={8} xs={12} className="non-fiction-section">
+                        <h3>Photos 📷</h3>
+                        <Carousels/>
+                    </Col>
+                    <Col md={4} xs={12} className="non-fiction-section">
+                    <h3>28 under 28 🇮🇳</h3>
+                        <Row>
+                            <Col md={6} xs={12}>
+                                <div className='under28'>
+                                    <ListGroup.Item>Andhra Pradesh</ListGroup.Item>
+                                    <ListGroup.Item>Arunachal Pradesh</ListGroup.Item>
+                                    <ListGroup.Item>Assam</ListGroup.Item>
+                                    <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold'}}>Bihar</ListGroup.Item>
+                                    <ListGroup.Item>Chhattisgarh</ListGroup.Item>
+                                    <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold' }}>Delhi</ListGroup.Item>
+                                    <ListGroup.Item>Goa</ListGroup.Item>
+                                    <ListGroup.Item>Gujarat</ListGroup.Item>
+                                    <ListGroup.Item>Haryana</ListGroup.Item>
+                                    <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold' }}>Himachal Pradesh</ListGroup.Item>
+                                    <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold' }}>Jharkhand</ListGroup.Item>
+                                    <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold' }}>Karnataka</ListGroup.Item>
+                                    <ListGroup.Item>Kerala</ListGroup.Item>
+                                    <ListGroup.Item>Madhya Pradesh</ListGroup.Item>
+                                    <ListGroup.Item>Maharashtra</ListGroup.Item>
+                                </div>
+                            </Col>
+                            <Col md={6} xs={12}>
+                                <div className='under28'>
+                                    <ListGroup.Item>Manipur</ListGroup.Item>
+                                    <ListGroup.Item>Meghalaya</ListGroup.Item>
+                                    <ListGroup.Item>Mizoram</ListGroup.Item>
+                                    <ListGroup.Item>Nagaland</ListGroup.Item>
+                                    <ListGroup.Item>Odisha</ListGroup.Item>
+                                    <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold' }}>Punjab</ListGroup.Item>
+                                    <ListGroup.Item>Rajasthan</ListGroup.Item>
+                                    <ListGroup.Item>Sikkim</ListGroup.Item>
+                                    <ListGroup.Item>Tamil Nadu</ListGroup.Item>
+                                    <ListGroup.Item>Telangana</ListGroup.Item>
+                                    <ListGroup.Item>Tripura</ListGroup.Item>
+                                    <ListGroup.Item>Uttar Pradesh</ListGroup.Item>
+                                    <ListGroup.Item>Uttarakhand</ListGroup.Item>
+                                    <ListGroup.Item>West Bengal</ListGroup.Item>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
             </Container>
-            <h3 className='text-center'>Photos 📷</h3>
-            <br />
-            <Carousels/>
             </>
         );
     }
