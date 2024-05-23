@@ -36,9 +36,9 @@ class NonTech extends React.Component {
                                 <ListGroup variant="flush">
                                     {nonFiction["col2"].map((item, index) => (
                                         <ListGroup.Item key={index}>
-                                            {item.book} {item.author}
+                                            {item.things}
                                             {item.itemlink && (
-                                                <a href={item.itemlink} target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}> 📌</a>
+                                                <a href={item.itemlink} target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}> {item.icon}</a>
                                             )}
                                         </ListGroup.Item>
                                     ))}

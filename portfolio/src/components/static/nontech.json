@@ -44,21 +44,23 @@
     ],
     "col2": [
         {
-            "book": "I do 🙄 like pubs, sometime",
-            "author": "",
+            "things": "I do 🙄 like pubs, sometime",
+            "icon": "📌",
             "itemlink" : "https://maps.app.goo.gl/PZWDarc2nUTn34FB9"
         },
         {
-            "book": "Netflix and Chill kind of person 🍽️",
-            "author": ""
+            "things": "Netflix and Chill kind of person 🍽️"
         },
         {
-            "book": "I love music ♭ ofcorse guitar ♯",
-            "author": ""
+            "things": "I love music ♭ ofcorse guitar ♯"
         },
         {
-            "book": "Moutains over Beaches",
-            "author": "🇧 🇺 🇹"
+            "things": "Moutains over Beaches 🇧 🇺 🇹"
+        },
+        {
+            "things": "I love Gaming and Streaming",
+            "icon": "▶️",
+            "itemlink": "https://www.youtube.com/@RazorCloak"
         }
     ]
 }
