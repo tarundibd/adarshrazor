@@ -3,7 +3,7 @@
         {
             "name":"Sorting Algorithm Visualizer",
             "date":"May, 2024",
-            "description":"Welcome to Sorting Visualizer! I built this application to learn JS as well as practice my DSA. I was fascinated by sorting algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. I will be adding cool features to this application in the upcoming future.",
+            "description":"Welcome to Sorting Visualizer! I built this application to learn JS as well as practice my DSA. I was fascinated by sorting algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. I will be adding cool features to this application in the future.",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/sorting.png",
             "codeLink": "https://github.com/AdarshRazor/Sorting_Visualizer"
         },
@@ -17,7 +17,7 @@
         {
             "name":"Nightfury Decrypto",
             "date":"July, 2021",
-            "description":"This script offers a simple method for encrypting and decrypting data, with a key feature being the delivery of encrypted files to recipients. It achieves this by dividing the encrypted file into multiple parts and transmitting them to the receiver. In the event that a hacker gains access to the file, decryption would necessitate additional files, enhancing its security against unauthorized access.",
+            "description":"This script offers a simple method for encrypting and decrypting data, with a key feature being the delivery of encrypted files to recipients. It achieves this by dividing the encrypted file into multiple parts and transmitting them to the receiver. If a hacker gains access to the file, decryption would necessitate additional files, enhancing its security against unauthorized access.",
             "codeLink":"https://github.com/AdarshRazor/NightFury_Decrypto",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/decrypto.png"
         },
@@ -38,7 +38,7 @@
         {
             "name":"Dynamic Intelligent Virtual Assistant (D.I.V.A)",
             "date":"Febuary, 2020",
-            "description":"D.I.V.A stands out as a virtual assistant, offering greater dynamism than existing counterparts and a heightened ability to understand users on a personal level. Our aim is to effectively manage our time and activities by inputting categorized time allocations such as Study, Gaming, or Watching series.",
+            "description":"D.I.V.A stands out as a virtual assistant, offering greater dynamism than existing counterparts and a heightened ability to understand users on a personal level. We aim to effectively manage our time and activities by inputting categorized time allocations such as Study, Gaming, or Watching series.",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/ai.png",
             "codeLink": "https://github.com/AdarshRazor/D.I.V.A",
             "blogLink": "http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317"

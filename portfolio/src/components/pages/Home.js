@@ -113,11 +113,11 @@ const Home = () => {
                 <p className='text-section-bio'>
                     <span className='home-row-bio-capitalized'>I</span> am a <a href="https://en.wikipedia.org/wiki/Hacker" target="_black" rel="noopener noreferrer">hacker</a> 👋🏻. Deeply curious about technology and social-engineering, I graduated from <a href="https://www.reva.edu.in/" target="_blank" rel="noopener noreferrer">Reva University</a> as an Engineer with a Bachelor's in computer science.
                     <br /><br />
-                    I started developing websites at an early age for various startups, became a webmaster for various universities, IEEE, and IISc Bangalore events, and also wrote a research paper on <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317" target='_blank' rel="noopener noreferrer">Virtual Assitants based on User Preferences</a>
+                    I started developing websites at an early age for various startups, became a webmaster for various universities, IEEE, and IISc Bangalore events, and also wrote a research paper on <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317" target='_blank' rel="noopener noreferrer">Virtual Assistants based on User Preferences</a>
                     <br /><br />
-                    I started my <i>career</i> as a frontend developer, but the latter of my curiosities learned about cloud technologies. Currently, I am seeking job oppurtunities as a full stack developer.
+                    I started my <i>career</i> as a frontend developer, but the latter of my curiosities learned about cloud technologies. Currently, I am seeking job opportunities as a full-stack developer.
                     <br /><br />
-                    When I am not in front of screen, I probably go to put my life on track and be the best version. I like cafes, music, wanderlust and creative. I will be sharing what I experience <Link to="/nontech">here</Link>
+                    When I am not in front of the screen, I probably go to put my life on track and be the best version. I like cafes, music, wanderlust and creative. I will be sharing what I experienced <Link to="/nontech">here</Link>
                     <br /><br />
                     Stay in touch! ✨<br /><br />
                 </p>

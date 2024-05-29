@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Outlet, Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './styles/Header.css';
 
 const Header = () => {
@@ -25,9 +25,9 @@ const Header = () => {
     return (
         <>
             <nav sticky="top">
-                <Link to="/" className="navbar-brand" style={{ color: isHomePage ? 'white' : 'black' }} onClick={handleNavbarBrandClick}>
+                <div to="/" className="navbar-brand" style={{ color: isHomePage ? 'white' : 'black', cursor: 'pointer' }} onClick={handleNavbarBrandClick}>
                     Adarsh Anand
-                </Link>
+                </div>
                 <div className='menu' onClick={() => {
                     setMenuOpen(!menuOpen);
                 }}>
