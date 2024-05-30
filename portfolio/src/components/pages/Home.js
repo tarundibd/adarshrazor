@@ -3,7 +3,6 @@ import Avatar from '../static/avatar.jpg'
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ReactTyped } from "react-typed";
-
 import { useCallback } from "react";
 import Particles from "react-particles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
