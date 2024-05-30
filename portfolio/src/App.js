@@ -21,7 +21,8 @@ function App() {
 
 function Content() {
   const location = useLocation();
-  const showHeaderAndFooter = location.pathname !== '/misc';
+  //const showHeaderAndFooter = location.pathname !== '/misc';
+  const showHeaderAndFooter = location.pathname !== '/404';
 
   return (
     <>
@@ -33,7 +34,8 @@ function Content() {
         <Route path="/experience" element={<Experience />} />
         <Route path="/bucketlist" element={<BucketList />} />
         <Route path="/misc" element={<Misc />} />
-        <Route path="*" element={<Error404 />} /> {/* Add a 404 route (optional) */}
+        {/*<Route path="*" element={<Error404 />} />  Add a 404 route (optional) */}
+        <Route path="/404" element={<Error404 />} />
       </Routes>
       {showHeaderAndFooter && <Footer />} {/* Conditionally render the Footer */}
     </>

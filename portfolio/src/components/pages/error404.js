@@ -6,7 +6,7 @@ import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
 const Error404 = () => {
   const [quote, setQuote] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [countdown, setCountdown] = useState(12); // Initialize countdown to 12 seconds
+  const [countdown, setCountdown] = useState(10); // Initialize countdown to 20 seconds
   const navigate = useNavigate();
 
   useEffect(() => {

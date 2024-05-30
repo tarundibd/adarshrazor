@@ -16,7 +16,8 @@ const Header = () => {
     const handleNavbarBrandClick = () => {
         // Redirect the user based on whether they are on the homepage or not
         if (isHomePage) {
-            navigate("/misc"); // Use navigate function for navigation
+            //navigate("/misc"); // Use navigate function for navigation
+            navigate("/404");
         } else {
             navigate("/");
         }
@@ -36,6 +37,9 @@ const Header = () => {
                     <span></span>
                 </div>
                 <ul className={menuOpen ? 'open' : ''}>
+                    <li>
+                        <NavLink to="/Misc" className="text-white">_Chat_</NavLink>
+                    </li>
                     <li>
                         <NavLink to="/experience">Experience</NavLink>
                     </li>
