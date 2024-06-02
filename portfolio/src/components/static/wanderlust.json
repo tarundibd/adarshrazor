@@ -1,0 +1,34 @@
+{
+    "India" : [
+        {
+            "state": "Himachal",
+            "wanderlust" : [
+                                {
+                                    "place" : "Kinnaur Valley",
+                                    "spot" : "Kalpa",
+                                    "viewpoints" : [
+                                        "Hindutan - Tibet Highway", "Kailash Range"
+                                    ],
+                                    "luxury": "Project Genesis",
+                                    "luxuryLink" : "https://www.youtube.com/watch?v=v3F42ouog3Y"
+                                },
+                                {
+                                    "place" : "Kullu",
+                                    "spot" : "Jibhi",
+                                    "viewpoints" : [
+                                        "Jibhi Waterfall","Balu Nag Temple - Landscape", "Seruvalsar Lake"
+                                    ],
+                                    "luxury": "Neeralaya Resort",
+                                    "luxuryLink": "https://www.youtube.com/watch?v=j9LQl8T4bs0"
+                                }
+                            ]
+        },
+        {
+            "state" : "Kashmir",
+            "wanderlust" : [
+
+            ]
+        }
+    ],
+    "col2": []
+}
