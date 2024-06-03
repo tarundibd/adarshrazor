@@ -6,11 +6,11 @@ import './styles/Footer.css'; // Make sure to create this CSS file
 class Footer extends React.Component {
     render() {
         return (
-            <Container fluid className="footer-container">
+            <Container fluid className="footer-container mb-3">
                 <Row className="justify-content-center">
                     <p>Find me on:</p>
                 </Row>
-                <Row className="justify-content-center social-row">
+                <Row className="justify-content-center social-row mt-2">
                     <Col md={3} xs={6} className="social-column">
                         <FaEnvelope className="social-icon" /><a href="mailto:adarshanshu7@gmail.com" target="_blank" rel="noreferrer"> Adarsh Anand</a>
                     </Col>

@@ -1,8 +1,10 @@
 import '../styles/Home.css'
 import Avatar from '../static/avatar.jpg'
+import Avatar1 from '../static/avatar1.jpg'
 import { Container, Row, Col, Image, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import {ReactTyped} from 'react-typed';
+import Skills from '../skills'
 import { useCallback } from 'react';
 import Particles from 'react-particles';
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
@@ -108,15 +110,15 @@ const Home = () => {
                     <Col md={6} className='text-section'>
                         <p className='name-tag'>Hi, Adarsh here !</p>
                         <p>
-                            I am <ReactTyped className="sub-name-tag" strings={["coder 📜","developer 🖥️","content-creator 🎥"]} typeSpeed={80} backSpeed={40} loop/>
+                            I am a<ReactTyped className="sub-name-tag" strings={["‎ coder 📜","‎ developer 🖥️","‎ techie 🤖","‎ content-creator 🎥","n artist 👨‍🎨"]} typeSpeed={80} backSpeed={40} loop/>
                         </p>
                     </Col>
                 </Row>
                 <Row className='align-items-center home-row-bio'>
                     <p className='text-section-bio'>
-                        <span className='home-row-bio-capitalized'>I</span> am a <a href="https://en.wikipedia.org/wiki/Hacker" target="_black" rel="noopener noreferrer">hacker</a> 👋🏻. Deeply curious about technology and social-engineering, I graduated from <a href="https://www.reva.edu.in/" target="_blank" rel="noopener noreferrer">Reva University</a> as an Engineer with a Bachelor's in computer science.
+                        <span className='home-row-bio-capitalized'>I</span> am a <a href="https://en.wikipedia.org/wiki/hacker" target="_black" rel="noopener noreferrer">hacker⁽⁺⁾</a> 👋🏻. Deeply curious about technology and social-engineering, I graduated from <a href="https://www.reva.edu.in/" target="_blank" rel="noopener noreferrer">Reva University⁽⁺⁾</a> as an Engineer with a Bachelor's in computer science.
                         <br /><br />
-                        I started developing websites at an early age for various startups, became a webmaster for various universities, IEEE, and IISc Bangalore events, and also wrote a research paper on <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317" target='_blank' rel="noopener noreferrer">Virtual Assistants based on User Preferences</a>
+                        I started developing websites at an early age for various startups, became a webmaster for various universities, IEEE, and IISc Bangalore events, and also wrote a research paper on <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317" target='_blank' rel="noopener noreferrer">Virtual Assistants based on User Preferences⁽⁺⁾</a>
                         <br /><br />
                         I started my <i>career</i> as a frontend developer, but the latter of my curiosities learned about cloud technologies. Currently, I am seeking job opportunities as a full-stack developer.
                         <br /><br />
@@ -126,8 +128,45 @@ const Home = () => {
                     </p>
                 </Row>
             </Container>
-            <Container className='align-items-center showcase'>
-            <h1 className='text-center my-5'>Showcase</h1>
+            <Container className='mb-5'>
+                <Row className='justify-content-center text-center'>
+                    <Col md={4} className='d-flex justify-content-center'>
+                        <div>
+                            <span style={{fontSize: '5rem', fontWeight: 'bold', color: '#153448'}}>8</span>
+                            <br />
+                            <span style={{fontSize: '1.5rem'}}>projects completed</span>
+                        </div>
+                    </Col>
+                    <Col md={4} className='d-flex justify-content-center'>
+                        <div>
+                            <span style={{fontSize: '5rem', fontWeight: 'bold', color: '#0A6847'}}>1500+</span>
+                            <br />
+                            <span style={{fontSize: '1.5rem', color: '#0A6847'}}>open source commits</span>
+                        </div>
+                    </Col>
+                    <Col md={4} className='d-flex justify-content-center'>
+                        <div>
+                            <span style={{fontSize: '5rem', fontWeight: 'bold', color: '#153448'}}>5</span><span style={{color: '#153448'}}>yrs</span>
+                            <br />
+                            <span style={{fontSize: '1.5rem'}}>total experience</span>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+            <Container className='home-container mt-5'>
+            <h1 className='text-center mt-5' style={{fontWeight: 'bold'}}><hr/>I perform <span style={{fontStyle: 'italic', fontWeight: '100'}}>symphonies</span> with my <span style={{color: 'blue'}}>keyboard</span>,<br/>turning the world into my <span style={{color: '#41B06E'}}>stage</span> and its people into my <span style={{color: 'red'}}>audience</span>.</h1>
+            <hr className='mb-5'/>
+                <Row className='align-items-center home-row mt-5'>
+                <Col md={6} className='text-section'>
+                    <Skills/> {/* This is the skills components */}
+                    </Col>
+                <   Col md={6} className='image-section'>
+                        <Image src={Avatar1} alt="Adarsh Anand Image" style={{height: "400px", width: "400px"}} className="Hero-Image" roundedCircle fluid />
+                    </Col>
+                </Row>
+            </Container>
+            {/* <Container className='align-items-center showcase mb-5'>
+            <h1 className='text-center my-5' style={{fontSize: '3rem', fontWeight: 'bold'}}>Showcase</h1>
             <Row className='justify-content-center'>
                 {projects.map((project, index) => (
                     <Col key={index} md={3} className='d-flex justify-content-center mb-4 mx-5'>
@@ -142,7 +181,7 @@ const Home = () => {
                     </Col>
                 ))}
             </Row>
-            </Container>
+            </Container> */}
         </>
     );
 }

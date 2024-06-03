@@ -108,11 +108,38 @@
 }
 
 .showcase h1 {
-    transition: color 2s ease;
+    transition: color 3s ease;
     color: white /* Hide the h1 element by default */
 }
 
 .showcase:hover h1 {
     color: #3572EF; /* Show the h1 element on hover */
-    font-weight: bold;
+}
+
+.skills-box1{
+    animation-name: floating;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.skills-box2{
+    animation-name: floating;
+    animation-duration: 2.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.skills-box3{
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.skills-box4{
+    animation-name: floating;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
