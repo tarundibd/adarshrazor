@@ -97,3 +97,22 @@
 .substack-iframe {
     clip-path: inset(0 0 20% 0); /* Hides 10% from the bottom of the iframe */
 }
+
+.grayscale {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.grayscale:hover {
+    filter: grayscale(0%);
+}
+
+.showcase h1 {
+    transition: color 2s ease;
+    color: white /* Hide the h1 element by default */
+}
+
+.showcase:hover h1 {
+    color: #3572EF; /* Show the h1 element on hover */
+    font-weight: bold;
+}
