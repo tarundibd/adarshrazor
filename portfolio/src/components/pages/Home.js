@@ -171,7 +171,7 @@ const Home = () => {
                 {projects.map((project, index) => (
                     <Col key={index} md={3} className='d-flex justify-content-center mb-4 mx-5'>
                         <Card className='text-center grayscale' style={{ width: '25rem', border: 'none'}}>
-                            <Card.Img variant="top" src={project.img} style={{width: '100%', height: 'auto'}}/>
+                            <Card.Img variant="top" src={project.img}/>
                             <Card.Body>
                                 <Card.Title style={{fontWeight: 600}}>{project.title}</Card.Title>
                                 <Card.Text className='text-muted'>{project.desc}</Card.Text>
