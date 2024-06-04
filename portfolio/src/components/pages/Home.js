@@ -165,7 +165,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            {/* <Container className='align-items-center showcase mb-5'>
+            <Container className='align-items-center showcase mb-5'>
             <h1 className='text-center my-5' style={{fontSize: '3rem', fontWeight: 'bold'}}>Showcase</h1>
             <Row className='justify-content-center'>
                 {projects.map((project, index) => (
@@ -181,7 +181,7 @@ const Home = () => {
                     </Col>
                 ))}
             </Row>
-            </Container> */}
+            </Container>
         </>
     );
 }
