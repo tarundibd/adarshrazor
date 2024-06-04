@@ -11,6 +11,7 @@ import sql from './static/skills/sql.png'
 import python from './static/skills/python.png'
 import git from './static/skills/git.png'
 import code from './static/skills/code.png'
+import azure from './static/skills/azure.png'
 import b from './static/skills/b.png'
 import './styles/Home.css'
 
@@ -44,6 +45,7 @@ function skills() {
         <Col md={2} className='my-3'><Image src={b} alt="Adarsh Anand Image" style={{height: "50px", width: "50px"}}/></Col>
         <Col md={2} className='my-3 skills-box3'><Image src={python} alt="Adarsh Anand Image" style={{height: "50px", width: "50px"}}/></Col>
         <Col md={2} className='my-3'><Image src={b} alt="Adarsh Anand Image" style={{height: "50px", width: "50px"}}/></Col>
+        <Col md={2} className='my-3 skills-box3'><Image src={azure} alt="Adarsh Anand Image" style={{height: "50px", width: "50px"}}/></Col>
 
 
     </Row>

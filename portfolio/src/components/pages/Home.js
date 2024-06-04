@@ -1,6 +1,8 @@
 import '../styles/Home.css'
 import Avatar from '../static/avatar.jpg'
 import Avatar1 from '../static/avatar1.jpg'
+import Avatar2 from '../static/avatar2.jpg'
+import a1 from '../static/a1.gif'
 import { Container, Row, Col, Image, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import {ReactTyped} from 'react-typed';
@@ -157,11 +159,20 @@ const Home = () => {
             <h1 className='text-center mt-5' style={{fontWeight: 'bold'}}><hr/>I perform <span style={{fontStyle: 'italic', fontWeight: '100'}}>symphonies</span> with my <span style={{color: 'blue'}}>keyboard</span>,<br/>turning the world into my <span style={{color: '#41B06E'}}>stage</span> and its people into my <span style={{color: 'red'}}>audience</span>.</h1>
             <hr className='mb-5'/>
                 <Row className='align-items-center home-row mt-5'>
-                <Col md={6} className='text-section'>
-                    <Skills/> {/* This is the skills components */}
+                    <Col md={6} className='text-section'>
+                        <Skills/> {/* This is the skills components */}
                     </Col>
-                <   Col md={6} className='image-section'>
-                        <Image src={Avatar1} alt="Adarsh Anand Image" style={{height: "400px", width: "400px"}} className="Hero-Image" roundedCircle fluid />
+                    <Col md={6} className='image-section'>
+                        <Row>
+                            <Col md={10}>
+                                <Image src={Avatar1} alt="Adarsh Anand Image" style={{height: "350px", width: "370px"}} className="skills-box1" roundedCircle fluid />
+                            </Col>
+                            <Col md={2}>
+                                <Image src={Avatar2} alt="Adarsh Anand Image" style={{height: "auto", width: "100%"}} className="skills-box3" roundedCircle fluid />
+                                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                                <Image src={a1} alt="Adarsh Anand Image" style={{height: "50px", width: "50px"}} className="skills-box2" roundedCircle fluid />
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Container>
@@ -183,6 +194,14 @@ const Home = () => {
                     </Col>
                 ))}
             </Row>
+            </Container>
+            <Container>
+            <h4 className='text-center mt-5'><hr/>I may have hidden a few digital easter eggs for the curious clicker. <span style={{fontWeight: 'bold'}} >Happy hunting!</span> 🎉</h4>
+            <hr className='mb-5'/>
+            {/* <h1 className='text-center mt-5' style={{fontWeight: 'bold'}}><hr/>Can you navigate the website's hidden pathways? There's more than meets the eye for the truly observant.</h1>
+            <hr className='mb-5'/>
+            <h1 className='text-center mt-5' style={{fontWeight: 'bold'}}><hr/>Think you're a web sleuth? There are hidden gems scattered throughout the site, just waiting to be unearthed.</h1>
+            <hr className='mb-5'/> */}
             </Container>
         </>
     );
