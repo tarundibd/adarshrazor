@@ -1,14 +1,13 @@
 {
     "homepage-project" : [
         {
-            "title": "Anon Chat App",
+            "title": "Developer Student Club",
             "img" : "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/gdg.png",
-            "desc" : "A Chat app which actually don't leak you data A Chat app which actually don't leak you data A Chat app which actually don't leak you data",
-            "link" : "https://www.youtube.com"
+            "desc" : "📚 Conducted and organized workshops within the college, on topics such as web development and cloud computing."
         },
         {
             "title": "Anon Chat App",
-            "img" : "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/spektra.png",
+            "img" : "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/IEEE.png",
             "desc" : "A Chat app which actually don't leak you data ",
             "link" : "https://www.youtube.com"
         },

@@ -166,16 +166,16 @@ const Home = () => {
                 </Row>
             </Container>
             <Container className='align-items-center showcase mb-5'>
-            <h1 className='text-center my-5' style={{fontSize: '3rem', fontWeight: 'bold'}}>Showcase</h1>
+            <h1 className='text-center my-5' style={{fontSize: '3rem', fontWeight: 'bold'}}>Volunteer Experience</h1>
             <Row className='justify-content-center'>
                 {projects.map((project, index) => (
                     <Col key={index} md={3} className='d-flex justify-content-center mb-4 mx-5'>
                         <Card className='text-center grayscale' style={{ width: '25rem', border: 'none'}}>
-                            <Card.Img variant="top" src={project.img} />
+                            <Card.Img variant="top" src={project.img} style={{width: '100%', height: 'auto'}}/>
                             <Card.Body>
                                 <Card.Title style={{fontWeight: 600}}>{project.title}</Card.Title>
                                 <Card.Text className='text-muted'>{project.desc}</Card.Text>
-                                <Button href={project.link} target="_blank">Checkout 🚀</Button>
+                                {(project.link && <Button href={project.link} target="_blank">Checkout 🚀</Button>)}
                             </Card.Body>
                         </Card>
                     </Col>
