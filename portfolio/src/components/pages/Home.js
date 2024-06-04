@@ -173,7 +173,9 @@ const Home = () => {
                         <Card className='text-center grayscale' style={{ width: '25rem', border: 'none'}}>
                             <Card.Img variant="top" src={project.img}/>
                             <Card.Body>
-                                <Card.Title style={{fontWeight: 600}}>{project.title}</Card.Title>
+                                <Card.Title style={{fontWeight: 600}}>{project.title.split('\n').map((line, lineIndex) => (
+                                            <p key={lineIndex} style={{ margin: 0 }}>{line}</p>
+                                        ))}</Card.Title>
                                 <Card.Text className='text-muted'>{project.desc}</Card.Text>
                                 {(project.link && <Button href={project.link} target="_blank">Checkout 🚀</Button>)}
                             </Card.Body>
