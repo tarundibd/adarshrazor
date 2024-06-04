@@ -38,7 +38,6 @@ class Projects extends React.Component {
                         </Row>
                     );
                 })}
-
             </Container>
         );
     }

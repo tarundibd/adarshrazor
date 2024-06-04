@@ -5,7 +5,8 @@
             "date":"May, 2024",
             "description":"Welcome to Sorting Visualizer! I built this application to learn JS as well as practice my DSA. I was fascinated by sorting algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. I will be adding cool features to this application in the future.",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/sorting.png",
-            "codeLink": "https://github.com/AdarshRazor/Sorting_Visualizer"
+            "codeLink": "https://github.com/AdarshRazor/Sorting_Visualizer",
+            "appLink": "https://sorting-visualizer-hyidphucc-adarshs-projects-c2e875a8.vercel.app/"
         },
         {
             "name":"Domain Enumeration",

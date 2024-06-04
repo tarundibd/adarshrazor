@@ -27,7 +27,7 @@ const Header = () => {
         <>
             <nav sticky="top">
                 <div to="/" className="navbar-brand" style={{ color: isHomePage ? 'white' : 'black', cursor: 'pointer' }} onClick={handleNavbarBrandClick}>
-                    Adarsh Anand
+                    Adarsh Anand{/* &lt;Adarsh Anand/&gt; */}
                 </div>
                 <div className='menu' onClick={() => {
                     setMenuOpen(!menuOpen);
