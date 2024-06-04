@@ -3,11 +3,11 @@ import Avatar from '../static/avatar.jpg'
 import Avatar1 from '../static/avatar1.jpg'
 import Avatar2 from '../static/avatar2.jpg'
 import a1 from '../static/a1.gif'
-import { Container, Row, Col, Image, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Image, Card, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import {ReactTyped} from 'react-typed';
 import Skills from '../skills'
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import Particles from 'react-particles';
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`
@@ -15,14 +15,30 @@ import projectData from '../static/homepage.json'
 
 const Home = () => {
 
+    const [show, setShow] = useState(false);
+    const [colorChangedflag1, setColorChangedflag1] = useState(false);
+
+    const [clicks, setClicks] = useState(0)
+    const handleClick = (event) => {
+        setClicks(clicks + 1);
+        const {target} = event;
+        if (clicks === 6) {
+            target.style.color = 'lightcoral'; // Change to your desired color
+            setShow(true)
+            setColorChangedflag1(true);
+        }
+      };
+
+    //   useEffect(() => {
+    //     if (colorChangedflag1) {
+    //       alert('Hurray! There are more hidden things for the truly observant.');
+    //     }
+    //   }, [colorChangedflag1]);
+
     const projects = projectData['homepage-project'];
 
     const particlesInit = useCallback(async engine => {
         console.log(engine);
-        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        //await loadFull(engine);
         await loadSlim(engine);
     }, []);
 
@@ -196,12 +212,22 @@ const Home = () => {
             </Row>
             </Container>
             <Container>
-            <h4 className='text-center mt-5'><hr/>I may have hidden a few digital easter eggs for the curious clicker. <span style={{fontWeight: 'bold'}} >Happy hunting!</span> 🎉</h4>
+            <h4 className='text-center mt-5'><hr/>I may have hidden a few digital easter eggs for the curious clicker. <span id="changeme"style={{fontWeight: 'bold', cursor: 'default'}} onClick={handleClick} >Happy hunting!</span> 🎉 </h4>
             <hr className='mb-5'/>
             {/* <h1 className='text-center mt-5' style={{fontWeight: 'bold'}}><hr/>Can you navigate the website's hidden pathways? There's more than meets the eye for the truly observant.</h1>
             <hr className='mb-5'/>
             <h1 className='text-center mt-5' style={{fontWeight: 'bold'}}><hr/>Think you're a web sleuth? There are hidden gems scattered throughout the site, just waiting to be unearthed.</h1>
             <hr className='mb-5'/> */}
+            {colorChangedflag1 && (
+            <div>
+              <Alert variant="info" onClose={() => setShow(false)} dismissible>
+                <Alert.Heading>Hurray! 🐣 You found an Easter egg!</Alert.Heading>
+                <p>
+                There are more hidden things for the truly observant.
+                </p>
+            </Alert>
+            </div>
+          )}
             </Container>
         </>
     );
