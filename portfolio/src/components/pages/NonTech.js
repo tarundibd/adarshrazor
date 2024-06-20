@@ -90,10 +90,10 @@ class NonTech extends React.Component {
                         <Carousels/>
                     </Col>
                     <Col md={4} xs={12} className="non-fiction-section">
-                    <h3>28 under 28 🇮🇳</h3>
+                    <h3>30 under 30 🇮🇳</h3>
                         <Row>
                             <Col md={6} xs={12}>
-                                <div className='under28'>
+                                <div className='under30'>
                                     <ListGroup.Item>Andhra Pradesh</ListGroup.Item>
                                     <ListGroup.Item>Arunachal Pradesh</ListGroup.Item>
                                     <ListGroup.Item>Assam</ListGroup.Item>
@@ -105,14 +105,16 @@ class NonTech extends React.Component {
                                     <ListGroup.Item>Haryana</ListGroup.Item>
                                     <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold' }}>Himachal Pradesh</ListGroup.Item>
                                     <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold' }}>Jharkhand</ListGroup.Item>
+                                    <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold' }}>Jammu & Kashmir</ListGroup.Item>
                                     <ListGroup.Item style={{ textDecoration: 'line-through', color: 'green', fontWeight: 'bold' }}>Karnataka</ListGroup.Item>
                                     <ListGroup.Item>Kerala</ListGroup.Item>
                                     <ListGroup.Item>Madhya Pradesh</ListGroup.Item>
-                                    <ListGroup.Item>Maharashtra</ListGroup.Item>
+                                    
                                 </div>
                             </Col>
                             <Col md={6} xs={12}>
-                                <div className='under28'>
+                                <div className='under30'>
+                                <ListGroup.Item>Maharashtra</ListGroup.Item>
                                     <ListGroup.Item>Manipur</ListGroup.Item>
                                     <ListGroup.Item>Meghalaya</ListGroup.Item>
                                     <ListGroup.Item>Mizoram</ListGroup.Item>
