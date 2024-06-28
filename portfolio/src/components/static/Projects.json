@@ -3,8 +3,8 @@
         {
             "name":"Chat App",
             "date":"Jume, 2024 (Ongoing)",
-            "description":"A chat app that actually doesn't leak your data.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/sorting.png",
+            "description":"A chat app that actually doesn't leak your data. Instantly see who's available with real-time online/offline status and enjoy the thrill of lightning-fast messaging. Express yourself with a vast array of emojis, and discover our unique registration process hidden as a fun easter egg.",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/chat.jpg",
             "codeLink": "https://github.com/AdarshRazor/Chat_App",
             "appLink": "https://chat-kk89usq77-adarshs-projects-c2e875a8.vercel.app/"
         },
