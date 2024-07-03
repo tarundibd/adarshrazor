@@ -1,7 +1,7 @@
 import '../styles/Home.css'
-import Avatar from '../static/avatar.jpg'
-import Avatar1 from '../static/avatar1.jpg'
-import Avatar2 from '../static/avatar2.jpg'
+import Avatar from '../static/photos/avatar.jpg'
+import Avatar1 from '../static/photos/avatar1.jpg'
+import Avatar2 from '../static/photos/avatar2.jpg'
 import a1 from '../static/a1.gif'
 import { Container, Row, Col, Image, Card, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { useCallback, useState } from 'react';
 import Particles from 'react-particles';
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`
-import projectData from '../static/homepage.json'
+import projectData from '../static/JSON/homepage.json'
 
 const Home = () => {
 

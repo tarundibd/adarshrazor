@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Row, Col, Container, ButtonGroup, Button, Badge } from 'react-bootstrap';
-import projects from '../static/Experience.json';
+import projects from '../static/JSON/Experience.json';
 //import '../styles/Exp.css'   // Assuming you have a CSS file for styles
 
 class Experience extends React.Component {

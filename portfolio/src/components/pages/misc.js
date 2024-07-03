@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Avatar from '../static/404.png';
+import Avatar from '../static/photos/404.png';
 import { Image } from 'react-bootstrap';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import bucketListData from '../static/bucketList.json';
+import bucketListData from '../static/JSON/bucketList.json';
 
 class BucketList extends React.Component {
     constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Col, Row, ListGroup } from 'react-bootstrap';
-import nonFiction from '../static/nontech.json';
+import nonFiction from '../static/JSON/nontech.json';
 import '../styles/NonTech.css'; 
 import Carousels from '../Carousels';
 

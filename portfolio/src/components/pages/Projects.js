@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Row, Col, Container, ButtonGroup, Button } from 'react-bootstrap';
-import projects from '../static/Projects.json';
+import projects from '../static/JSON/Projects.json';
 
 class Projects extends React.Component {
     render() {
