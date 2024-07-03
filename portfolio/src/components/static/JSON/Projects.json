@@ -4,7 +4,7 @@
             "name":"Chat App",
             "date":"Jume, 2024 (Ongoing)",
             "description":"A chat app that actually doesn't leak your data. Instantly see who's available with real-time online/offline status and enjoy the thrill of lightning-fast messaging. Express yourself with a vast array of emojis, and discover our unique registration process hidden as a fun easter egg.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/chat.jpg",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//chat.jpg",
             "codeLink": "https://github.com/AdarshRazor/Chat_App",
             "appLink": "https://chat-kk89usq77-adarshs-projects-c2e875a8.vercel.app/"
         },
@@ -12,7 +12,7 @@
             "name":"Sorting Algorithm Visualizer",
             "date":"May, 2024",
             "description":"Welcome to Sorting Visualizer! I built this application to learn JS as well as practice my DSA. I was fascinated by sorting algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. I will be adding cool features to this application in the future.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/sorting.png",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//sorting.png",
             "codeLink": "https://github.com/AdarshRazor/Sorting_Visualizer",
             "appLink": "https://sorting-visualizer-mu-one.vercel.app/"
         },
@@ -20,7 +20,7 @@
             "name":"Learn React Hooks",
             "date":"June, 2024",
             "description":"Here is a website to learn about React Hooks",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/reacthook.png",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//reacthook.png",
             "codeLink": "https://github.com/AdarshRazor/Coding-Ninja-LearningCurve/tree/main/React/reacthooks",
             "appLink": "https://reacthook-lovat.vercel.app/"
         },
@@ -28,7 +28,7 @@
             "name":"Domain Enumeration",
             "date":"August, 2021",
             "description":"Domain enumeration, designed for Linux OS, is a comprehensive tool for extracting and scanning URLs. It amalgamates various tools to gather extensive information about URLs by employing multiple enumeration techniques. Its functionality extends to identifying sub-domains, login pages, and potentially vulnerable areas within websites.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/domainenum.png",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//domainenum.png",
             "codeLink": "https://github.com/AdarshRazor/Domain_Enumeration"
         },
         {
@@ -36,27 +36,27 @@
             "date":"July, 2021",
             "description":"This script offers a simple method for encrypting and decrypting data, with a key feature being the delivery of encrypted files to recipients. It achieves this by dividing the encrypted file into multiple parts and transmitting them to the receiver. If a hacker gains access to the file, decryption would necessitate additional files, enhancing its security against unauthorized access.",
             "codeLink":"https://github.com/AdarshRazor/NightFury_Decrypto",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/decrypto.png"
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//decrypto.png"
         },
         {
             "name":"Smart Seach Engine",
             "date":"Febuary 2021",
             "description":"SSE, also known as the fundamental framework of Search Engines or colloquially referred to as 'Google Search', operates by utilizing Wikipedia content as its foundation. The subsequent phase of the program employs words extracted from this content to refine and enhance search capabilities, facilitating continual learning and improvement for better comprehension.",
             "codeLink":"https://github.com/AdarshRazor/Smart-Search-Engine",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/sse.png"
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//sse.png"
         },
         {
             "name":"Twitter Scraper",
             "date":"March, 2020",
             "description":"A JavaScript code that extracts tweets from Twitter using hashtags, then analyzes the text to determine sentiment, employing machine learning to discern public sentiment by geographical location",
             "codeLink": "https://github.com/AdarshRazor/TweetScrap",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/TS.png"
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//TS.png"
         },
         {
             "name":"Dynamic Intelligent Virtual Assistant (D.I.V.A)",
             "date":"Febuary, 2020",
             "description":"D.I.V.A stands out as a virtual assistant, offering greater dynamism than existing counterparts and a heightened ability to understand users on a personal level. We aim to effectively manage our time and activities by inputting categorized time allocations such as Study, Gaming, or Watching series.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/ai.png",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//ai.png",
             "codeLink": "https://github.com/AdarshRazor/D.I.V.A",
             "blogLink": "http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317"
         }

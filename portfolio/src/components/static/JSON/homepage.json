@@ -2,17 +2,17 @@
     "homepage-project" : [
         {
             "title": "Developer Student Club",
-            "img" : "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/gdg.png",
+            "img" : "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project/gdg.png",
             "desc" : "📚 Conducted and organized workshops within the college, on topics such as web development and cloud computing."
         },
         {
             "title": "Web Master - Bangalore",
-            "img" : "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/IEEE_square.png",
+            "img" : "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project/IEEE_square.png",
             "desc" : "🖥️    Maintained the IEEE Bangalore Section website and contributed to the CS Society, IEEE Wie, and IISc Bangalore Reimagine Health events."
         },
         {
             "title": "ACM Chair Person\n REVA Univeristy",
-            "img" : "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/acm.png",
+            "img" : "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project/acm.png",
             "desc" : "👨‍🏫 Motivated students to learn and explore new technologies by providing hands-on experiences, mentorship and engaging presentations."
         }
     ]

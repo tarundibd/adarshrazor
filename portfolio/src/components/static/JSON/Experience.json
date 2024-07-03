@@ -31,7 +31,7 @@
                 }
             ],
             "description": "• Developed efficient and reusable components, enhancing performance by 20-40%. Strong proficiency in React hooks, Router and DOM Manipulation.\n• Utilized state management libraries, including Redux or Content API, to streamline application state.\n• Onboarded a cloud application on Azure Marketplace (AMP), created architecture, conducted certificate testing, enhanced UI features, and resolved critical bugs.\n• Automated cloud product deployments through custom scripts using shell scripting and JSON",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/spektra.png"
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//spektra.png"
         },
         {
             "name":"REVA University (Education)",
@@ -49,7 +49,7 @@
                 }
             ],
             "description":"• B. Tech in Computer Science and Engineering - GPA: 8.0\n• IEEE Webmaster RU (2018 - 2020)\n• ACM Chairperson 2019\n• Research Paper Publish 2020",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/RU.png",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//RU.png",
             "blogLink":"http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317"
         },
         {
@@ -72,7 +72,7 @@
                 }
             ],
             "description":"• Enhanced tweet scraping tool efficiency by 20% for hashtag searches.\n• Implemented machine learning algorithms to filter and categorize COVID-related tweets based on sentiments.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/RN.png"
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//RN.png"
         },
         {
             "name":"IEEE Bangalore (Internship)",
@@ -90,7 +90,7 @@
                 }
             ],
             "description":"• Worked on maintaining IEEE website of the Bangalore Section.\n• Contributed to IEEE Individual Chapters\n‎ ∘ CS Society\n‎ ∘ IEEE Wie\n‎ ∘ IISc Bangalore Reimagine Health events.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/IEEE.png"
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//IEEE.png"
         },
         {
             "name":"Malik Ventures (Internship)",
@@ -122,7 +122,7 @@
                 }
             ],
             "description":"• Accelerated website development by 30% for clients like:\n‎ ∘ Radix Healthcare\n‎ ∘ Harvin Academy\n‎ ∘ Dr Shruti Malik's Website\n• Developed backend systems using NodeJS and MySQL.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/MV.png"
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//MV.png"
         }
     ]
 }
