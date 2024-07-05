@@ -61,6 +61,14 @@
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//reacthook.png",
             "codeLink": "https://github.com/AdarshRazor/Coding-Ninja-LearningCurve/tree/main/React/reacthooks",
             "appLink": "https://reacthook-lovat.vercel.app/"
+        },
+        {
+            "name":"Todo APP",
+            "date":"July, 2024",
+            "description":"A Simple todo app",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//todo.png",
+            "codeLink": "https://github.com/AdarshRazor/Coding-Ninja-LearningCurve/tree/main/React/reacthooks",
+            "appLink": "https://todo-app-ten-chi.vercel.app/"
         }
     ]
 }
