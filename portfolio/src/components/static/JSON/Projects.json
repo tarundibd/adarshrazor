@@ -9,22 +9,6 @@
             "appLink": "https://chat-kk89usq77-adarshs-projects-c2e875a8.vercel.app/"
         },
         {
-            "name":"Sorting Algorithm Visualizer",
-            "date":"May, 2024",
-            "description":"Welcome to Sorting Visualizer! I built this application to learn JS as well as practice my DSA. I was fascinated by sorting algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. I will be adding cool features to this application in the future.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//sorting.png",
-            "codeLink": "https://github.com/AdarshRazor/Sorting_Visualizer",
-            "appLink": "https://sorting-visualizer-mu-one.vercel.app/"
-        },
-        {
-            "name":"Learn React Hooks",
-            "date":"June, 2024",
-            "description":"Here is a website to learn about React Hooks",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//reacthook.png",
-            "codeLink": "https://github.com/AdarshRazor/Coding-Ninja-LearningCurve/tree/main/React/reacthooks",
-            "appLink": "https://reacthook-lovat.vercel.app/"
-        },
-        {
             "name":"Domain Enumeration",
             "date":"August, 2021",
             "description":"Domain enumeration, designed for Linux OS, is a comprehensive tool for extracting and scanning URLs. It amalgamates various tools to gather extensive information about URLs by employing multiple enumeration techniques. Its functionality extends to identifying sub-domains, login pages, and potentially vulnerable areas within websites.",
@@ -59,6 +43,24 @@
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//ai.png",
             "codeLink": "https://github.com/AdarshRazor/D.I.V.A",
             "blogLink": "http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317"
+        }
+    ],
+    "small-projects":[
+        {
+            "name":"Sorting Algorithm Visualizer",
+            "date":"May, 2024",
+            "description":"Welcome to Sorting Visualizer! I built this application to learn JS as well as practice my DSA. I was fascinated by sorting algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. I will be adding cool features to this application in the future.",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//sorting.png",
+            "codeLink": "https://github.com/AdarshRazor/Sorting_Visualizer",
+            "appLink": "https://sorting-visualizer-mu-one.vercel.app/"
+        },
+        {
+            "name":"Learn React Hooks",
+            "date":"June, 2024",
+            "description":"Here is a website to learn about React Hooks",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//reacthook.png",
+            "codeLink": "https://github.com/AdarshRazor/Coding-Ninja-LearningCurve/tree/main/React/reacthooks",
+            "appLink": "https://reacthook-lovat.vercel.app/"
         }
     ]
 }

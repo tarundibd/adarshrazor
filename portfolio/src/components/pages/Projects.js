@@ -43,16 +43,21 @@ class Projects extends React.Component {
             <h1 className='my-5 d-flex align-items-center justify-content-center'>Portable Projects</h1>
             <Container className='align-items-center showcase mb-5 '>
                 <Row className='justify-content-center'>
-                {projects["projects"].map((project) => {
+                {projects["small-projects"].map((project) => {
                     return (
                         <Col key={project.name} md={3} className='d-flex justify-content-center mb-4 mx-5'>
                             <Card className='text-center' style={{ width: '25rem', border: 'none'}}>
-                                <Card.Img variant="top" src={project.image} style={{width: '100%', height: 'auto', borderRadius: '10px' }} />
+                                <Card.Img variant="top" src={project.image} style={{width: '100%', height: '100%', borderRadius: '200px' }} />
                                 <Card.Body>
                                     <Card.Title style={{fontWeight: 600}}>{project.name.split('\n').map((line, lineIndex) => (
                                                 <p key={lineIndex} style={{ margin: 0 }}>{line}</p>
                                             ))}</Card.Title>
-                                    {(project.link && <Button href={project.link} target="_blank">Checkout 🚀</Button>)}
+                                    {project.appLink && (
+                                                <Button variant="light" style={{ margin: '0 5px' }} onClick={() => window.open(project.appLink, "_blank")}>App</Button>
+                                            )}
+                                    {project.codeLink && (
+                                        <Button variant="light" style={{ margin: '0 5px' }} onClick={() => window.open(project.codeLink, "_blank")}>Code</Button>
+                                    )}
                                 </Card.Body>
                             </Card>
                         </Col>
