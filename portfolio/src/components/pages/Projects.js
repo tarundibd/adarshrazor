@@ -5,6 +5,7 @@ import projects from '../static/JSON/Projects.json';
 class Projects extends React.Component {
     render() {
         return (
+            <>
             <Container style={{ marginTop: '35px' }}>
                 {projects["projects"].map((project) => {
                     return (
@@ -39,6 +40,27 @@ class Projects extends React.Component {
                     );
                 })}
             </Container>
+            <h1 className='my-5 d-flex align-items-center justify-content-center'>Portable Projects</h1>
+            <Container className='align-items-center showcase mb-5 '>
+                <Row className='justify-content-center'>
+                {projects["projects"].map((project) => {
+                    return (
+                        <Col key={project.name} md={3} className='d-flex justify-content-center mb-4 mx-5'>
+                            <Card className='text-center' style={{ width: '25rem', border: 'none'}}>
+                                <Card.Img variant="top" src={project.image} style={{width: '100%', height: 'auto', borderRadius: '10px' }} />
+                                <Card.Body>
+                                    <Card.Title style={{fontWeight: 600}}>{project.name.split('\n').map((line, lineIndex) => (
+                                                <p key={lineIndex} style={{ margin: 0 }}>{line}</p>
+                                            ))}</Card.Title>
+                                    {(project.link && <Button href={project.link} target="_blank">Checkout 🚀</Button>)}
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    );
+                })}
+                </Row>
+                </Container>
+        </>
         );
     }
 }
