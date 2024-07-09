@@ -15,6 +15,10 @@
                 "color":"primary"
                 },
                 {
+                    "tag": "NodeJS",
+                    "color":"success"
+                },
+                {
                 "tag": "JSON",
                 "color":"warning",
                 "text": "dark"
@@ -30,7 +34,7 @@
                     "text": "light"
                 }
             ],
-            "description": "• Developed efficient and reusable components, enhancing performance by 20-40%. Strong proficiency in React hooks, Router and DOM Manipulation.\n• Utilized state management libraries, including Redux or Content API, to streamline application state.\n• Onboarded a cloud application on Azure Marketplace (AMP), created architecture, conducted certificate testing, enhanced UI features, and resolved critical bugs.\n• Automated cloud product deployments through custom scripts using shell scripting and JSON",
+            "description": "• Developed efficient and reusable components, enhancing performance by 20-30%. Strong proficiency in React hooks, Router, DOM Manipulation and state management libraries, including Redux or Content API, to streamline application state.\n• Reduced response time by 40% for app-facing APIs by refactoring backend services in Node (NestJS) and PostgreSQL.\n• Onboarded a cloud application on Azure Marketplace (AMP), created architecture, conducted certificate testing, enhanced UI features, and resolved critical bugs, automated cloud product deployments through custom scripts using shell scripting and JSON",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//spektra.png"
         },
         {
