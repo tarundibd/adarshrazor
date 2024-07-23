@@ -9,6 +9,13 @@
             "appLink": "https://chat-app-nine-steel.vercel.app/"
         },
         {
+            "name":"iNotebook",
+            "date":"June, 2024",
+            "description":"A cloud-based sticky note app designed for speed and simplicity. With secure login and signup features powered by an exclusive invite code system, this app ensures that each user enjoys a private, individual space for their notes, free from prying eyes. Its minimalist design and lightning-fast performance make it the perfect tool for capturing and organizing your thoughts on the go.",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/iNotebook/main/client/public/book.png",
+            "codeLink": "https://github.com/AdarshRazor/iNotebook"
+        },
+        {
             "name":"Domain Enumeration",
             "date":"August, 2021",
             "description":"Domain enumeration, designed for Linux OS, is a comprehensive tool for extracting and scanning URLs. It amalgamates various tools to gather extensive information about URLs by employing multiple enumeration techniques. Its functionality extends to identifying sub-domains, login pages, and potentially vulnerable areas within websites.",
