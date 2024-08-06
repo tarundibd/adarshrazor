@@ -143,3 +143,13 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
+
+.fixed-alert {
+    position: fixed;
+    top: 5%;
+    right: 0;
+    left: 0;
+    z-index: 1050; /* Ensure it's above other content */
+    margin-inline: 20%;
+  }
+  

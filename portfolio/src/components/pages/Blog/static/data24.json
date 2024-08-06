@@ -1,0 +1,44 @@
+{
+    "june" : [
+        {
+            "title": "Random title",
+            "image": "https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+            "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "link": "google.com"
+        },
+        {
+            "title": "Random title 2",
+            "image": "",
+            "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "link": "google.com"
+        },
+        {
+            "title": "Random title 3",
+            "image": "https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+            "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "link": "google.com"
+        }
+    ],
+    "july" : [
+        {
+            "title": "Random title",
+            "image": "https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+            "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "link": "google.com"
+        }
+    ],
+    "august" : [
+        {
+            "title": "Random title",
+            "image": "https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+            "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "link": "google.com"
+        },
+        {
+            "title": "Random title 3",
+            "image": "https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+            "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+            "link": "google.com"
+        }
+    ]
+}

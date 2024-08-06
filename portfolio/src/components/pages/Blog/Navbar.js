@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Outlet, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import './styles/Header.css';
+import '../../styles/Header.css'
 
-const Header = () => {
+const NavBlog = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isHomePage, setIsHomePage] = useState(false);
     const location = useLocation();
@@ -14,20 +14,15 @@ const Header = () => {
     }, [location]);
 
     const handleNavbarBrandClick = () => {
-        // Redirect the user based on whether they are on the homepage or not
-        if (isHomePage) {
-            //navigate("/misc"); // Use navigate function for navigation
-            navigate("/404");
-        } else {
-            navigate("/");
-        }
-    };
+        navigate('/blog'); // Navigate to the homepage when the brand is clicked
+      };
+
 
     return (
         <>
             <nav sticky="top">
                 <div to="/" className="navbar-brand" style={{ color: isHomePage ? 'white' : 'black', cursor: 'pointer' }} onClick={handleNavbarBrandClick}>
-                    Adarsh Anand{/* &lt;Adarsh Anand/&gt; */}
+                    Blog.Div {/* &lt;Adarsh Anand/&gt; */}
                 </div>
                 <div className='menu' onClick={() => {
                     setMenuOpen(!menuOpen);
@@ -38,25 +33,10 @@ const Header = () => {
                 </div>
                 <ul className={menuOpen ? 'open' : ''}>
                     <li>
-                        <NavLink to="/Misc" className="text-white">_Chat_</NavLink>
+                        <NavLink to="/about">About</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/experience">Experience</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/projects">Projects</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/blog">Blog</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/nontech">Not so Tech</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/bucketlist">Bucket List</NavLink>
-                    </li>
-                    <li>
-                        <a href="https://drive.google.com/file/d/1gtX2j7VKl79Ez4OiJ4B5tg8vPTgpbsUV/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
+                        <NavLink to="/">Portfolio</NavLink>
                     </li>
                 </ul>
             </nav>
@@ -65,4 +45,9 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default NavBlog;
+
+/*
+Implement a search box
+
+*/

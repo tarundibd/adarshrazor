@@ -12,10 +12,12 @@ import Particles from 'react-particles';
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`
 import projectData from '../static/JSON/homepage.json'
+import { useEffect } from 'react';
 
 const Home = () => {
 
     const [show, setShow] = useState(false);
+    const [alertshow, setalertShow] = useState(true);
     const [colorChangedflag1, setColorChangedflag1] = useState(false);
 
     const [clicks, setClicks] = useState(0)
@@ -28,6 +30,15 @@ const Home = () => {
             setColorChangedflag1(true);
         }
       };
+      useEffect(() => {
+        // Set a timer to hide the alert after 5 seconds
+        const timer = setTimeout(() => {
+            setalertShow(false);
+        }, 3500);
+
+        // Clear the timer if the component unmounts or if the effect is cleaned up
+        return () => clearTimeout(timer);
+    }, []);
 
     //   useEffect(() => {
     //     if (colorChangedflag1) {
@@ -45,6 +56,7 @@ const Home = () => {
     const particlesLoaded = useCallback(async container => {
         await console.log(container);
     }, []);
+
 
     return (
         <>
@@ -146,6 +158,14 @@ const Home = () => {
                     </p>
                 </Row>
             </Container>
+            {alertshow && (<div className="fixed-alert">
+              <Alert variant="info" onClose={() => setShow(false)} dismissible>
+                <p>
+                    Blog section is being revamped. Please visit later !!
+                </p>
+            </Alert>
+            </div>)}
+
             <Container className='mb-5'>
                 <Row className='justify-content-center text-center'>
                     <Col md={4} className='d-flex justify-content-center'>
