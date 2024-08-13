@@ -76,6 +76,13 @@
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//todo.png",
             "codeLink": "https://github.com/AdarshRazor/Coding-Ninja-LearningCurve/tree/main/React/todo_app_list",
             "appLink": "https://todo-app-ten-chi.vercel.app/"
+        },
+        {
+            "name":"ChatRoom",
+            "date":"August, 2024",
+            "description":"A Simple chat room app",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//chat_room.png",
+            "appLink": "https://chat-room-hlal.onrender.com/"
         }
     ]
 }
