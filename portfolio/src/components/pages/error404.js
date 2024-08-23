@@ -6,20 +6,35 @@ import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
 const Error404 = () => {
   const [quote, setQuote] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [countdown, setCountdown] = useState(10); // Initialize countdown to 20 seconds
+  const [error, setError] = useState(null); // State for error handling
+  const [countdown, setCountdown] = useState(10); // Initialize countdown to 10 seconds
   const navigate = useNavigate();
+  const category = 'happiness'; // Category for the quote
+  const apiUrl = `https://api.api-ninjas.com/v1/quotes?category=${category}`; // API URL
 
   useEffect(() => {
-    axios.get('https://api.quotable.io/quotes/random')
-      .then(response => {
-        setQuote(response.data[0]);
+    const fetchQuote = async () => {
+      try {
+        const response = await axios.get(apiUrl, {
+          headers: {
+            'X-Api-Key': '3NO0JXj17MDEXbFscPXvWg==hxWpzASrSUK5ADPY', // Replace with your API key
+          },
+        });
+        if (response.status === 200 && response.data.length > 0) {
+          setQuote(response.data[0]);
+        } else {
+          setError('No quote available');
+        }
+      } catch (err) {
+        console.error('Error fetching the quote:', err);
+        setError(`Error: ${err.message}`);
+      } finally {
         setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error fetching the quote:', error);
-        setLoading(false);
-      });
-  }, []);
+      }
+    };
+
+    fetchQuote();
+  }, [apiUrl]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -50,11 +65,13 @@ const Error404 = () => {
             <div className="d-flex justify-content-center">
               <Spinner animation="border" />
             </div>
+          ) : error ? ( // Handle error state
+            <div className="text-danger">{error}</div>
           ) : (
             <Card className="text-center">
               <Card.Body>
                 <Card.Text>
-                  {quote.content}
+                  {quote.quote}
                 </Card.Text>
                 <Card.Footer className="text-muted">
                   — {quote.author}
