@@ -13,15 +13,15 @@
             "date":"Jume, 2024 (revamped)",
             "description":"A chat app that actually doesn't leak your data. Instantly see who's available with real-time online/offline status and enjoy the thrill of lightning-fast messaging. Express yourself with a vast array of emojis, and discover our unique registration process hidden as a fun easter egg.",
             "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//chat.jpg",
-            "codeLink": "https://github.com/AdarshRazor/Chat_App",
-            "appLink": "https://chat-app-nine-steel.vercel.app/"
+            "codeLink": "https://github.com/AdarshRazor/Chat_App"
         },
         {
             "name":"iNotebook",
             "date":"June, 2024",
             "description":"A cloud-based sticky note app designed for speed and simplicity. With secure login and signup features powered by an exclusive invite code system, this app ensures that each user enjoys a private, individual space for their notes, free from prying eyes. Its minimalist design and lightning-fast performance make it the perfect tool for capturing and organizing your thoughts on the go.",
             "image":"https://raw.githubusercontent.com/AdarshRazor/iNotebook/main/client/public/book.png",
-            "codeLink": "https://github.com/AdarshRazor/iNotebook"
+            "codeLink": "https://github.com/AdarshRazor/iNotebook",
+            "appLink": "https://i-notebook-app-cloud.vercel.app/"
         },
         {
             "name":"Domain Enumeration",
