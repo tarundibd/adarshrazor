@@ -56,7 +56,7 @@ const Header = () => {
                         <NavLink to="/bucketlist">Bucket List</NavLink>
                     </li>
                     <li>
-                        <a href="https://drive.google.com/file/d/14S847EhZ7PQ_mu5CMxTKfB5_7IIEtYFG/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
+                        <a href="https://drive.google.com/file/d/1PmZbsKaXMBSWXhjV5ISfczIlbNeamAlm/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
                     </li>
                 </ul>
             </nav>
