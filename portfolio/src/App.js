@@ -12,6 +12,7 @@ import Misc from './components/pages/misc';
 import Error404 from './components/pages/error404';
 import Blog from './components/pages/Blog/Main';
 import About from './components/pages/Blog/About';
+import SaketBoi from './components/pages/Saket';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function Content() {
   const HeaderFooter404 = location.pathname !== '/404';
   const HeaderFooterBlog = location.pathname !== '/blog';
   const HeaderFooterAbout = location.pathname !== '/about';
+  const Saket = location.pathname !== '/saket';
+
+  const shouldRenderHeaderFooter = location.pathname !== '/404' && location.pathname !== '/blog' && location.pathname !== '/about' && location.pathname !== '/saket';
 
   if (!location) {
     return <div>Error: Location is null</div>;
@@ -38,7 +42,7 @@ function Content() {
 
   return (
     <>
-      {HeaderFooter404 && HeaderFooterAbout && HeaderFooterBlog && <Header />} {/* Conditionally render the Navbar */}
+      {shouldRenderHeaderFooter && <Header />} {/* Conditionally render the Navbar */}
       <Routes>
         <Route path="/" element={<Home />} /> {/* Add a Home route (optional) */}
         <Route path="/projects" element={<Projects />} />
@@ -50,8 +54,9 @@ function Content() {
         {/*<Route path="*" element={<Error404 />} />  Add a 404 route (optional) */}
         <Route path="/404" element={<Error404 />} />
         <Route path="/about" element={<About/>} /> 
+        <Route path="/saket" element={<SaketBoi/>} />
       </Routes>
-      {HeaderFooter404 && HeaderFooterAbout &&  HeaderFooterBlog && <Footer />} {/* Conditionally render the Footer */}
+      {shouldRenderHeaderFooter && <Footer />} {/* Conditionally render the Footer */}
     </>
   );
 }
