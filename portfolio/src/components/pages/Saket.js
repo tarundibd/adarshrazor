@@ -1,7 +1,6 @@
 import '../styles/Home.css'
-import Avatar from '../static/photos/avatar.jpg'
+import Avatar from '../static/photos/saket.jpg'
 import { Container, Row, Col, Image, Alert } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import {ReactTyped} from 'react-typed';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -39,9 +38,9 @@ const Home = () => {
                     <p className='text-section-bio'>
                         <span className='home-row-bio-capitalized'>Happy Birthday Bhai ! </span> somehow I convinced you 7 years ago that we will be "cool" enough to be friends. Seriously, what were you thinking back then 😂? But I am glad I found you in very unexpected way. 
                         <br /><br />
-                        Abhi this project is really hitting hard as I am overiding my sleep 😂. Its almost shocking as the fact ki I was missing being there and this project came which reminded me of those amazing college Hackathon days. Where we participated first time - Glad universe works in different ways 😝. 
+                        Abhi this project is really hitting hard as I am overiding my sleep 😂. It's almost as shocking as the fact that I was missing being there, and then bam! This project came up, which totally reminded me of those awesome college hackathons, you know, when we first did one with Kanishk and Yusuf? Glad the universe has its own weird plans! 😝. 
                         <br /><br />
-                        I really really miss you and your company. I was super upset last few days kyuki I planned but nahi aa paye Bday surprise dene. Lots of things happened and kaafi stories h batane ke liye. For now - Party Hard and Drink a lot 🥂. Wishes to you Brother - You deserve the best.
+                        I really, really miss you and hanging out with you. I was super upset last few days kyuki I planned but nahi aa paye Bday surprise dene. Lots of things happened and kaafi stories h batane ke liye. For now - Party Hard and Drink a lot 🥂. <span>Best Wishes to you Brother - You deserve the best.</span>
                         <br /><br />
                     </p>
                 </Row>
