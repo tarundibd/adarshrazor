@@ -1,4 +1,4 @@
-import '../styles/Home.css'
+import '../styles/Saket.css'
 import Avatar from '../static/photos/saket.jpg'
 import { Container, Row, Col, Image, Alert } from 'react-bootstrap';
 import {ReactTyped} from 'react-typed';
