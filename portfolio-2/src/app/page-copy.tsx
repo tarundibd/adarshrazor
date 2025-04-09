@@ -35,11 +35,11 @@ export default function Home() {
       <CardContent className="p-6 space-y-6">
             <div className="grid md:grid-cols-2 gap-8 items-center py-7">
               <div className="flex justify-center">
-              <div className="relative w-[350px] md:w-[60%] h-[450px] md:h-[500px]">
+              <div className="relative w-[450px] h-[500px]">
                 <div className="mask-no-repeat mask-size-[100%_100%] mask-center" style={{ maskImage: 'url(/shape/mask-shape-5.svg)' }}>
                   <ReactCompareImage
-                    leftImage="/avatar-g.svg"
-                    rightImage="/avatar.svg"
+                    leftImage="/avatar.svg"
+                    rightImage="/avatar-g.svg"
                     sliderLineColor="#FFFFFF"
                     sliderPositionPercentage={0.85}
                   />
@@ -47,7 +47,7 @@ export default function Home() {
               </div>
               </div>
               <div className="text-center md:text-left">
-                <h1 className="text-7xl font-bold mb-4">Hi, Adarsh here !</h1>
+                <h1 className="text-5xl font-bold mb-4">Hi, Adarsh here !</h1>
                 <p className="text-3xl">
                   I am a <span className="text-[#153448]">full stack developer</span> <span className="text-[#e4d4b4]">and a Hacker</span>
                 </p>
