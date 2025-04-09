@@ -6,6 +6,7 @@ import ReactCompareImage from 'react-compare-image';
 import { TypeAnimation } from 'react-type-animation';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MaskedImage } from "@/components/ui/masked-image";
+import ActiveUpdate from "@/components/active-update";
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -107,6 +108,14 @@ export default function Home() {
           <br/>
           turning the world into my <span className="text-[#41B06E]">stage</span> and its people into my <span className="text-red-600">audience</span>.
         </div>
+
+        <Card>
+          <CardHeader>
+            <CardContent>
+              <ActiveUpdate />
+            </CardContent>
+          </CardHeader>
+        </Card>
 
         <Card>
           <CardHeader>
