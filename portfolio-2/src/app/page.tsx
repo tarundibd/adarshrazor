@@ -12,16 +12,13 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 export default function Home() {
-  const [show, setShow] = useState(false);
   const [alertshow, setAlertShow] = useState(true);
-  const [colorChangedflag1, setColorChangedflag1] = useState(false);
   const [clicks, setClicks] = useState(0);
   const [openRulesDialog, setOpenRulesDialog] = useState(false);
   const [currentAnimal, setCurrentAnimal] = useState('🐹');
 
-  const animalEmojis = ['🐹', '🐶', '🐱', '🐰', '🦊', '🐼', '🐨', '🦁', '🐯', '🐸'];
-
   useEffect(() => {
+    const animalEmojis = ['🐹', '🐶', '🐱', '🐰', '🦊', '🐼', '🐨', '🦁', '🐯', '🐸'];
     const randomIndex = Math.floor(Math.random() * animalEmojis.length);
     setCurrentAnimal(animalEmojis[randomIndex]);
   }, []);
@@ -33,13 +30,11 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleClick = (event:any) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setClicks(clicks + 1);
     const target = event.target as HTMLElement;
     if (clicks === 6) {
       target.style.color = 'lightcoral';
-      setShow(true);
-      setColorChangedflag1(true);
     }
   };
 
@@ -82,13 +77,13 @@ export default function Home() {
           <CardContent>
               <div className="prose max-w-none">
                 <p className="text-lg leading-relaxed">
-                  <span className="text-3xl font-dancing-script">I</span> am a <a href="https://en.wikipedia.org/wiki/hacker" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">hacker⁽⁺⁾</a> 👋🏻. Deeply curious about technology and social-engineering, I graduated from <a href="https://www.reva.edu.in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Reva University⁽⁺⁾</a> as an Engineer with a Bachelor's in computer science.
+                  <span className="text-3xl font-dancing-script">I</span> am a <a href="https://en.wikipedia.org/wiki/hacker" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">hacker⁽⁺⁾</a> 👋🏻. Deeply curious about technology and social-engineering, I graduated from <a href="https://www.reva.edu.in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Reva University⁽⁺⁾</a> as an Engineer with a Bachelor&apos;s in computer science.
                   <br /><br />
                   I started developing websites at an early age for various startups, became a webmaster for various universities, IEEE, and IISc Bangalore events, and also wrote a research paper on <a href="http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Virtual Assistants based on User Preferences⁽⁺⁾</a>
                   <br /><br />
-                  I started my <i>career</i> as a frontend developer, but the latter of my curiosities learned about <span className=" text-purple-700">Cloud technologies.</span> Currently, I am seeking job opportunities as a <span className="text-green-700">full-stack developer.</span>
+                  I started my <i>career</i> as a frontend developer, but the latter of my curiosities learned about <span className="text-purple-700">Cloud technologies.</span> Currently, I&apos;m seeking job opportunities as a <span className="text-green-700">full-stack developer.</span>
                   <br /><br />
-                  When I'm not in front of the screen, I focus on personal growth and striving to be the best version of myself. I like cafes, music, exploring and creativity. <br/>PS: NOT TO FORGET THE GOOD SENSE OF HUMOR
+                  When I&apos;m not in front of the screen, I focus on personal growth and striving to be the best version of myself. I like cafes, music, exploring and creativity. <br/>PS: NOT TO FORGET THE GOOD SENSE OF HUMOR
                   <br /><br />
                   <span className="text-yellow-600">Stay in touch!</span> ✨
                 </p>
@@ -151,7 +146,7 @@ export default function Home() {
         <Card>
           <CardContent>
             <hr className='my-4'/>
-              <p className='flex justify-center tems-center text-4xl'>Still Interested ?? Try that 'KNOW ME' button below.</p>
+              <p className="flex justify-center tems-center text-4xl">Still Interested ?? Try that &apos;KNOW ME&apos; button below.</p>
             <hr className='my-4'/>
             <ContactMe/>
           </CardContent>

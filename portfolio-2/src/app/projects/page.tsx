@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 
 interface Project {
   title: string
@@ -31,10 +32,12 @@ export default function Projects() {
           <Card key={index} className="flex flex-col h-full transition-all hover:shadow-lg">
             {project.imageUrl && (
               <div className="relative h-48 w-full">
-                <img
+                <Image
                   src={project.imageUrl}
                   alt={project.title}
-                  className="object-cover w-full h-full rounded-t-lg"
+                  className="object-cover rounded-t-lg"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
             )}
