@@ -3,7 +3,6 @@
 import { Nunito } from "next/font/google";
 import { PT_Sans } from "next/font/google";
 import "./globals.css";
-import { NavMenu } from "@/components/nav-menu";
 
 const nunito = Nunito({
   variable: "--font-nunito",

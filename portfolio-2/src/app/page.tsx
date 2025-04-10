@@ -1,11 +1,8 @@
 'use client';
 
-import Image from "next/image";
 import { useState, useEffect } from 'react';
 import ReactCompareImage from 'react-compare-image';
-import { TypeAnimation } from 'react-type-animation';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { MaskedImage } from "@/components/ui/masked-image";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import ActiveUpdate from "@/components/active-update";
 import SkillCarousel from "@/components/skill-carousel";
 import BlogSection from "@/components/blogs-section";
