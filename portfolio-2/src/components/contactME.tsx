@@ -14,17 +14,15 @@ function ContactMe() {
             <Label className='text-3xl pt-4'>email</Label>
             <Input placeholder="📧 the one to contact you." className="sm:w-60 md:w-80"/>
             <Label className='text-3xl pt-4'>text</Label>
-            <Textarea placeholder="Write your message here.."/>
+            <Textarea placeholder="Write your message here.." className="h-32 sm:w-70 md:w-80"/>
             <Button className='m-6'>KNOW ME</Button>
+            <Button className='m-6' variant={'ghost'}>Resume 📝</Button>
         </div>
       </div>
-      <div className="hidden md:block md:flex-1">
+      <div className="hidden md:block md:flex-1 md:bg-[url('/profile/user.png')] bg-cover">
       </div>
     </div>
   )
 }
 
 export default ContactMe
-
-
-{/* <Textarea placeholder="Write your message here..." className="min-h-[120px] sm:w-60 md:w-80"/> */}

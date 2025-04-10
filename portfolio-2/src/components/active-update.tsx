@@ -27,7 +27,7 @@ function ActiveUpdate() {
     
     <div className='flex flex-col w-full md:w-2/3 items-center'>
         <div className='flex items-center gap-2 mb-4'>
-            <h2 className='text-3xl md:text-4xl font-bold text-center'>Top working</h2>
+            <h2 className='text-3xl md:text-4xl font-bold text-center'>Active update</h2>
             <Image
                 src="/reuse/verify.png"
                 alt="Verified"

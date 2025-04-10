@@ -2,18 +2,36 @@
 
 import { useState, useEffect } from 'react';
 import ReactCompareImage from 'react-compare-image';
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import ActiveUpdate from "@/components/active-update";
 import SkillCarousel from "@/components/skill-carousel";
 import BlogSection from "@/components/blogs-section";
 import Marquee from "react-fast-marquee";
 import ContactMe from '@/components/contactME';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 export default function Home() {
   const [show, setShow] = useState(false);
   const [alertshow, setAlertShow] = useState(true);
   const [colorChangedflag1, setColorChangedflag1] = useState(false);
   const [clicks, setClicks] = useState(0);
+  const [openRulesDialog, setOpenRulesDialog] = useState(false);
+  const [currentAnimal, setCurrentAnimal] = useState('🐹');
+
+  const animalEmojis = ['🐹', '🐶', '🐱', '🐰', '🦊', '🐼', '🐨', '🦁', '🐯', '🐸'];
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * animalEmojis.length);
+    setCurrentAnimal(animalEmojis[randomIndex]);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAlertShow(false);
+    }, 3500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleClick = (event:any) => {
     setClicks(clicks + 1);
@@ -25,16 +43,19 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAlertShow(false);
-    }, 3500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <Card className="">
       <CardContent className="p-6 space-y-6">
+
+        {/* Alert Component */}
+        {alertshow && (
+          <div className="fixed top-5 left-0 right-0 z-50">
+            <div className="max-w-md mx-auto bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
+              <p className="text-center">I am just trying to follow the tread, 😊!!</p>
+            </div>
+          </div>
+        )}
+
             <div className="grid md:grid-cols-2 gap-8 items-center py-7">
               <div className="flex justify-center">
               <div className="relative w-[350px] md:w-[60%] h-[450px] md:h-[500px]">
@@ -74,14 +95,6 @@ export default function Home() {
               </div>
           </CardContent>
         </Card>
-
-        {alertshow && (
-          <div className="fixed top-5 left-0 right-0 z-50">
-            <div className="max-w-md mx-auto bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
-              <p className="text-center">I am just trying to follow the tread, 😊!!</p>
-            </div>
-          </div>
-        )}
 
         <Card>
           <CardContent>
@@ -130,7 +143,7 @@ export default function Home() {
           <CardFooter className="flex justify-center items-center">
             Subscribe to&nbsp;<span className="hover:underline cursor-pointer">Newsletter</span>&nbsp;📰
           </CardFooter>
-          <Marquee>&#8226; Some easter egg news here &#8226;</Marquee>
+          <Marquee>&#8226;<span className='bg-white mx-1'>easterEgg_newZ:</span>&nbsp;Do checkout our <span className='text-purple-700 mx-1'>PLAYGROUND</span> !! &#8226;</Marquee>
         </Card>
 
         {/* Contact ME */}
@@ -147,28 +160,49 @@ export default function Home() {
 
         {/* Easter Egg Component */}
         <Card>
+          <CardHeader>
+            <CardTitle>
+              <h2 className='text-4xl md:text-3xl font-bold text-center'>Playground: <span className='text-yellow-500'>in-development</span></h2>
+            </CardTitle>
+          </CardHeader>
           <CardContent>
+            <div className='flex justify-center items-center'>
+              <p className='text-center'>I am trying to make a playground and training my website. Would you like to be a {currentAnimal} &nbsp;
+                <Button onClick={() => setOpenRulesDialog(true)}>Yes, why not!</Button>
+              &nbsp;Play around for a while !!</p>
+            </div>
             <h4 className="text-center mt-5">
               <hr className="my-4"/>
               I may have hidden a few digital easter eggs for the curious clicker. 
               <span className="font-bold cursor-pointer" onClick={handleClick}>Happy hunting!</span> 🎉
               <hr className="my-4"/>
             </h4>
-
-            {colorChangedflag1 && (
-              <div className="max-w-md mx-auto mt-4">
-                <div className="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
-                  <h4 className="font-bold">Hurray! 🐣 You found an Easter egg!</h4>
-                  <p>There are more hidden things for the truly observant.</p>
-                  <button onClick={() => setShow(false)} className="absolute top-0 right-0 p-2">
-                    <span className="text-2xl">&times;</span>
-                  </button>
-                </div>
-              </div>
-            )}
           </CardContent>
         </Card>
-      
+
+        {/* Playground rules Component */}
+        <Dialog open={openRulesDialog} onOpenChange={setOpenRulesDialog}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Welcome to the Playground!</DialogTitle>
+            </DialogHeader>
+            <div className="mt-4 space-y-4">
+              <p>Here are some rules and guidelines for you:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Explore the interactive elements throughout the website</li>
+                <li>Click around to discover hidden easter eggs</li>
+                <li>Try clicking elements multiple times</li>
+                <li>Watch for color changes and animations</li>
+                <li>Most importantly, have fun exploring!</li>
+              </ul>
+              <p className="text-sm text-muted-foreground mt-4">Remember: This is just a dummy modal 🎮✨</p>
+              <div className='flex justify-center items-center'>
+              <Button onClick={() => setOpenRulesDialog(false)}>Lets Go!</Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+
       </CardContent>
     </Card>
   );

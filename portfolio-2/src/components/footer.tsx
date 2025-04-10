@@ -1,0 +1,51 @@
+'use client';
+
+import Link from 'next/link';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+
+const Footer = () => {
+  return (
+    <footer className="bg-background border-t">
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="space-y-3">
+            <h3 className="text-lg font-semibold">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><Link href="/" className="hover:text-blue-600 transition-colors">Home</Link></li>
+              <li><Link href="/projects" className="hover:text-blue-600 transition-colors">Projects</Link></li>
+              <li><Link href="skills" className="hover:text-blue-600 transition-colors">Skills</Link></li>
+              <li><Link href="#blog" className="hover:text-blue-600 transition-colors">Blog</Link></li>
+            </ul>
+          </div>
+          
+          <div className="space-y-3">
+            <h3 className="text-lg font-semibold">Connect</h3>
+            <div className="flex space-x-4">
+              <a href="https://github.com/adarshrazor" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                <FaGithub size={24} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                <FaLinkedin size={24} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                <FaTwitter size={24} />
+              </a>
+            </div>
+          </div>
+          
+          <div className="space-y-3">
+            <h3 className="text-lg font-semibold">Contact</h3>
+            <p>Feel free to reach out!</p>
+            <a href="mailto:contact@example.com" className="hover:text-blue-600 transition-colors">contact@example.com</a>
+          </div>
+        </div>
+        
+        <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} Adarsh. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

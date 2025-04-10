@@ -3,6 +3,7 @@
 import { Nunito } from "next/font/google";
 import { PT_Sans } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -27,7 +28,10 @@ function RootLayout({
       >
         <div className="texture" />
         {/* <NavMenu /> */}
-        {children}
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
