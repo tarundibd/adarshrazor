@@ -46,7 +46,11 @@ export default function Home() {
         {alertshow && (
           <div className="fixed top-5 left-0 right-0 z-50">
             <div className="max-w-md mx-auto bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
-              <p className="text-center">I am just trying to follow the tread, 😊!!</p>
+              <p className="text-center">I am just trying to follow the tread, 😊!! <br/>- Website is in early beta phase -
+              <br/>☸ building chatSystem ..
+              <br/>☸ implementing aiBot ..
+              <br/>Thanks for Checking and do visit more !! ✨
+              </p>
             </div>
           </div>
         )}
@@ -182,13 +186,14 @@ export default function Home() {
               <DialogTitle>Welcome to the Playground!</DialogTitle>
             </DialogHeader>
             <div className="mt-4 space-y-4">
-              <p>Here are some rules and guidelines for you:</p>
+              <p>Here are some rules and guidelines for you:&nbsp;<span className='text-sm text-muted-foreground'>update.01</span></p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Explore the interactive elements throughout the website</li>
                 <li>Click around to discover hidden easter eggs</li>
                 <li>Try clicking elements multiple times</li>
                 <li>Watch for color changes and animations</li>
                 <li>Most importantly, have fun exploring!</li>
+                <li>almost everything here is hint or reference to something, keep your creativity alive.</li>
               </ul>
               <p className="text-sm text-muted-foreground mt-4">Remember: This is just a dummy modal 🎮✨</p>
               <div className='flex justify-center items-center'>
