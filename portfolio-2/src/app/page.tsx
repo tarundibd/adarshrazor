@@ -9,6 +9,7 @@ import { MaskedImage } from "@/components/ui/masked-image";
 import ActiveUpdate from "@/components/active-update";
 import SkillCarousel from "@/components/skill-carousel";
 import BlogSection from "@/components/blogs-section";
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -125,17 +126,13 @@ export default function Home() {
 
         {/* Blogs and News Updates Component */}
         <Card>
-          <CardHeader className="text-center">
-            <CardTitle>
-              Blogs and Writings
-            </CardTitle>
-          </CardHeader>
           <CardContent>
             <BlogSection/>
           </CardContent>
           <CardFooter className="flex justify-center items-center">
             Subscribe to&nbsp;<span className="hover:underline cursor-pointer">Newsletter</span>&nbsp;📰
           </CardFooter>
+          <Marquee>&#8226; Some easter egg news here &#8226;</Marquee>
         </Card>
 
         <Card>
