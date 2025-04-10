@@ -26,7 +26,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAlertShow(false);
-    }, 3500);
+    }, 7500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -47,8 +47,10 @@ export default function Home() {
           <div className="fixed top-5 left-0 right-0 z-50">
             <div className="max-w-md mx-auto bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
               <p className="text-center">I am just trying to follow the tread, 😊!! <br/>- Website is in early beta phase -
+              <br/>
               <br/>☸ building chatSystem ..
               <br/>☸ implementing aiBot ..
+              <br/>
               <br/>Thanks for Checking and do visit more !! ✨
               </p>
             </div>
