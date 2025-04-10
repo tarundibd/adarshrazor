@@ -7,6 +7,7 @@ import ActiveUpdate from "@/components/active-update";
 import SkillCarousel from "@/components/skill-carousel";
 import BlogSection from "@/components/blogs-section";
 import Marquee from "react-fast-marquee";
+import ContactMe from '@/components/contactME';
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -132,6 +133,19 @@ export default function Home() {
           <Marquee>&#8226; Some easter egg news here &#8226;</Marquee>
         </Card>
 
+        {/* Contact ME */}
+        <div className='pt-12'>
+        <Card>
+          <CardContent>
+            <hr className='my-4'/>
+              <p className='flex justify-center tems-center text-4xl'>Still Interested ?? Try that 'KNOW ME' button below.</p>
+            <hr className='my-4'/>
+            <ContactMe/>
+          </CardContent>
+        </Card>
+        </div>
+
+        {/* Easter Egg Component */}
         <Card>
           <CardContent>
             <h4 className="text-center mt-5">
@@ -154,6 +168,7 @@ export default function Home() {
             )}
           </CardContent>
         </Card>
+      
       </CardContent>
     </Card>
   );

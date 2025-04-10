@@ -39,7 +39,7 @@ const projects: Project[] = [
 function BlogSection() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className='text-4xl md:text-5xl font-bold text-center mb-8'>Top working</h2>
+      <h2 className='text-4xl md:text-5xl font-bold text-center mb-8'>Blogs and News</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <Card key={index} className="flex flex-col h-full transition-all hover:shadow-lg">
