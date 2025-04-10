@@ -4,9 +4,11 @@ import Image from "next/image";
 import { useState, useEffect } from 'react';
 import ReactCompareImage from 'react-compare-image';
 import { TypeAnimation } from 'react-type-animation';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { MaskedImage } from "@/components/ui/masked-image";
 import ActiveUpdate from "@/components/active-update";
+import SkillCarousel from "@/components/skill-carousel";
+import BlogSection from "@/components/blogs-section";
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -109,6 +111,7 @@ export default function Home() {
           turning the world into my <span className="text-[#41B06E]">stage</span> and its people into my <span className="text-red-600">audience</span>.
         </div>
 
+        {/* USP Portfolio Top Working Component */}
         <Card>
           <CardHeader>
             <CardContent>
@@ -117,38 +120,22 @@ export default function Home() {
           </CardHeader>
         </Card>
 
+        {/* SkillSet Carosel Component */}
+        <SkillCarousel/>
+
+        {/* Blogs and News Updates Component */}
         <Card>
-          <CardHeader>
+          <CardHeader className="text-center">
             <CardTitle>
-              
+              Blogs and Writings
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="text-section">
-                {/* Skills component will be added here */}
-                <div className="p-4 text-lg">
-                  <p>Skills section placeholder - to be implemented as a separate component</p>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="grid grid-cols-6 gap-4">
-                  <div className="col-span-5">
-                    {/* Placeholder for Avatar1 */}
-                    <div className="w-full h-[350px] rounded-full bg-gray-200 animate-float" />
-                  </div>
-                  <div className="col-span-1 flex flex-col items-center">
-                    {/* Placeholder for Avatar2 */}
-                    <div className="w-full aspect-square rounded-full bg-gray-200 animate-float-delay" />
-                    <div className="mt-40">
-                      {/* Placeholder for a1.gif */}
-                      <div className="w-12 h-12 rounded-full bg-gray-200 animate-float-quick" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <BlogSection/>
           </CardContent>
+          <CardFooter className="flex justify-center items-center">
+            Subscribe to&nbsp;<span className="hover:underline cursor-pointer">Newsletter</span>&nbsp;📰
+          </CardFooter>
         </Card>
 
         <Card>
