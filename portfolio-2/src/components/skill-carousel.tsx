@@ -4,9 +4,9 @@ import Marquee from "react-fast-marquee";
 
 function SkillCarousel() {
   const skills = {
-    techstack: ['React', 'TypeScript', 'HTML5', 'CSS3', 'JavaScript','Node.js', 'Express', 'Python','SQL-Developer'],
-    database: ['MongoDB', 'PostgresSQL', 'MySQL','GitHub','Tailwind-CSS'],
-    cloud: ['AWS', 'Google-Cloud', 'Firebase', 'Azure','Git', 'Docker', 'Kubernetes', 'Jenkins'],
+    techstack: ['React', 'TypeScript', 'HTML5', 'CSS3', 'JavaScript','Node.js', 'Express', 'Python','Tailwind-CSS',],
+    database: ['MongoDB', 'PostgresSQL', 'MySQL','GitHub','SQL-Developer'],
+    cloud: ['AWS', 'Google-Cloud', 'Firebase', 'Azure','Git', 'Docker', 'Kubernetes'],
   }
 
   return (
@@ -35,7 +35,7 @@ function SkillCarousel() {
                         alt={`${skill} Icon`}
                         width={50}
                         height={50}
-                        className="mx-16"
+                        className="mx-32"
                     />
                 ))}
             </Marquee>

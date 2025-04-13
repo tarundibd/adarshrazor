@@ -2,16 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import ReactCompareImage from 'react-compare-image';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import ActiveUpdate from "@/components/active-update";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+//import ActiveUpdate from "@/components/active-update";
 import SkillCarousel from "@/components/skill-carousel";
-import BlogSection from "@/components/blogs-section";
-import Marquee from "react-fast-marquee";
+//import BlogSection from "@/components/blogs-section";
+//import Marquee from "react-fast-marquee";
 import ContactMe from '@/components/contactME';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 export default function Home() {
+  const resumeLink = process.env.NEXT_PUBLIC_RESUME_LINK;
   const [alertshow, setAlertShow] = useState(true);
   const [clicks, setClicks] = useState(0);
   const [openRulesDialog, setOpenRulesDialog] = useState(false);
@@ -62,8 +63,8 @@ export default function Home() {
               <div className="relative w-[350px] md:w-[60%] h-[450px] md:h-[500px]">
                 <div className="mask-no-repeat mask-size-[100%_100%] mask-center" style={{ maskImage: 'url(/shape/mask-shape-5.svg)' }}>
                   <ReactCompareImage
-                    leftImage="/avatar-g.svg"
-                    rightImage="/avatar.svg"
+                    leftImage="/profile/avatar-g.png"
+                    rightImage="/profile/avatar.png"
                     sliderLineColor="#FFFFFF"
                     sliderPositionPercentage={0.85}
                   />
@@ -73,8 +74,9 @@ export default function Home() {
               <div className="text-center md:text-left">
                 <h1 className="text-7xl font-bold mb-4">Hi, Adarsh here !</h1>
                 <p className="text-3xl">
-                  I am a <span className="text-[#153448]">full stack developer</span> <span className="text-[#e4d4b4]">and a Hacker</span>
+                  I am a <span className="text-[#153448]">full stack developer</span> <span className="text-[#e4d4b4]"></span>
                 </p>
+                <Button className='m-4' onClick={() => window.open(resumeLink, '_blank')}>Resume 📃</Button>
               </div>
             </div>
 
@@ -124,20 +126,37 @@ export default function Home() {
           turning the world into my <span className="text-[#41B06E]">stage</span> and its people into my <span className="text-red-600">audience</span>.
         </div>
 
-        {/* USP Portfolio Top Working Component */}
         <Card>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+              <div className="flex flex-col items-center">
+                <span className="text-6xl font-bold text-[#153448]">Experience</span>
+                <span className="text-xl mt-2">Journey</span>
+                <Button onClick={() => window.location.href = '/experience'}>Experience</Button>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-6xl font-bold text-[#0A6847]">Projects</span>
+                <span className="text-xl mt-2 text-[#0A6847]">Still counting ..</span>
+                <Button onClick={() => window.location.href = '/projects'}>Projects</Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* USP Portfolio Top Working Component */}
+        {/* <Card>
           <CardHeader>
             <CardContent>
               <ActiveUpdate />
             </CardContent>
           </CardHeader>
-        </Card>
+        </Card> */}
 
         {/* SkillSet Carosel Component */}
         <SkillCarousel/>
 
         {/* Blogs and News Updates Component */}
-        <Card>
+        {/* <Card>
           <CardContent>
             <BlogSection/>
           </CardContent>
@@ -145,7 +164,7 @@ export default function Home() {
             Subscribe to&nbsp;<span className="hover:underline cursor-pointer">Newsletter</span>&nbsp;📰
           </CardFooter>
           <Marquee>&#8226;<span className='bg-white mx-1'>easterEgg_newZ:</span>&nbsp;Do checkout our <span className='text-purple-700 mx-1'>PLAYGROUND</span> !! &#8226;</Marquee>
-        </Card>
+        </Card> */}
 
         {/* Contact ME */}
         <div className='pt-12'>
