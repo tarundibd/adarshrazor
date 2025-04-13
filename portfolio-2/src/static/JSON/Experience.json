@@ -1,14 +1,14 @@
 {
-    "projects":[
+    "experience":[
         {
-            "name":"Spektra Systems (Full Time)",
-            "role": "Software Developer (Cloud)",
+            "name":"Spektra Systems",
+            "exp" : "Full Time",
+            "role": "Cloud Developer (Azure)",
             "date":"June 2021 - October 2023",
-            "badges" :[
-                {
-                "tag": "HTML | CSS | JS",
-                "color":"danger"
-                },
+            "badges" : [
+                "Azure Cloud", "REACTJS", "NODEJS", "SQL", "Linux | Shell Scripting", "Git", "Docker"
+            ],
+            "badgeold" :[
                 {
                 "tag": "ReactJS",
                 "text" : "light",
@@ -19,29 +19,38 @@
                     "color":"success"
                 },
                 {
-                "tag": "JSON",
-                "color":"warning",
-                "text": "dark"
-                },
-                {
                 "tag": "Azure",
                 "text": "dark",
                 "color":"info"
                 },
                 {
-                    "tag": "Linux",
+                    "tag": "Linux | Shell Scripting",
                     "color":"dark",
                     "text": "light"
+                },
+                {
+                    "tag": "Git"
+                },
+                {
+                    "tag": "Docker"
                 }
             ],
-            "description": "• Developed efficient and reusable components, enhancing performance by 20-30%. Strong proficiency in React hooks, Router, DOM Manipulation and state management libraries, including Redux or Content API, to streamline application state.\n• Reduced response time by 40% for app-facing APIs by refactoring backend services in Node (NestJS) and PostgreSQL.\n• Onboarded a cloud application on Azure Marketplace (AMP), created architecture, conducted certificate testing, enhanced UI features, and resolved critical bugs, automated cloud product deployments through custom scripts using shell scripting and JSON",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//spektra.png"
+            "description": [
+                "Developed efficient and reusable components, enhancing performance by 20-30%. Strong proficiency in React hooks, Router, DOM Manipulation and state management libraries, including Redux or Content API, to streamline application state.",
+                "Reduced response time by 40% for app-facing APIs by refactoring backend services in Node (NestJS) and PostgreSQL.",
+                "Onboarded a cloud application on Azure Marketplace (AMP), created architecture, conducted certificate testing, enhanced UI features, and resolved critical bugs, automated cloud product deployments through custom scripts using shell scripting and JSON"
+            ],
+            "image":"/experience/spektra.png"
         },
         {
             "name":"REVA University (Education)",
+            "exp": "Education",
             "role": "Computer Science (CSE)",
             "date":"August 2017 - September 2021",
-            "badges" :[
+            "badges" : [
+                "BTECH", "GPA: 8.0", "Published Research Paper"
+            ],
+            "badgeold" :[
                 {
                 "tag": "BTECH",
                 "color":"secondary"
@@ -52,15 +61,25 @@
                     "text": "light"
                 }
             ],
-            "description":"• B. Tech in Computer Science and Engineering - GPA: 8.0\n• IEEE Webmaster RU (2018 - 2020)\n• ACM Chairperson 2019\n• Research Paper Publish 2020",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//RU.png",
-            "blogLink":"http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317"
+            "description": [
+                "B. Tech in Computer Science and Engineering - GPA: 8.0",
+                "IEEE Webmaster RU (2018 - 2020)",
+                "ACM Chairperson 2019",
+                "Research Paper Publish 2020"
+            ],
+            "image":"/experience/RU.png",
+            "blogLink":"http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317",
+            "blogName":"Research Paper 📃"
         },
         {
-            "name":"REVA NEST (Internship)",
+            "name":"REVA NEST",
+            "exp": "Internship",
             "role": "Software Development Engineer (SDE)",
             "date":"January 2020 - March 2020",
-            "badges" :[
+            "badges" : [
+                "Python", "REST API"
+            ],
+            "badgeold" :[
                 {
                     "tag": "JavaScript",
                     "color":"danger"
@@ -75,14 +94,21 @@
                     "text": "light"
                 }
             ],
-            "description":"• Enhanced tweet scraping tool efficiency by 20% for hashtag searches.\n• Implemented machine learning algorithms to filter and categorize COVID-related tweets based on sentiments.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//RN.png"
+            "description": [
+                "Enhanced tweet scraping tool efficiency by 20% for hashtag searches.",
+                "Implemented machine learning algorithms to filter and categorize COVID-related tweets based on sentiments."
+            ],
+            "image":"/experience/RN.png"
         },
         {
-            "name":"IEEE Bangalore (Internship)",
+            "name":"IEEE Bangalore",
+            "exp": "Internship",
             "role": "Frontend Developer (UI/UX)",
             "date":"August 2018 - December 2019",
-            "badges" :[
+            "badges" : [
+                "JavsScript", "Wordpress"
+            ],
+            "badgeold" :[
                 {
                     "tag": "HTML | CSS | JS",
                     "color":"danger"
@@ -93,14 +119,24 @@
                     "text": "light"
                 }
             ],
-            "description":"• Worked on maintaining IEEE website of the Bangalore Section.\n• Contributed to IEEE Individual Chapters\n‎ ∘ CS Society\n‎ ∘ IEEE Wie\n‎ ∘ IISc Bangalore Reimagine Health events.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//IEEE.png"
+            "description": [
+                "Worked on maintaining IEEE website of the Bangalore Section.",
+                "Contributed to IEEE Individual Chapters",
+                "CS Society",
+                "IEEE Wie",
+                "IISc Bangalore Reimagine Health events."
+            ],
+            "image":"/experience/IEEE_square.png"
         },
         {
-            "name":"Malik Ventures (Internship)",
+            "name":"Malik Ventures",
+            "exp" : "Freelancing",
             "role": "LAMP Stack Developer (LAMP DEV)",
             "date":"June 2017 - December 2017",
-            "badges" :[
+            "badges" : [
+                "JavaScript", "NodeJS", "SQL", "WordPress", "Linux"
+            ],
+            "badgeold" :[
                 {
                     "tag": "JavaScript",
                     "color":"danger"
@@ -125,8 +161,14 @@
                     "text": "light"
                 }
             ],
-            "description":"• Accelerated website development by 30% for clients like:\n‎ ∘ Radix Healthcare\n‎ ∘ Harvin Academy\n‎ ∘ Dr Shruti Malik's Website\n• Developed backend systems using NodeJS and MySQL.",
-            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//MV.png"
+            "description": [
+                "Accelerated website development by 30% for clients like:",
+                "Radix Healthcare",
+                "Harvin Academy",
+                "Dr Shruti Malik's Website",
+                "Developed backend systems using NodeJS and MySQL."
+            ],
+            "image":"/experience/MV.png"
         }
     ]
 }

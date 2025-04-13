@@ -1,5 +1,5 @@
 {
-    "col1": [
+    "book": [
         {   "book": "The Ikigai Journey",
             "author1": "Hector Garcia & ",
             "author2": "Francesc Miralles"
@@ -42,7 +42,7 @@
             "author1": "Brandon Sanderson"
         }
     ],
-    "col2": [
+    "myThings": [
         {
             "things": "I do 🙄 like pubs, sometime",
             "icon": "📌",
@@ -62,5 +62,11 @@
             "icon": "▶️",
             "itemlink": "https://www.youtube.com/@RazorCloak"
         }
+    ],
+    "music": [
+        "https://open.spotify.com/embed/playlist/2nqTO4p8xkIlISuOeApKLD",
+        "https://open.spotify.com/embed/playlist/32eZGIT6tdHaBXfq6wf5td",
+        "https://open.spotify.com/embed/playlist/3aiCvbIhqwU0NgE9bDzFFh",
+        "https://open.spotify.com/embed/playlist/3ld95JnbTEoE9q6qiZD9Jq"
     ]
 }
