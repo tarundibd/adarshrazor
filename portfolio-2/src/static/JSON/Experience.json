@@ -1,0 +1,132 @@
+{
+    "projects":[
+        {
+            "name":"Spektra Systems (Full Time)",
+            "role": "Software Developer (Cloud)",
+            "date":"June 2021 - October 2023",
+            "badges" :[
+                {
+                "tag": "HTML | CSS | JS",
+                "color":"danger"
+                },
+                {
+                "tag": "ReactJS",
+                "text" : "light",
+                "color":"primary"
+                },
+                {
+                    "tag": "NodeJS",
+                    "color":"success"
+                },
+                {
+                "tag": "JSON",
+                "color":"warning",
+                "text": "dark"
+                },
+                {
+                "tag": "Azure",
+                "text": "dark",
+                "color":"info"
+                },
+                {
+                    "tag": "Linux",
+                    "color":"dark",
+                    "text": "light"
+                }
+            ],
+            "description": "• Developed efficient and reusable components, enhancing performance by 20-30%. Strong proficiency in React hooks, Router, DOM Manipulation and state management libraries, including Redux or Content API, to streamline application state.\n• Reduced response time by 40% for app-facing APIs by refactoring backend services in Node (NestJS) and PostgreSQL.\n• Onboarded a cloud application on Azure Marketplace (AMP), created architecture, conducted certificate testing, enhanced UI features, and resolved critical bugs, automated cloud product deployments through custom scripts using shell scripting and JSON",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//spektra.png"
+        },
+        {
+            "name":"REVA University (Education)",
+            "role": "Computer Science (CSE)",
+            "date":"August 2017 - September 2021",
+            "badges" :[
+                {
+                "tag": "BTECH",
+                "color":"secondary"
+                },
+                {
+                    "tag": "GPA: 8.0",
+                    "color":"dark",
+                    "text": "light"
+                }
+            ],
+            "description":"• B. Tech in Computer Science and Engineering - GPA: 8.0\n• IEEE Webmaster RU (2018 - 2020)\n• ACM Chairperson 2019\n• Research Paper Publish 2020",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//RU.png",
+            "blogLink":"http://www.testmagzine.biz/index.php/testmagzine/article/view/8343/6317"
+        },
+        {
+            "name":"REVA NEST (Internship)",
+            "role": "Software Development Engineer (SDE)",
+            "date":"January 2020 - March 2020",
+            "badges" :[
+                {
+                    "tag": "JavaScript",
+                    "color":"danger"
+                },
+                {
+                "tag": "Context API",
+                "color":"secondary"
+                },
+                {
+                    "tag": "Twitter Scraper",
+                    "color":"dark",
+                    "text": "light"
+                }
+            ],
+            "description":"• Enhanced tweet scraping tool efficiency by 20% for hashtag searches.\n• Implemented machine learning algorithms to filter and categorize COVID-related tweets based on sentiments.",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//RN.png"
+        },
+        {
+            "name":"IEEE Bangalore (Internship)",
+            "role": "Frontend Developer (UI/UX)",
+            "date":"August 2018 - December 2019",
+            "badges" :[
+                {
+                    "tag": "HTML | CSS | JS",
+                    "color":"danger"
+                },
+                {
+                    "tag": "WordPress",
+                    "color":"primary",
+                    "text": "light"
+                }
+            ],
+            "description":"• Worked on maintaining IEEE website of the Bangalore Section.\n• Contributed to IEEE Individual Chapters\n‎ ∘ CS Society\n‎ ∘ IEEE Wie\n‎ ∘ IISc Bangalore Reimagine Health events.",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//IEEE.png"
+        },
+        {
+            "name":"Malik Ventures (Internship)",
+            "role": "LAMP Stack Developer (LAMP DEV)",
+            "date":"June 2017 - December 2017",
+            "badges" :[
+                {
+                    "tag": "JavaScript",
+                    "color":"danger"
+                },
+                {
+                    "tag": "NodeJS",
+                    "color":"success"
+                },
+                {
+                    "tag": "SQL",
+                    "color":"info",
+                    "text": "light"
+                },
+                {
+                    "tag": "WordPress",
+                    "color":"primary",
+                    "text": "light"
+                },
+                {
+                    "tag": "Linux",
+                    "color":"dark",
+                    "text": "light"
+                }
+            ],
+            "description":"• Accelerated website development by 30% for clients like:\n‎ ∘ Radix Healthcare\n‎ ∘ Harvin Academy\n‎ ∘ Dr Shruti Malik's Website\n• Developed backend systems using NodeJS and MySQL.",
+            "image":"https://raw.githubusercontent.com/AdarshRazor/adarshrazor/main/portfolio/src/components/static/experience_project//MV.png"
+        }
+    ]
+}

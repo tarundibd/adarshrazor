@@ -1,0 +1,53 @@
+{
+    "India" : [
+        {
+            "state": "Himachal",
+            "wanderlust" : [
+                                {
+                                    "place" : "Kinnaur Valley",
+                                    "spot" : "Kalpa",
+                                    "viewpoints" : [
+                                        "Hindutan - Tibet Highway", "Kailash Range"
+                                    ],
+                                    "luxury": "Project Genesis",
+                                    "luxuryLink" : "https://www.youtube.com/watch?v=v3F42ouog3Y"
+                                },
+                                {
+                                    "place" : "Kullu",
+                                    "spot" : "Jibhi",
+                                    "viewpoints" : [
+                                        "Jibhi Waterfall","Balu Nag Temple - Landscape", "Seruvalsar Lake"
+                                    ],
+                                    "luxury": "Neeralaya Resort",
+                                    "luxuryLink": "https://www.youtube.com/watch?v=j9LQl8T4bs0"
+                                },
+                                {
+                                    "place": "Sissu",
+                                    "spot" : "Kaza",
+                                    "viewpoints": "Road trip - Bike",
+                                    "viewpointsLink": "https://www.youtube.com/watch?v=RSXZX5p8yfM"
+                                }
+                            ]
+        },
+        {
+            "state" : "Kashmir",
+            "wanderlust" : [
+                {
+                    "place" : "Kashmir Great Lakes",
+                    "viewpointsLink" : "https://www.youtube.com/watch?v=h3zk-cwS8hU"
+                },
+                {
+                    "place": "Leh Ladak",
+                    "viewpoints": "Pangong Lake",
+                    "viewpointsLink": "https://www.youtube.com/watch?v=qCcLus0yNSg"
+                }
+            ]
+        }
+    ],
+    "spots": [
+        {
+            "title": "15 Places to visit in india",
+            "link": "https://www.youtube.com/watch?v=cOa97mBh8co"
+        }
+    ]
+}

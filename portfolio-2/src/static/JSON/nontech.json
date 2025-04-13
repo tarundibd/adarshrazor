@@ -1,0 +1,66 @@
+{
+    "col1": [
+        {   "book": "The Ikigai Journey",
+            "author1": "Hector Garcia & ",
+            "author2": "Francesc Miralles"
+        },
+        {
+            "book" : "The 5 am Club",
+            "author1" : "Robin Sharma"
+        },
+        {
+            "book" : "I am GITA",
+            "author1" : "Deep Trivedi"
+        },
+        {
+            "book" : "Why Bharat Matters",
+            "author1" : "S. Jaishankar"
+        },
+        {
+            "book" : "The 48 Laws of Power",
+            "author1" : "Robert Greene"
+        },
+        {
+            "book" : "A Brief history of time",
+            "author1" : "Stephen Hawking"
+        },
+        {
+            "book" : "She’ll Never Make It",
+            "author1" : "Masoom Minawala & ",
+            "author2" : "Aditi Shah"
+        },
+        {
+            "book" : "Why I Killed Gandhi",
+            "author1" : "Nathuram Godse"
+        },
+        {
+            "book": "The Good Girl's Guide to Murder",
+            "author1": "Holly Jackson"
+        },
+        {
+            "book": "Mistborn: The Final Empire",
+            "author1": "Brandon Sanderson"
+        }
+    ],
+    "col2": [
+        {
+            "things": "I do 🙄 like pubs, sometime",
+            "icon": "📌",
+            "itemlink" : "https://maps.app.goo.gl/PZWDarc2nUTn34FB9"
+        },
+        {
+            "things": "Netflix and Chill kind of person 🍽️"
+        },
+        {
+            "things": "I love music ♭ ofcorse guitar ♯"
+        },
+        {
+            "things": "Moutains over Beaches 🇧 🇺 🇹"
+        },
+        {
+            "things": "I love Gaming and Streaming",
+            "icon": "▶️",
+            "itemlink": "https://www.youtube.com/@RazorCloak"
+        }
+    ]
+}
