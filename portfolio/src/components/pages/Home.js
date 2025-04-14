@@ -34,7 +34,7 @@ const Home = () => {
         // Set a timer to hide the alert after 5 seconds
         const timer = setTimeout(() => {
             setalertShow(false);
-        }, 3500);
+        }, 5500);
 
         // Clear the timer if the component unmounts or if the effect is cleaned up
         return () => clearTimeout(timer);
@@ -159,7 +159,7 @@ const Home = () => {
             {alertshow && (<div className="fixed-alert">
               <Alert variant="info" onClose={() => setShow(false)} dismissible>
                 <p>
-                    Blog section is being revamped. Please visit later !!
+                    Please visit to my new website: <a href="https://adarshere.vercel.app/" target="_blank" rel="noopener noreferrer">Link</a> Stay tuned for the updates.
                 </p>
             </Alert>
             </div>)}
