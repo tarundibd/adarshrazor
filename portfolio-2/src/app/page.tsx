@@ -60,7 +60,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-8 items-center py-7">
               <div className="flex justify-center">
-              <div className="relative w-[350px] md:w-[60%] h-[450px] md:h-[500px]">
+              <div className="relative w-[350px] md:w-[60%] h-[450px] md:h-[600px]">
                 <div className="mask-no-repeat mask-size-[100%_100%] mask-center" style={{ maskImage: 'url(/shape/mask-shape-5.svg)' }}>
                   <ReactCompareImage
                     leftImage="/profile/avatar-g.png"
