@@ -1,5 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
 # A Comprehensive Life Reset Plan: From Rock Bottom to Prime Success
 
 Adam stands at a pivotal crossroads at 27 – with technical skills, past accomplishments, current challenges, and unrealized dreams. This comprehensive plan addresses his specific situation in India and provides a strategic roadmap to transform from his current state to achieving his ambitious bucket list and life goals.
