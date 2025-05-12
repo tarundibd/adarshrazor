@@ -1,7 +1,8 @@
 # Portfolio (NEXTJS, Aceternity UI, Notion)
 
+## 📃 Pages
 
-## Homepage
+### Homepage
 * **NavBar:**
 * **Hero Section:** Photo and Name [Some animation]
 * **About Section:**
@@ -14,13 +15,13 @@
 * **Playground:**
 * **Footer:**
 
-## Experience
+### Experience
 
-## Projects
+### Projects
 
-## Blog
+### Blog
 
-## Not so Tech
+### Not so Tech
 * **Daily Todo:** Add Daily Todo and track the progress. (Simple)
 
-## BucketList
+### BucketList
