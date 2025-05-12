@@ -46,7 +46,7 @@ export function Navbar({ className }: { className?: string }) {
             <ProductItem
               title="Not so Tech"
               href="/notsotech"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+              src="/images/website/notsotech.png"
               description="Beyond the Binary & Brimming with Banality, Where Circuits Rest & Curiosities Reign."
             />
             <ProductItem
@@ -58,7 +58,7 @@ export function Navbar({ className }: { className?: string }) {
             <ProductItem
               title="Bucket List"
               href="/bucketlist"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+              src="/images/website/bucketlist.png"
               description="My To-Do List Before I'm To-Done 🏁"
             />
             <HoveredLink href="/contact">know me better 💬</HoveredLink>
