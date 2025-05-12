@@ -1,7 +1,15 @@
+'use client'
+
+import Hero from "@/components/homepage/Hero";
+import About from "@/components/homepage/About";
+import { FeaturesSection } from "@/components/homepage/Featured";
+
 export default function Home() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <Hero />
+      <About />
+      <FeaturesSection />
     </div>
   );
 }
