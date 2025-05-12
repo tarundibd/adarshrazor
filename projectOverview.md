@@ -21,5 +21,6 @@
 ## Blog
 
 ## Not so Tech
+* **Daily Todo:** Add Daily Todo and track the progress. (Simple)
 
 ## BucketList
