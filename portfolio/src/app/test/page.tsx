@@ -5,25 +5,24 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 function Test() {
   // List of icon filenames without paths
-  const iconNames = [
-    "Next.js.svg", 
-    "React.svg", 
-    "Tailwind-CSS.svg", 
-    "TypeScript.svg", 
-    "Figma.svg", 
-    "Git.svg", 
-    "GitHub.svg", 
-    "Vercel.svg", 
-    "Vite.js.svg",
-    "JavaScript.svg",
-    "HTML5.svg",
-    "CSS3.svg",
-    "Node.js.svg",
-    "MongoDB.svg",
-    "PostgresSQL.svg",
-    "Firebase.svg",
-    "AWS.svg",
-    "Docker.svg"
+  const icons = [
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Next.js.svg", 
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/React.svg", 
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Tailwind-CSS.svg", 
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/TypeScript.svg", 
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Figma.svg", 
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Git.svg", 
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/GitHub.svg", 
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Vite.js.svg",
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/JavaScript.svg",
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/HTML5.svg",
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/CSS3.svg",
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Node.js.svg",
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/MongoDB.svg",
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/PostgresSQL.svg",
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Firebase.svg",
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/AWS.svg",
+    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Docker.svg"
   ];
 
   const images = [
@@ -61,7 +60,7 @@ function Test() {
   ];
 
   // Map the icon names to their full paths
-  const iconPaths = iconNames.map(icon => `/images/techicons/${icon}`);
+  const iconPaths = icons.map(icon => `/images/techicons/${icon}`);
 
   return (
     <div className="flex flex-col overflow-hidden">
@@ -77,7 +76,7 @@ function Test() {
           </>
         }
       >
-        <ThreeDMarquee images={images} />
+        <ThreeDMarquee images={icons} />
       </ContainerScroll>
     </div>
   )
