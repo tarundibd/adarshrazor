@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import dynamic from "next/dynamic";
 import { useBlogStore } from '@/store/blogStore';
-import { fetchNotionProjectData } from '@/lib/notionIntegrationproject';
+import { useProjectStore } from '@/store/projectStore';
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
 
 // Dynamically import the Globe component with no SSR
@@ -15,30 +15,30 @@ const DynamicGlobe = dynamic(() => Promise.resolve(Globe), { ssr: false });
 
 export function FeaturesSection() {
     // Use the blog store for blog data
-    const { posts, latestPost, isLoading: isBlogLoading, fetchBlogData } = useBlogStore();
+    const { 
+      posts, 
+      latestPost, 
+      isLoading: isBlogLoading, 
+      fetchBlogData 
+    } = useBlogStore();
     
-    // Keep project data in local state
-    const [projects, setProjects] = useState<any[]>([]);
-    const [isProjectLoading, setIsProjectLoading] = useState(true);
+    // Use the project store for project data
+    const { 
+      projects,
+      isLoading: isProjectLoading, 
+      fetchProjectData 
+    } = useProjectStore();
 
     useEffect(() => {
-      // Fetch blog data from the Zustand store
+      // Fetch data from both stores in parallel
       fetchBlogData();
-      
-      // Fetch project data directly
-      const fetchProjects = async () => {
-        try {
-          const projectData = await fetchNotionProjectData();
-          setProjects(projectData);
-        } catch (error) {
-          console.error("Failed to load project data:", error);
-        } finally {
-          setIsProjectLoading(false);
-        }
-      };
-      
-      fetchProjects();
-    }, [fetchBlogData]);
+      fetchProjectData();
+    }, [fetchBlogData, fetchProjectData]);
+    
+    // Log projects data when it changes
+    useEffect(() => {
+      console.log("Projects data:", projects);
+    }, [projects]);
     
   const features = [
     {
@@ -52,9 +52,8 @@ export function FeaturesSection() {
     },
     {
       title: "Working Project 🔴",
-      description:
-        "Capture stunning photos effortlessly using our advanced AI technology.",
-      skeleton: <SkeletonTwo />,
+      description: "Capture stunning photos effortlessly using our advanced AI technology.",
+      skeleton: <SkeletonTwo projectImages={projects?.[0]?.properties?.Images?.files?.map((file: any) => file.file?.url)} />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
     {
@@ -215,8 +214,8 @@ export const SkeletonThree = () => {
   );
 };
 
-export const SkeletonTwo = () => {
-  const images = [
+export const SkeletonTwo = ({ projectImages }: { projectImages?: string[] }) => {
+  const images = projectImages || [
     "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

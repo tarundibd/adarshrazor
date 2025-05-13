@@ -1,71 +1,54 @@
 "use client";
-import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
-import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/theme-toggle";
 
-export default function Page() {
+import { ThreeDMarquee } from "@/components/ui/3d-marquee";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+
+function Test() {
+  // List of icon filenames without paths
+  const iconNames = [
+    "Next.js.svg", 
+    "React.svg", 
+    "Tailwind-CSS.svg", 
+    "Typescript.svg", 
+    "Figma.svg", 
+    "Notion.svg", 
+    "Git.svg", 
+    "Github.svg", 
+    "Vercel.svg", 
+    "Framer.svg", 
+    "Vite.svg",
+    "JavaScript.svg",
+    "HTML.svg",
+    "CSS.svg",
+    "Node.js.svg",
+    "MongoDB.svg",
+    "PostgreSQL.svg",
+    "Firebase.svg",
+    "AWS.svg",
+    "Docker.svg"
+  ];
+
+  // Map the icon names to their full paths
+  const iconPaths = iconNames.map(icon => `/images/techicons/${icon}`);
+
   return (
-    <div className="min-h-screen">
-      <Navbar className={cn("fixed top-10 inset-x-0 max-w-2xl md:mx-auto z-50 mx-2")} />
+    <div className="flex flex-col overflow-hidden">
+      <ContainerScroll
+        titleComponent={
+          <>
+            <h1 className="text-4xl font-semibold text-black dark:text-white">
+              Powered by <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Modern Tech Stack
+              </span>
+            </h1>
+          </>
+        }
+      >
+        <ThreeDMarquee images={iconPaths} />
+      </ContainerScroll>
     </div>
-  );
+  )
 }
 
-export function Navbar({ className }: { className?: string }) {
-  const [active, setActive] = useState<string | null>(null);
-  return (
-    <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
-    >
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Projects">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-            <ProductItem
-              title="Algochurn"
-              href="https://algochurn.com"
-              src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
-            />
-            <ProductItem
-              title="Tailwind Master Kit"
-              href="https://tailwindmasterkit.com"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-              description="Production ready Tailwind css components for your next project"
-            />
-            <ProductItem
-              title="Moonbeam"
-              href="https://gomoonbeam.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
-            />
-            <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-            />
-            <HoveredLink href="/projects">View More</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Theme" children={<ThemeToggle />} />
-      </Menu>
-    </div>
-  );
-}
+export default Test
