@@ -6,17 +6,47 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import dynamic from "next/dynamic";
+import { useBlogStore } from '@/store/blogStore';
+import { fetchNotionProjectData } from '@/lib/notionIntegrationproject';
+import { HoverBorderGradient } from '../ui/hover-border-gradient'
 
 // Dynamically import the Globe component with no SSR
 const DynamicGlobe = dynamic(() => Promise.resolve(Globe), { ssr: false });
 
 export function FeaturesSection() {
+    // Use the blog store for blog data
+    const { posts, latestPost, isLoading: isBlogLoading, fetchBlogData } = useBlogStore();
+    
+    // Keep project data in local state
+    const [projects, setProjects] = useState<any[]>([]);
+    const [isProjectLoading, setIsProjectLoading] = useState(true);
+
+    useEffect(() => {
+      // Fetch blog data from the Zustand store
+      fetchBlogData();
+      
+      // Fetch project data directly
+      const fetchProjects = async () => {
+        try {
+          const projectData = await fetchNotionProjectData();
+          setProjects(projectData);
+        } catch (error) {
+          console.error("Failed to load project data:", error);
+        } finally {
+          setIsProjectLoading(false);
+        }
+      };
+      
+      fetchProjects();
+    }, [fetchBlogData]);
+    
   const features = [
     {
-      title: "Track issues effectively",
-      description:
-        "Track and manage your project issues with ease using our intuitive interface.",
-      skeleton: <SkeletonOne />,
+      title: "Blogs ✍",
+      description: latestPost ?
+        ("🔵 "+latestPost.properties?.Title?.title?.[0]?.plain_text || "Latest blog post") : 
+        "Check out my latest blog posts and articles",
+      skeleton: <SkeletonOne headerImage={latestPost?.properties?.HeaderImage?.files?.[0]?.file?.url} />,
       className:
         "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
@@ -106,19 +136,52 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   );
 };
 
-export const SkeletonOne = () => {
+export const SkeletonOne = ({ headerImage }: { headerImage?: string }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
   return (
     <div className="relative flex py-8 px-2 gap-10 h-full">
-      <div className="w-full  p-5  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
-        <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
-          {/* TODO */}
-          <img
-            src="/linear.webp"
-            alt="header"
-            width={800}
-            height={800}
-            className="h-full w-full aspect-square object-cover object-left-top rounded-sm"
-          />
+      <div className="w-full p-5 mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
+        <div className="flex flex-1 w-full h-full flex-col space-y-2 relative">
+          {!imageLoaded && !imageError && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800 animate-pulse">
+              <div className="text-gray-500 dark:text-gray-400">Loading...</div>
+            </div>
+          )}
+          
+          {imageError && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+              <div className="text-gray-500 dark:text-gray-400">Image unavailable</div>
+            </div>
+          )}
+          
+          <div className="relative group/blog">
+            <img
+              src={headerImage}
+              alt="header"
+              width={800}
+              height={800}
+              className={`h-full w-full aspect-square object-cover object-left-top rounded-sm ${!imageLoaded && !imageError ? 'invisible' : ''}`}
+              onLoad={() => setImageLoaded(true)}
+              onError={() => {
+                setImageError(true);
+                setImageLoaded(true);
+              }}
+            />
+            
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/blog:opacity-100 transition-opacity duration-300">
+              <a href="/blog">
+                <HoverBorderGradient 
+                  containerClassName="rounded-full" 
+                  as="button" 
+                  className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 text-sm z-50"
+                  gradientColor="#f83232">
+                  <span>Read more...</span>
+                </HoverBorderGradient>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -157,8 +220,6 @@ export const SkeletonTwo = () => {
     "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
   // Use useState with useEffect to generate random rotations only on client side
