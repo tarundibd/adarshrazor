@@ -9,9 +9,9 @@ export const ThreeDMarquee = ({
   images: string[];
   className?: string;
 }) => {
-  // Split the images array into 6 equal parts for more columns
-  const chunkSize = Math.ceil(images.length / 6);
-  const chunks = Array.from({ length: 6 }, (_, colIndex) => {
+  // Split the images array into 4 equal parts
+  const chunkSize = Math.ceil(images.length / 4);
+  const chunks = Array.from({ length: 4 }, (_, colIndex) => {
     const start = colIndex * chunkSize;
     return images.slice(start, start + chunkSize);
   });
@@ -28,18 +28,18 @@ export const ThreeDMarquee = ({
             style={{
               transform: "rotateX(55deg) rotateY(0deg) rotateZ(-45deg)",
             }}
-            className="relative top-96 right-[50%] grid size-full origin-top-left grid-cols-6 gap-4 transform-3d"
+            className="relative top-96 right-[50%] grid size-full origin-top-left grid-cols-4 gap-1 transform-3d"
           >
             {chunks.map((subarray, colIndex) => (
               <motion.div
                 animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}
                 transition={{
-                  duration: colIndex % 2 === 0 ? 6 : 8, // Faster animation
+                  duration: colIndex % 2 === 0 ? 10 : 15,
                   repeat: Infinity,
                   repeatType: "reverse",
                 }}
                 key={colIndex + "marquee"}
-                className="flex flex-col items-start gap-4" // Smaller gap
+                className="flex flex-col items-start gap-8"
               >
                 <GridLineVertical className="-left-4" offset="80px" />
                 {subarray.map((image, imageIndex) => (
@@ -50,15 +50,15 @@ export const ThreeDMarquee = ({
                         y: -10,
                       }}
                       transition={{
-                        duration: 0.2, // Faster hover effect
+                        duration: 0.3,
                         ease: "easeInOut",
                       }}
                       key={imageIndex + image}
                       src={image}
                       alt={`Image ${imageIndex + 1}`}
-                      className="aspect-square rounded-lg object-contain bg-white dark:bg-gray-800 p-3 ring ring-gray-950/5 hover:shadow-2xl"
-                      width={180} // Smaller images
-                      height={180} // Smaller images
+                      className="aspect-[970/700] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl"
+                      width={970}
+                      height={700}
                     />
                   </div>
                 ))}
