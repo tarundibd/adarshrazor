@@ -2,84 +2,58 @@
 
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { motion } from "motion/react";
+import { LampContainer } from "@/components/ui/lamp";
 
-function Test() {
+function TechStack() {
   // List of icon filenames without paths
-  const icons = [
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Next.js.svg", 
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/React.svg", 
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Tailwind-CSS.svg", 
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/TypeScript.svg", 
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Figma.svg", 
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Git.svg", 
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/GitHub.svg", 
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Vite.js.svg",
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/JavaScript.svg",
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/HTML5.svg",
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/CSS3.svg",
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Node.js.svg",
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/MongoDB.svg",
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/PostgresSQL.svg",
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Firebase.svg",
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/AWS.svg",
-    "https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/portfolio/public/images/techicons/Docker.svg"
-  ];
-
-  const images = [
-    "https://assets.aceternity.com/cloudinary_bkp/3d-card.png",
-    "https://assets.aceternity.com/animated-modal.png",
-    "https://assets.aceternity.com/animated-testimonials.webp",
-    "https://assets.aceternity.com/cloudinary_bkp/Tooltip_luwy44.png",
-    "https://assets.aceternity.com/github-globe.png",
-    "https://assets.aceternity.com/glare-card.png",
-    "https://assets.aceternity.com/layout-grid.png",
-    "https://assets.aceternity.com/flip-text.png",
-    "https://assets.aceternity.com/hero-highlight.png",
-    "https://assets.aceternity.com/carousel.webp",
-    "https://assets.aceternity.com/placeholders-and-vanish-input.png",
-    "https://assets.aceternity.com/shooting-stars-and-stars-background.png",
-    "https://assets.aceternity.com/signup-form.png",
-    "https://assets.aceternity.com/cloudinary_bkp/stars_sxle3d.png",
-    "https://assets.aceternity.com/spotlight-new.webp",
-    "https://assets.aceternity.com/cloudinary_bkp/Spotlight_ar5jpr.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Parallax_Scroll_pzlatw_anfkh7.png",
-    "https://assets.aceternity.com/tabs.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Tracing_Beam_npujte.png",
-    "https://assets.aceternity.com/cloudinary_bkp/typewriter-effect.png",
-    "https://assets.aceternity.com/glowing-effect.webp",
-    "https://assets.aceternity.com/hover-border-gradient.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Infinite_Moving_Cards_evhzur.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Lamp_hlq3ln.png",
-    "https://assets.aceternity.com/macbook-scroll.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Meteors_fye3ys.png",
-    "https://assets.aceternity.com/cloudinary_bkp/Moving_Border_yn78lv.png",
-    "https://assets.aceternity.com/multi-step-loader.png",
-    "https://assets.aceternity.com/vortex.png",
-    "https://assets.aceternity.com/wobble-card.png",
-    "https://assets.aceternity.com/world-map.webp",
+  const iconses = [
+    "Next.js.svg", "React.svg", "Tailwind-CSS.svg", "TypeScript.svg", "Figma.svg", "Git.svg", "GitHub.svg", "Vite.js.svg", "JavaScript.svg", "HTML5.svg", "CSS3.svg", "Node.js.svg", "MongoDB.svg", "PostgresSQL.svg", "Firebase.svg", "AWS.svg", "Docker.svg", "Express.svg", "Apache-Airflow.svg", "Apache-Cassandra.svg", "Apache-Groovy.svg", "Apache-Hadoop.svg", "Apache-Kafka.svg", "Apache-Maven.svg", "Apache-Spark.svg", "Apache-Subversion.svg", "Apache-Tomcat.svg", "Bootstrap.svg", "C.svg", "Django.svg", "Flask.svg", "GraphQL.svg", "Java.svg", "Kubernetes.svg", "Linux.svg", "MariaDB.svg", "MySQL.svg", "Nginx.svg", "PHP.svg", "Python.svg", "Redis.svg", "Sass.svg", "Spring.svg", "SQLite.svg", "Vue.js.svg", "Webpack.svg", "Zustand.svg"
   ];
 
   // Map the icon names to their full paths
-  const iconPaths = icons.map(icon => `/images/techicons/${icon}`);
+  const iconPaths = iconses.map(icon => `/images/techicons/${icon}`);
 
   return (
-    <div className="flex flex-col overflow-hidden">
-      <ContainerScroll
-        titleComponent={
-          <>
-            <h1 className="text-4xl font-semibold text-black dark:text-white">
-              Powered by <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                Modern Tech Stack
-              </span>
-            </h1>
-          </>
-        }
-      >
-        <ThreeDMarquee images={icons} />
-      </ContainerScroll>
-    </div>
+    <>
+      {/* Top gradient - dark blue to transparent */}
+      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-blue-900/70 via-blue-950/50 to-transparent z-10"></div>
+      
+      {/* Bottom gradient - transparent to dark blue/black */}
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black via-blue-950/70 to-transparent z-10"></div>
+      
+      <div className="mt-[10rem] relative">
+        <LampContainer>
+          <motion.h1
+            initial={{ opacity: 0.5, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
+            <div className="flex flex-col overflow-hidden">
+              <ContainerScroll
+                titleComponent={
+                  <>
+                    <h1 className="text-4xl font-semibold text-black dark:text-white">
+                      Powered by <br />
+                      <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                        Modern Tech Stack
+                      </span>
+                    </h1>
+                  </>
+                }
+              >
+                <ThreeDMarquee images={iconPaths} />
+              </ContainerScroll>
+            </div>
+          </motion.h1>
+        </LampContainer>
+      </div>
+    </>
   )
 }
 
-export default Test
+export default TechStack
