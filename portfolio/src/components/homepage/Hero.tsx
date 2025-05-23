@@ -3,6 +3,8 @@ import { motion } from "motion/react";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import { FlipWords } from '../ui/flip-words';
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
+import { RainbowButton } from "@/components/magicui/rainbow-button";
+import { ShinyButton } from "@/components/magicui/shiny-button";
 
 function Hero() {
     const resumeLink = process.env.NEXT_PUBLIC_RESUME_LINK;
@@ -20,15 +22,17 @@ function Hero() {
                 </div>
             </motion.h1>
             <div className='flex justify-center items-center my-10'>
-                <HoverBorderGradient 
+                {/* <HoverBorderGradient 
                     containerClassName="rounded-full" 
                     as="button" 
                     className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 text-sm"
                     gradientColor="#f83232"
                     onClick={() => window.open(resumeLink, '_blank')}
                 >
-                    <span>Resume 📜</span>
-                </HoverBorderGradient>
+                    <span>Resume </span>
+                </HoverBorderGradient> */}
+                <RainbowButton onClick={() => window.open(resumeLink, '_blank')}>Resume 📜</RainbowButton>
+                <ShinyButton onClick={() => window.open(resumeLink, '_blank')}>Resume 📜</ShinyButton>
             </div>
         </HeroHighlight>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent">  
