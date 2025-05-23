@@ -2,9 +2,9 @@ import React from 'react'
 import { motion } from "motion/react";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import { FlipWords } from '../ui/flip-words';
-import { HoverBorderGradient } from '../ui/hover-border-gradient'
+//import { HoverBorderGradient } from '../ui/hover-border-gradient'
 import { RainbowButton } from "@/components/magicui/rainbow-button";
-import { ShinyButton } from "@/components/magicui/shiny-button";
+//import { ShinyButton } from "@/components/magicui/shiny-button";
 
 function Hero() {
     const resumeLink = process.env.NEXT_PUBLIC_RESUME_LINK;
@@ -32,7 +32,6 @@ function Hero() {
                     <span>Resume </span>
                 </HoverBorderGradient> */}
                 <RainbowButton onClick={() => window.open(resumeLink, '_blank')}>Resume 📜</RainbowButton>
-                <ShinyButton onClick={() => window.open(resumeLink, '_blank')}>Resume 📜</ShinyButton>
             </div>
         </HeroHighlight>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent">  
