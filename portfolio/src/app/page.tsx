@@ -14,6 +14,7 @@ export default function Home() {
       <FeaturesSection />
       <TechStack /> 
       <MyTechStack/>
+ 
     </div>
   );
 }

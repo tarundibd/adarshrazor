@@ -3,13 +3,12 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import createGlobe from "cobe";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import dynamic from "next/dynamic";
 import { useBlogStore } from '@/store/blogStore';
 import { useProjectStore } from '@/store/projectStore';
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
-import { AnimatedList } from "@/components/magicui/animated-list";
+import {NotificationList} from "@/components/homepage/Notification";
 
 // Dynamically import the Globe component with no SSR
 const DynamicGlobe = dynamic(() => Promise.resolve(Globe), { ssr: false });
@@ -43,6 +42,7 @@ export function FeaturesSection() {
     
   const features = [
     {
+      id: "blogs",
       title: "Blogs ✍",
       description: latestPost ?
         ("🔵 "+latestPost.properties?.Title?.title?.[0]?.plain_text || "Latest blog post") : 
@@ -52,12 +52,43 @@ export function FeaturesSection() {
         "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
     {
-      title: "Working Project 🔴",
+      id: "changelog",
+      title: (
+        <div className="flex items-center justify-between">
+          <span>Change log</span>
+          <button 
+            onClick={() => {
+              const skeletonTwo = document.querySelector('#skeleton-two');
+              if (skeletonTwo) {
+                const event = new Event('reload');
+                skeletonTwo.dispatchEvent(event);
+              }
+            }}
+            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            title="Reload notifications"
+          >
+            <svg 
+              className="w-4 h-4 text-gray-600 dark:text-gray-300"
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
+              />
+            </svg>
+          </button>
+        </div>
+      ),
       description: "Capture stunning photos effortlessly using our advanced AI technology.",
       skeleton: <SkeletonTwo projectImages={projects?.[0]?.properties?.Images?.files?.map((file: any) => file.file?.url)} />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
     {
+      id: "youtube",
       title: "Catch me on YouTube",
       description:
         "Live vibe coding, TLDR contents, informative videos and game streaming.",
@@ -66,6 +97,7 @@ export function FeaturesSection() {
         "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
     },
     {
+      id: "news",
       title: "News from the world 🌎",
       description:
         "Get the latest news from the world in a single place.",
@@ -88,8 +120,10 @@ export function FeaturesSection() {
       <div className="relative ">
         <div className="grid grid-cols-1 lg:grid-cols-6 mt-12 xl:border rounded-md dark:border-neutral-800">
           {features.map((feature) => (
-            <FeatureCard key={feature.title} className={feature.className}>
-              <FeatureTitle>{feature.title}</FeatureTitle>
+            <FeatureCard key={feature.id} className={feature.className}>
+              <FeatureTitle>
+                <span className="font-bold font-mono">{feature.title}</span>
+              </FeatureTitle>
               <FeatureDescription>{feature.description}</FeatureDescription>
               <div className=" h-full w-full">{feature.skeleton}</div>
             </FeatureCard>
@@ -116,9 +150,9 @@ const FeatureCard = ({
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className=" max-w-5xl mx-auto text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug">
+    <div className="max-w-5xl mx-auto text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug">
       {children}
-    </p>
+    </div>
   );
 };
 
@@ -141,7 +175,7 @@ export const SkeletonOne = ({ headerImage }: { headerImage?: string }) => {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="relative flex h-[300px]">
+    <div className="relative flex h-[400px]">
       <div className="w-full mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
         <div className="flex flex-1 w-full h-full relative">
           {!imageLoaded && !imageError && (
@@ -213,22 +247,27 @@ export const SkeletonThree = () => {
 };
 
 export const SkeletonTwo = ({ projectImages }: { projectImages?: string[] }) => {
+  const [key, setKey] = useState(0);
+  
+  useEffect(() => {
+    const element = document.querySelector('#skeleton-two');
+    if (element) {
+      element.addEventListener('reload', () => {
+        setKey(prev => prev + 1);
+      });
+    }
+  }, []);
   
   return (
-    <div className="relative flex flex-col items-start p-4 gap-4 h-[300px] overflow-hidden">
-      
-      <AnimatedList>
-        <p>Item 1</p>
-        <p>Item 2</p>
-        <p>Item 3</p>
-      </AnimatedList>
+    <div id="skeleton-two" className="relative flex flex-col items-start p-4 gap-4 h-[400px] overflow-hidden">
+      <NotificationList key={key}/>
     </div>
   );
 };
 
 export const SkeletonFour = () => {
   return (
-    <div className="h-[300px] flex flex-col items-center relative bg-transparent dark:bg-transparent mt-5">
+    <div className="h-[400px] flex flex-col items-center relative bg-transparent dark:bg-transparent mt-5">
       <DynamicGlobe className="absolute -right-10 md:-right-10 -bottom-60 md:-bottom-52" />
     </div>
   );
@@ -258,7 +297,8 @@ export const Globe = ({ className }: { className?: string }) => {
       markers: [
         // longitude latitude
         { location: [37.7595, -122.4367], size: 0.03 },
-        { location: [40.7128, -74.006], size: 0.1 },
+        { location: [40.7128, -74.006], size: 0.02 },
+        { location: [20.5937, 78.9629], size: 0.07 },
       ],
       onRender: (state) => {
         // Called on every animation frame.
