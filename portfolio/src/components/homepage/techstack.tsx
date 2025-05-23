@@ -7,7 +7,7 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 function TechStack() {
   // List of icon filenames without paths
   const iconses = [
-    "Next.js.svg", "React.svg", "Tailwind-CSS.svg", "TypeScript.svg", "Figma.svg", "Git.svg", "GitHub.svg", "Vite.js.svg", "JavaScript.svg", "HTML5.svg", "CSS3.svg", "Node.js.svg", "MongoDB.svg", "PostgresSQL.svg", "Firebase.svg", "AWS.svg", "Docker.svg", "Express.svg", "Apache-Airflow.svg", "Apache-Cassandra.svg", "Apache-Groovy.svg", "Apache-Hadoop.svg", "Apache-Kafka.svg", "Apache-Maven.svg", "Apache-Spark.svg", "Apache-Subversion.svg", "Apache-Tomcat.svg", "Bootstrap.svg", "C.svg", "Django.svg", "Flask.svg", "GraphQL.svg", "Java.svg", "Kubernetes.svg", "Linux.svg", "MariaDB.svg", "MySQL.svg", "Nginx.svg", "PHP.svg", "Python.svg", "Redis.svg", "Sass.svg", "Spring.svg", "SQLite.svg", "Vue.js.svg", "Webpack.svg", "Zustand.svg"
+    "Typescript.svg", "Python.svg", "C.svg", "HTML5.svg", "CSS3.svg", "JavaScript.svg", "PostgresSQL.svg", "MongoDB.svg", "SQL-Developer.svg", "PowerShell.svg", "Firebase.svg", "Next.js.svg", "Node.js.svg", "React.svg", "Tailwind-CSS.svg", "Express.svg", "Redux.svg", "Pandas.svg", "NumPy.svg", "Bootstrap.svg", "Material-UI.svg", "WordPress.svg", "Git.svg", "Node.js.svg", "Azure.svg", "Ansible.svg", "Supabase.svg", "AWS.svg", "Jenkins.svg", "Google-Cloud.svg", "Vercel.svg", "GitHub.svg", "Swagger.svg", "Kubernetes.svg", "Apache.svg", "Bitbucket.svg", "Visual-Studio.svg", "Postman.svg", "Jira.svg"
   ];
 
   // Map the icon names to their full paths
