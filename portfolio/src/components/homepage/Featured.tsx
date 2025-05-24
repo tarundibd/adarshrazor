@@ -5,6 +5,7 @@ import createGlobe from "cobe";
 import { useEffect, useRef, useState } from "react";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useBlogStore } from '@/store/blogStore';
 import { useProjectStore } from '@/store/projectStore';
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
@@ -191,8 +192,8 @@ export const SkeletonOne = ({ headerImage }: { headerImage?: string }) => {
           )}
           
           <div className="relative group/blog">
-            <img
-              src={headerImage}
+            <Image
+              src={`${headerImage}`}
               alt="header"
               width={800}
               height={800}
@@ -233,7 +234,7 @@ export const SkeletonThree = () => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
           {/* TODO */}
           <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
-          <img
+          <Image
             src="/images/website/razoryt.png"
             alt="header"
             width={800}
