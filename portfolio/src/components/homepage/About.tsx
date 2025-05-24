@@ -5,6 +5,7 @@ import { TextGenerateEffect } from '../ui/text-generate-effect';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MovingBorder } from "../ui/moving-border";
 import { Button } from "../ui/button";
+import { NumberTicker } from "@/components/magicui/number-ticker";
 
 function About() {
     // Using a different approach for the quote with colored part
@@ -73,7 +74,7 @@ function About() {
               <span>[still counting ...]</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="text-7xl font-bold text-[#0A6847]">1500+</span>
+              <span className="text-7xl font-bold text-[#0A6847]"><NumberTicker value={1500} className='text-[#0A6847]'/>+</span>
               <span className="text-xl mt-2 text-[#0A6847]">open source commits</span>
             </div>
             <div className="flex flex-col items-center">

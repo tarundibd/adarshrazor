@@ -6,6 +6,8 @@ import { FeaturesSection } from "@/components/homepage/Featured";
 import TechStack from "@/components/homepage/techstack";
 import MyTechStack from "@/components/homepage/MyTechStack";
 import Contactme from "@/components/homepage/Contactme";
+import { Playground } from "@/components/homepage/Playground";
+import Footer from "@/components/homepage/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <TechStack /> 
       <MyTechStack/>
       <Contactme />
+      <Playground />
+      <Footer />  
     </div>
   );
 }

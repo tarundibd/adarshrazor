@@ -2,6 +2,7 @@
 
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 
 function TechStack() {
@@ -21,7 +22,7 @@ function TechStack() {
             <h1 className="text-4xl font-semibold text-black dark:text-white">
               Powered by <br />
               <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                Modern Tech Stack
+                <AuroraText>Modern Tech Stack</AuroraText>
               </span>
             </h1>
           </>

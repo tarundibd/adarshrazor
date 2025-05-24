@@ -1,12 +1,13 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
+import { HyperText } from "@/components/magicui/hyper-text";
 
 function MyTechStack() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden h-[60rem]">
       <div className="relative w-full flex items-center justify-center">
         <div className="text-7xl font-bold text-blue-950 dark:text-blue-500 my-16">
-          My Tech Stack
+        <HyperText className="text-7xl font-bold">My Tech Stack</HyperText>
         </div>
       </div>
       <div className="relative w-full flex items-center justify-center">
