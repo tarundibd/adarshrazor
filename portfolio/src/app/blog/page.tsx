@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect } from 'react';
 import { useBlogStore } from '@/store/blogStore';
+import Image from 'next/image';
+import { BlogPost } from '@/types/notion_database';
 
 export default function Blog() {
   const { posts, isLoading, error, fetchBlogData } = useBlogStore();
@@ -25,17 +27,22 @@ export default function Blog() {
         <p>No blog posts found.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post: any) => (
+          {posts.map((post: BlogPost) => (
             <div 
               key={post.id} 
               className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
               {post.properties?.HeaderImage?.files?.[0]?.file?.url && (
-                <img 
-                  src={post.properties.HeaderImage.files[0].file.url} 
-                  alt={post.properties?.Title?.title?.[0]?.plain_text || 'Blog post'} 
-                  className="w-full h-48 object-cover"
-                />
+                <div className="relative w-full h-48">
+                  <Image 
+                    src={post.properties.HeaderImage.files[0].file.url} 
+                    alt={post.properties?.Title?.title?.[0]?.plain_text || 'Blog post'} 
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                    priority={false}
+                  />
+                </div>
               )}
               
               <div className="p-6">

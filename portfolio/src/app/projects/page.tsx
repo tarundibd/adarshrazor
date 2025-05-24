@@ -2,18 +2,20 @@
 import React, { useEffect, useState } from 'react';
 import { useProjectStore } from '@/store/projectStore';
 import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
+import { Project } from '@/types/notion_database';
 
 export default function Projects() {
   const { projects, isLoading, error, fetchProjectData } = useProjectStore();
-  const [majorProjects, setMajorProjects] = useState<any[]>([]);
-  const [minorProjects, setMinorProjects] = useState<any[]>([]);
+  const [majorProjects, setMajorProjects] = useState<Project[]>([]);
+  const [minorProjects, setMinorProjects] = useState<Project[]>([]);
   
   useEffect(() => {
     fetchProjectData();
   }, [fetchProjectData]);
   
   // Helper function to sort projects by date (newest first)
-  const sortProjectsByDate = (projectsArray: any[]) => {
+  const sortProjectsByDate = (projectsArray: Project[]) => {
     return [...projectsArray].sort((a, b) => {
       // Get date from the date property (as seen in the Notion response)
       const dateA = a?.properties?.date?.date?.start || '';
@@ -34,8 +36,8 @@ export default function Projects() {
       console.log("Projects in projects page:", projects);
       
       // Separate major and minor projects
-      const major: any[] = [];
-      const minor: any[] = [];
+      const major: Project[] = [];
+      const minor: Project[] = [];
       
       projects.forEach(project => {
         const projectType = project?.properties?.type?.select?.name?.toLowerCase() || '';
@@ -75,7 +77,7 @@ export default function Projects() {
   };
   
   // Render a project card
-  const renderProjectCard = (project: any) => {
+  const renderProjectCard = (project: Project) => {
     // Access the correct properties based on the Notion response structure
     const projectName = project?.properties?.name?.title?.[0]?.plain_text || 
                        project?.properties?.Name?.title?.[0]?.plain_text ||
@@ -112,11 +114,16 @@ export default function Projects() {
         className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow"
       >
         {imageUrl && (
-          <img 
-            src={imageUrl} 
-            alt={projectName} 
-            className="w-full h-48 object-cover"
-          />
+          <div className="relative w-full h-48">
+            <Image 
+              src={imageUrl} 
+              alt={projectName} 
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+              priority={false}
+            />
+          </div>
         )}
         
         <div className="p-6">
@@ -140,7 +147,7 @@ export default function Projects() {
           </p>
           
           <div className="flex flex-wrap gap-1 mb-4">
-            {tags.slice(0, 3).map((tag: any) => (
+            {tags.slice(0, 3).map((tag) => (
               <Badge 
                 key={tag.id} 
                 variant="secondary"
