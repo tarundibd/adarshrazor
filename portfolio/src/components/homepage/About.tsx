@@ -2,7 +2,7 @@ import React from 'react'
 import {LinkPreview} from '@/components/ui/link-preview'
 import ColourfulText from "@/components/ui/colourful-text";
 import { TextGenerateEffect } from '../ui/text-generate-effect';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { MovingBorder } from "../ui/moving-border";
 import { Button } from "../ui/button";
 import { NumberTicker } from "@/components/magicui/number-ticker";
@@ -22,7 +22,7 @@ function About() {
         <LinkPreview url="https://www.reva.edu.in/" className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-orange-600 to-orange-400">
             Reva University
         </LinkPreview>{" "}
-        as an Engineer with a Bachelor's in computer science.
+        as an Engineer with a Bachelor&apos;s in computer science.
       </div>
       <div className='text-neutral-500 dark:text-neutral-400 text-xl md:text-3xl max-w-7xl mx-auto mb-10'>
         I started developing websites at an early age for various startups, became a webmaster for various universities, IEEE, and IISc Bangalore events, and also wrote a research paper on {" "}
@@ -31,13 +31,13 @@ function About() {
         </LinkPreview>
       </div>
       <div className='text-neutral-500 dark:text-neutral-400 text-xl md:text-3xl max-w-7xl mx-auto mb-10'>
-        I started my career as a frontend developer, but the latter of my curiosities learned about Cloud technologies. Currently, I'm seeking job opportunities as a {" "}
+        I started my career as a frontend developer, but the latter of my curiosities learned about Cloud technologies. Currently, I&apos;m seeking job opportunities as a {" "}
         <LinkPreview url="https://www.linkedin.com/in/adarsh007/" className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-green-500 to-green-700">
             full-stack developer.
         </LinkPreview>
       </div>
       <div className='text-neutral-500 dark:text-neutral-400 text-xl md:text-3xl max-w-7xl mx-auto mb-10'>
-        When I'm not in front of the screen, I focus on personal growth and striving to be the best version of myself. I like cafes, music, exploring and creativity.
+        When I&apos;m not in front of the screen, I focus on personal growth and striving to be the best version of myself. I like cafes, music, exploring and creativity.
       </div>
     </div>
     {/* Featured section */}
