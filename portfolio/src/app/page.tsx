@@ -5,6 +5,7 @@ import About from "@/components/homepage/About";
 import { FeaturesSection } from "@/components/homepage/Featured";
 import TechStack from "@/components/homepage/techstack";
 import MyTechStack from "@/components/homepage/MyTechStack";
+import Contactme from "@/components/homepage/Contactme";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <FeaturesSection />
       <TechStack /> 
       <MyTechStack/>
- 
+      <Contactme />
     </div>
   );
 }

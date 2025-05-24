@@ -106,7 +106,7 @@ const Frameworks = [
 
 const Dev_Tools = [
   { name: "Git", img: "/images/techicons/Git.svg" },
-  { name: "Docker", img: "/images/techicons/Node.js.svg" },
+  { name: "Docker", img: "/images/techicons/Docker.svg" },
   { name: "Azure", img: "/images/techicons/Azure.svg" },
   { name: "Ansible", img: "/images/techicons/Ansible.svg" },
   { name: "Supabase", img: "/images/techicons/Supabase.svg" },
