@@ -74,7 +74,7 @@ function About() {
               <span>[still counting ...]</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="text-7xl font-bold text-[#0A6847]"><NumberTicker value={1500} className='text-[#0A6847]'/>+</span>
+              <span className="text-7xl font-bold text-[#0A6847]"><NumberTicker value={1500} className='text-[#0A6847] dark:text-[#0A6847]'/>+</span>
               <span className="text-xl mt-2 text-[#0A6847]">open source commits</span>
             </div>
             <div className="flex flex-col items-center">

@@ -1,8 +1,10 @@
+import { BlogPost } from '@/types/notion_database';
+
 /**
  * Fetch data from the Notion database through our API route
- * @returns {Promise<any>} The data from the Notion database
+ * @returns {Promise<BlogPost[]>} The data from the Notion database
  */
-export async function fetchNotionBlogData(): Promise<any> {
+export async function fetchNotionBlogData(): Promise<BlogPost[]> {
   try {
     const response = await fetch('/api/notion/blog', {
       method: 'GET',

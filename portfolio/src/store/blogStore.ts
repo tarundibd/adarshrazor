@@ -1,11 +1,11 @@
 import { create } from 'zustand'
 import { fetchNotionBlogData } from '@/lib/notionIntegrationblog'
-import { NotionDatabase } from '@/types/notion_database'
+import { BlogPost } from '@/types/notion_database'
 
 interface BlogStore {
   // Blog posts
-  posts: any[]
-  latestPost: any | null
+  posts: BlogPost[]
+  latestPost: BlogPost | null
   
   // Loading state
   isLoading: boolean
@@ -15,7 +15,7 @@ interface BlogStore {
   fetchBlogData: () => Promise<void>
 }
 
-export const useBlogStore = create<BlogStore>((set, get) => ({
+export const useBlogStore = create<BlogStore>((set) => ({
   // Initial state
   posts: [],
   latestPost: null,
@@ -26,15 +26,14 @@ export const useBlogStore = create<BlogStore>((set, get) => ({
   fetchBlogData: async () => {
     try {
       set({ isLoading: true, error: null })
-      const data = await fetchNotionBlogData()
+      const data = await fetchNotionBlogData() as BlogPost[]
       
       // Find the first published post
-      let latestPost = null
+      let latestPost: BlogPost | null = null
       if (data && data.length > 0) {
         // Look for the first post with status "published"
-        const publishedPost = data.find((post: any) => 
-          post.properties?.Status?.select?.name === 'Published' || 
-          post.properties?.status?.select?.name === 'Published'
+        const publishedPost = data.find((post) => 
+          post.properties?.Status?.select?.name === 'Published'
         )
         
         if (publishedPost) {

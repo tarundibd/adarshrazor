@@ -103,7 +103,13 @@
   0%, 100% {
     transform: translate(-50%, -50%) scale(1);}
   50% {
-    transform: translate(-50%, -50%) scale(0.9);}}}
+    transform: translate(-50%, -50%) scale(0.9);}}
+  --animate-line-shadow: line-shadow 15s linear infinite;
+  @keyframes line-shadow {
+  0% {
+    background-position: 0 0;}
+  100% {
+    background-position: 100% -100%;}}}
 
 :root {
   --radius: 0.625rem;
@@ -190,5 +196,22 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+
+
+/* cursor hidding in mobile */
+
+
+/* Default style: visible on larger screens */
+.smooth-cursor-wrapper {
+  display: block; /* Or flex, grid, etc., depending on its natural display */
+}
+
+/* Hide on screens smaller than a certain width (e.g., 768px for tablets/mobiles) */
+@media (max-width: 768px) {
+  .smooth-cursor-wrapper {
+    display: none;
   }
 }

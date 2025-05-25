@@ -1,9 +1,10 @@
 import { create } from 'zustand'
 import { fetchNotionProjectData } from '@/lib/notionIntegrationproject'
+import { Project } from '@/types/notion_database'
 
 interface ProjectStore {
   // Project data
-  projects: any[]
+  projects: Project[]
   
   // Loading state
   isLoading: boolean
@@ -13,7 +14,7 @@ interface ProjectStore {
   fetchProjectData: () => Promise<void>
 }
 
-export const useProjectStore = create<ProjectStore>((set, get) => ({
+export const useProjectStore = create<ProjectStore>((set) => ({
   // Initial state
   projects: [],
   isLoading: false,
@@ -23,7 +24,7 @@ export const useProjectStore = create<ProjectStore>((set, get) => ({
   fetchProjectData: async () => {
     try {
       set({ isLoading: true, error: null })
-      const data = await fetchNotionProjectData()
+      const data = await fetchNotionProjectData() as Project[]
       
       set({ 
         projects: data,

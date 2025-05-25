@@ -193,6 +193,9 @@ export function SmoothCursor({
         zIndex: 100,
         pointerEvents: "none",
         willChange: "transform",
+        filter: isMoving ? "brightness(1.2)" : "brightness(1)",
+        opacity: isMoving ? 0.85 : 1,
+        transition: "filter 0.2s, opacity 0.2s",
       }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
