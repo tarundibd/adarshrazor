@@ -34,7 +34,9 @@ export default function RootLayout({
             <NavClass/>
           </div>
           <div className="">
-            <SmoothCursor />
+            <div className=" ">
+            <SmoothCursor/>
+            </div>
             {children}
           </div>
         </ThemeProvider>
