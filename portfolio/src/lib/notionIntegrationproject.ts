@@ -1,8 +1,10 @@
+import { Project } from '@/types/notion_database';
+
 /**
  * Fetch data from the Notion database through our API route
- * @returns {Promise<any>} The data from the Notion database
+ * @returns {Promise<Project[]>} The data from the Notion database
  */
-export async function fetchNotionProjectData(): Promise<any> {
+export async function fetchNotionProjectData(): Promise<Project[]> {
   try {
     const response = await fetch('/api/notion/project', {
       method: 'GET',

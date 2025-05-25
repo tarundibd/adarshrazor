@@ -89,12 +89,12 @@ export function SmoothCursor({
     restDelta: 0.001,
   },
 }: SmoothCursorProps) {
+  const [isMoving, setIsMoving] = useState(false);
   const lastMousePos = useRef<Position>({ x: 0, y: 0 });
   const velocity = useRef<Position>({ x: 0, y: 0 });
   const lastUpdateTime = useRef(Date.now());
   const previousAngle = useRef(0);
   const accumulatedRotation = useRef(0);
-  const [isMoving, setIsMoving] = useState(false);
 
   const cursorX = useSpring(0, springConfig);
   const cursorY = useSpring(0, springConfig);
@@ -193,6 +193,9 @@ export function SmoothCursor({
         zIndex: 100,
         pointerEvents: "none",
         willChange: "transform",
+        filter: isMoving ? "brightness(1.2)" : "brightness(1)",
+        opacity: isMoving ? 0.85 : 1,
+        transition: "filter 0.2s, opacity 0.2s",
       }}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}

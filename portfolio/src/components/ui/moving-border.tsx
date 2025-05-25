@@ -85,7 +85,7 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
   const pathRef = useRef<SVGPathElement>(null);
   const progress = useMotionValue<number>(0);
