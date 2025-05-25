@@ -10,7 +10,7 @@ import {
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
-type SVGPathElement = SVGElement & {
+type SVGRectWithLength = SVGRectElement & {
   getTotalLength(): number;
   getPointAtLength(length: number): { x: number; y: number };
 };
@@ -87,7 +87,7 @@ export const MovingBorder = ({
   ry?: string;
   [key: string]: unknown;
 }) => {
-  const pathRef = useRef<SVGPathElement>(null);
+  const pathRef = useRef<SVGRectWithLength>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {
