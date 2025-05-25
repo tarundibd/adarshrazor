@@ -21,10 +21,11 @@ export const TextGenerateEffect = ({
   const [scope, animate] = useAnimate();
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(!triggerOnScroll);
-  let wordsArray = words.split(" ");
-  
+  const wordsArray = words.split(" ");
+
   useEffect(() => {
     if (triggerOnScroll) {
+      const currentRef = containerRef.current;
       const observer = new IntersectionObserver(
         (entries) => {
           const [entry] = entries;
@@ -36,13 +37,13 @@ export const TextGenerateEffect = ({
         { threshold: 0.1 }
       );
       
-      if (containerRef.current) {
-        observer.observe(containerRef.current);
+      if (currentRef) {
+        observer.observe(currentRef);
       }
       
       return () => {
-        if (containerRef.current) {
-          observer.unobserve(containerRef.current);
+        if (currentRef) {
+          observer.unobserve(currentRef);
         }
       };
     }
@@ -62,7 +63,7 @@ export const TextGenerateEffect = ({
         }
       );
     }
-  }, [scope.current, isInView, animate, duration, filter]);
+  }, [isInView, animate, duration, filter]);
 
   const renderWords = () => {
     return (
