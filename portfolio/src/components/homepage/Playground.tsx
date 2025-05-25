@@ -1,5 +1,6 @@
 import { Ripple } from "@/components/magicui/ripple";
 import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 export function Playground() {
     const placeholders = [
@@ -20,8 +21,8 @@ export function Playground() {
 
   return (
     <div className="relative flex h-[800px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
-      <p className="z-10 whitespace-pre-wrap text-center text-5xl font-mono font-bold tracking-tighter text-black">
-        Playground is coming soon!
+      <p className="z-10 whitespace-pre-wrap text-center text-5xl font-mono font-bold tracking-tighter">
+        <AuroraText>Playground is coming soon!</AuroraText>
       </p>
       <p className="text-muted-foreground text-xl mt-4 mb-4">
         Join the waitlist!

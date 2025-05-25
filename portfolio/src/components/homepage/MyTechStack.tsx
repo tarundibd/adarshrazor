@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import { HyperText } from "@/components/magicui/hyper-text";
+import Image from "next/image";
 
 function MyTechStack() {
   return (
@@ -66,7 +67,7 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2 grayscale hover:grayscale-0">
-        <img className="rounded-full" width="42" height="42" alt="" src={img} />
+        <Image className="rounded-full" width="42" height="42" alt="" src={img} />
         <div className="flex flex-col">
           <figcaption className="text-lg font-bold text-gray-500 dark:text-white">
             {name}

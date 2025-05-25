@@ -11,7 +11,7 @@ interface Item {
   time: string;
 }
 
-let notifications = [
+const notifications = [
   {
     name: "Payment received",
     description: "Payment is successful, Payment is successful",
