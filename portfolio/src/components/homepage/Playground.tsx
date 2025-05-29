@@ -81,7 +81,7 @@ export function Playground() {
       };
 
   return (
-    <div className="relative flex h-[800px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
+    <div id="playgroundHome" className="relative flex h-[800px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
       <p className="z-10 whitespace-pre-wrap text-center text-5xl font-mono font-bold tracking-tighter">
         <AuroraText>Playground is coming soon!</AuroraText>
       </p>
