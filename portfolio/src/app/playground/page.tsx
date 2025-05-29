@@ -1,12 +1,10 @@
 'use client'
 
-import React, {useState} from "react";
+import React from "react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import Image from 'next/image'
 
 function Playground() {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-orange-100 dark:bg-black p-8">

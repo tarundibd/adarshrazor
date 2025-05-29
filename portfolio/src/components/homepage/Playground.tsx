@@ -92,6 +92,7 @@ export function Playground() {
         placeholders={placeholders}
         onChange={handleChange}
         onSubmit={onSubmit}
+        submitting={submitting}
       />
       <Ripple />
       <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
