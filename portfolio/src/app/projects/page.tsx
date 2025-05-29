@@ -125,7 +125,7 @@ export default function Projects() {
             <h2 className="text-xl font-semibold">
               {projectName}
             </h2>
-            <Badge className={`${projectType === 'major' ? 'bg-red-600' : 'bg-blue-600'} text-white`}>
+            <Badge className={`${projectType === 'major' ? 'bg-green-600' : 'bg-blue-600'} text-white`}>
               {projectType || 'project'}
             </Badge>
           </div>

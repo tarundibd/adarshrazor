@@ -13,33 +13,33 @@ interface Item {
 
 const notifications = [
   {
-    name: "Payment received",
-    description: "Payment is successful, Payment is successful",
+    name: "Porject Created",
+    description: "Project is successfully created",
     time: "15m ago",
-
     icon: "💸",
     color: "#00C9A7",
   },
   {
     name: "User signed up",
-    description: "Magic UI",
+    description: "User signed up and logged in",
     time: "10m ago",
     icon: "👤",
     color: "#FFB800",
   },
   {
-    name: "New message",
-    description: "Magic UI",
+    name: "Playground added",
+    description: "Playground is updated",
     time: "5m ago",
     icon: "💬",
     color: "#FF3D71",
   },
   {
-    name: "New event",
-    description: "New event is created",
+    name: "Experience completed",
+    description: "Experience board is created",
     time: "2m ago",
     icon: "🗞️",
-    color: "#1E86FF",  },
+    color: "#1E86FF"
+  },
 ];
 
 const Notification = ({ name, description, icon, color, time }: Item) => {

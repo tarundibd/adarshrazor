@@ -61,7 +61,15 @@ export function Navbar({ className }: { className?: string }) {
               src="/images/website/bucketlist.png"
               description="My To-Do List Before I'm To-Done 🏁"
             />
-            <HoveredLink href="/contact">know me better 💬</HoveredLink>
+            <HoveredLink href="/#contact" onClick={(e) => {
+              e.preventDefault();
+              const isHomePage = window.location.pathname === '/';
+              if (isHomePage) {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.location.href = '/#contact';
+              }
+            }}>know me better 💬</HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Misc">

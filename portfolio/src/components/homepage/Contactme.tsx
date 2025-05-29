@@ -61,7 +61,7 @@ function Contactme() {
           description: 'Your message has been sent successfully.'
         })
       } else {
-        throw new Error('Metwork reposnse was not successful')
+        throw new Error('Metwork response was not successful')
       }
     } catch (error) {
       console.error('Error:', error)
@@ -77,7 +77,7 @@ function Contactme() {
   }
 
   return (    
-    <div className="relative flex flex-col min-h-[90vh] overflow-hidden bg-background mt-32">  
+    <div id="contact" className="relative flex flex-col min-h-[90vh] overflow-hidden bg-background mt-32">  
       <InteractiveGridPattern
         className={cn(
           "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",

@@ -32,39 +32,31 @@ export const Highlight = ({
 const CARDS = [
   {
     id: 0,
-    name: "Manu Arora",
-    designation: "Senior Software Engineer",
+    name: "Saket Savarn",
+    designation: "ML Engineer 👩‍💻",
     content: (
       <p>
-        These cards are amazing, <Highlight>I want to use them</Highlight> in my
-        project. Framer motion is a godsend ngl tbh fam 🙏
+        Demonstrated exceptional <Highlight>leadership and collaboration</Highlight> skills by effectively guiding projects from conception to completion. His ability to foster positive working relationships significantly contributed to our collective success.
       </p>
     ),
   },
   {
     id: 1,
-    name: "Elon Musk",
-    designation: "Senior Shitposter",
+    name: "Dr. Srinivas",
+    designation: "Professor, IISc Bangalore 🥼",
     content: (
       <p>
-        I dont like this Twitter thing,{" "}
-        <Highlight>deleting it right away</Highlight> because yolo. Instead, I
-        would like to call it <Highlight>X.com</Highlight> so that it can easily
-        be confused with adult sites.
+        Possesses an impressive ability to <Highlight>quickly grasp complex concepts</Highlight> and translate them into actionable solutions. His <Highlight>innovative thinking and adaptability</Highlight> are invaluable in dynamic environments.
       </p>
     ),
   },
   {
     id: 2,
-    name: "Tyler Durden",
-    designation: "Manager Project Mayhem",
+    name: "Sunilkumar S. Manvi",
+    designation: "HOD, Computer Science Department 🎓",
     content: (
       <p>
-        The first rule of
-        <Highlight>Fight Club</Highlight> is that you do not talk about fight
-        club. The second rule of
-        <Highlight>Fight club</Highlight> is that you DO NOT TALK about fight
-        club.
+        A highly <Highlight>reliable and dedicated professional</Highlight> who consistently delivers impactful results. Their commitment to <Highlight>continuous improvement</Highlight> and willingness to take on new challenges make them a standout contributor.
       </p>
     ),
   },

@@ -43,7 +43,7 @@ export function FeaturesSection() {
       id: "blogs",
       title: "Blogs ✍",
       description: latestPost ?
-        ("🔵 "+latestPost.properties?.Title?.title?.[0]?.plain_text || "Latest blog post") : 
+        ("▶ "+latestPost.properties?.Title?.title?.[0]?.plain_text || "Latest blog post") : 
         "Check out my latest blog posts and articles",
       skeleton: <SkeletonOne headerImage={latestPost?.properties?.HeaderImage?.files?.[0]?.file?.url} />,
       className:
@@ -81,7 +81,7 @@ export function FeaturesSection() {
           </button>
         </div>
       ),
-      description: "Capture stunning photos effortlessly using our advanced AI technology.",
+      description: "⭕ Live update notifications from my website.",
       skeleton: <SkeletonTwo />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
@@ -98,7 +98,7 @@ export function FeaturesSection() {
       id: "news",
       title: "News from the world 🌎",
       description:
-        "Get the latest news from the world in a single place.",
+        "Get the latest news and blogs from the world in a single place.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
     },
@@ -122,7 +122,7 @@ export function FeaturesSection() {
               <FeatureTitle>
                 <span className="font-bold font-mono">{feature.title}</span>
               </FeatureTitle>
-              <FeatureDescription>{feature.description}</FeatureDescription>
+              <FeatureDescription><span className="text-lg text-neutral-500 dark:text-neutral-300">{feature.description}</span></FeatureDescription>
               <div className=" h-full w-full">{feature.skeleton}</div>
             </FeatureCard>
           ))}
@@ -159,7 +159,7 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
     <p
       className={cn(
         "text-sm md:text-base  max-w-4xl text-left mx-auto",
-        "text-neutral-500 text-center font-normal dark:text-neutral-300",
+        "text-neutral-800 text-center font-normal dark:text-neutral-300",
         "text-left max-w-sm mx-0 md:text-sm my-2"
       )}
     >
