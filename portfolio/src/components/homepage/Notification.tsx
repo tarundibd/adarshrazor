@@ -2,6 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/magicui/animated-list";
+import { useChangelogStore } from "@/store/changelogStore";
+import { useEffect } from "react";
+import { formatDistanceToNow } from "date-fns";
 
 interface Item {
   name: string;
@@ -10,37 +13,6 @@ interface Item {
   color: string;
   time: string;
 }
-
-const notifications = [
-  {
-    name: "Porject Created",
-    description: "Project is successfully created",
-    time: "15m ago",
-    icon: "💸",
-    color: "#00C9A7",
-  },
-  {
-    name: "User signed up",
-    description: "User signed up and logged in",
-    time: "10m ago",
-    icon: "👤",
-    color: "#FFB800",
-  },
-  {
-    name: "Playground added",
-    description: "Playground is updated",
-    time: "5m ago",
-    icon: "💬",
-    color: "#FF3D71",
-  },
-  {
-    name: "Experience completed",
-    description: "Experience board is created",
-    time: "2m ago",
-    icon: "🗞️",
-    color: "#1E86FF"
-  },
-];
 
 const Notification = ({ name, description, icon, color, time }: Item) => {
   return (
@@ -84,6 +56,41 @@ export function NotificationList({
 }: {
   className?: string;
 }) {
+  const { changelogs, isLoading, error, fetchChangelogData } = useChangelogStore();
+
+  useEffect(() => {
+    console.log('NotificationList mounted, fetching data...');
+    fetchChangelogData();
+  }, [fetchChangelogData]);
+
+  useEffect(() => {
+    console.log('Current changelogs:', changelogs);
+    console.log('Loading state:', isLoading);
+    console.log('Error state:', error);
+  }, [changelogs, isLoading, error]);
+
+  if (isLoading) {
+    return <div className="flex items-center justify-center h-[500px]">Loading notifications...</div>;
+  }
+
+  if (error) {
+    return <div className="flex items-center justify-center h-[500px] text-red-500">{error}</div>;
+  }
+
+  const formattedNotifications = changelogs.map((changelog) => {
+    const formatted = {
+      name: changelog.properties.name?.title?.[0]?.plain_text || "",
+      description: changelog.properties.description?.rich_text?.[0]?.plain_text || "",
+      icon: changelog.properties.icon?.rich_text?.[0]?.plain_text || "📢",
+      color: changelog.properties.color?.rich_text?.[0]?.plain_text || "#1E86FF",
+      time: changelog.created_time
+        ? formatDistanceToNow(new Date(changelog.created_time), { addSuffix: true })
+        : 'just 1 now',
+    };
+    console.log('Formatted notification:', formatted);
+    return formatted;
+  });
+
   return (
     <div
       className={cn(
@@ -92,7 +99,7 @@ export function NotificationList({
       )}
     >
       <AnimatedList>
-        {notifications.map((item, idx) => (
+        {formattedNotifications.map((item, idx) => (
           <Notification {...item} key={idx} />
         ))}
       </AnimatedList>

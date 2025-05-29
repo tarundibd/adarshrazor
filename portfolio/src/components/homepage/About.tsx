@@ -83,7 +83,7 @@ function About() {
               <span className="text-xl mt-2">total experience</span>
             </div>
             <div className="flex flex-col items-center">
-                <span className="text-6xl font-bold text-[#0A6847] mb-7">Experience</span>
+                <span className="text-6xl font-bold text-[#0A6847] mb-7">Projects</span>
                 <Button variant="outline" onClick={() => window.location.href = '/projects'}>view</Button>
             </div>
             <div className="flex flex-col items-center">
@@ -91,8 +91,8 @@ function About() {
               <span className="text-xl mt-2">Certifications</span>
             </div>
             <div className="flex flex-col items-center">
-                <span className="text-6xl font-bold text-[#0A6847] mb-7">Projects</span>
-                <Button variant="outline" onClick={() => window.location.href = '/projects'}>view</Button>
+                <span className="text-6xl font-bold text-[#0A6847] mb-7">Experience</span>
+                <Button variant="outline" onClick={() => window.location.href = '/experience'}>view</Button>
             </div>
           </div>
         </CardContent>
