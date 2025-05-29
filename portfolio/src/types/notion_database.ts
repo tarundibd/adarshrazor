@@ -88,6 +88,19 @@ export interface Experience {
   };
 }
 
+export interface Changelog {
+  id: string;
+  properties: {
+    name?: NotionTitle;
+    description?: NotionRichText;
+    time?: NotionDate;
+    icon?: NotionRichText;
+    color?: NotionRichText;
+  };
+  created_time: string;
+  last_edited_time: string;
+}
+
 export interface NotionDatabase {
   Title: string;
   HeaderImage: string;
