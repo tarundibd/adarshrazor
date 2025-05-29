@@ -56,25 +56,35 @@ export interface Project {
   id: string;
   properties: {
     name?: NotionTitle;
-    Name?: NotionTitle;
     description?: NotionRichText;
-    Description?: NotionRichText;
     tags?: NotionMultiSelect;
-    Tags?: NotionMultiSelect;
     images?: {
       files: NotionFile[];
     };
-    Images?: {
-      files: NotionFile[];
-    };
     github_link?: NotionUrl;
-    GitHubLink?: NotionUrl;
     applink?: NotionUrl;
     live_link?: NotionUrl;
-    LiveLink?: NotionUrl;
     applink_working?: NotionUrl;
     date?: NotionDate;
     type?: NotionSelect;
+  };
+}
+
+export interface Experience {
+  id: string;
+  ID: number;
+  properties: {
+    Name?: NotionTitle;
+    Role?: NotionRichText;
+    ExperienceType?: NotionSelect;
+    Duration?: NotionRichText;
+    Badges?: NotionMultiSelect;
+    Description?: NotionRichText;
+    Image?: {
+      files: NotionFile[];
+    };
+    BlogName?: NotionTitle;
+    BlogLink?: NotionUrl;
   };
 }
 

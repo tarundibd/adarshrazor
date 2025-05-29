@@ -80,26 +80,20 @@ export default function Projects() {
   const renderProjectCard = (project: Project) => {
     // Access the correct properties based on the Notion response structure
     const projectName = project?.properties?.name?.title?.[0]?.plain_text || 
-                       project?.properties?.Name?.title?.[0]?.plain_text ||
                        'Loading...';
     
     const description = project?.properties?.description?.rich_text?.[0]?.plain_text || 
-                       project?.properties?.Description?.rich_text?.[0]?.plain_text ||
                        'Loading description...';
     
     const tags = project?.properties?.tags?.multi_select || 
-                project?.properties?.Tags?.multi_select || 
                 [];
     
-    const imageUrl = project?.properties?.images?.files?.[0]?.file?.url || 
-                    project?.properties?.Images?.files?.[0]?.file?.url;
+    const imageUrl = project?.properties?.images?.files?.[0]?.file?.url;
     
     const githubUrl = project?.properties?.github_link?.url || 
-                     project?.properties?.GitHubLink?.url ||
                      project?.properties?.applink?.url;
     
     const liveUrl = project?.properties?.live_link?.url || 
-                   project?.properties?.LiveLink?.url ||
                    project?.properties?.applink_working?.url;
     
     // Get the project date from the date property
