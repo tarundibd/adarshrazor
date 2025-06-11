@@ -20,6 +20,9 @@ function Hero() {
                         Adarsh
                     </Highlight> here !!
                 </div>
+                <div className="text-xl px-4 md:text-2xl lg:text-xl text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto my-4">
+                     I&apos;m a <Highlight className="text-black dark:text-white">developer</Highlight> and I sell infrastructures and solutions
+                </div>
             </motion.h1>
             <div className='flex justify-center items-center my-10'>
                 {/* <HoverBorderGradient 
