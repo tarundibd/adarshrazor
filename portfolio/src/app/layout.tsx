@@ -29,7 +29,7 @@ export default function RootLayout({
         <ThemeProvider>
           <StickyBanner className="bg-gradient-to-b from-blue-500 to-blue-600 z-40 relative">
             <p className="mx-0 max-w-[90%] text-white drop-shadow-md">
-              Announcing waitlist open for Playground, I am sure you dont want to miss it.{" "}
+              ⚡ Pre-Build n8n templates are coming. ⭕ Announcing waitlist open for Playground, I am sure you dont want to miss it.{" "}
               <a href="#playgroundHome" className="transition duration-200 hover:underline font-bold" onClick={(e) => {
               e.preventDefault();
               const isHomePage = window.location.pathname === '/';
