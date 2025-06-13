@@ -1,25 +1,74 @@
-import React from 'react'
-import { AuroraText } from "@/components/magicui/aurora-text";
-import Image from 'next/image'
+"use client";
+import React, { useEffect } from 'react';
+import { useBucketListStore } from '@/store/bucketlistStore';
 
-function BucketList() {
+export default function BucketList() {
+  const { bucketList, isLoading, error, fetchBucketListData } = useBucketListStore();
+
+  useEffect(() => {
+    fetchBucketListData();
+  }, [fetchBucketListData]);
+
+  // Extract and flatten the data for easier rendering
+  const items = bucketList.map((item) => {
+    return {
+      id: item.id,
+      goal: item.properties.goal?.title?.[0]?.plain_text || '',
+      checked: item.properties.checked?.checkbox || false,
+      value: item.properties.value?.number ?? 0,
+      link: item.properties.link?.url || '',
+      icon: item.properties.icon?.rich_text?.[0]?.plain_text || '',
+    };
+  });
+
+  const total = items.length;
+  const done = items.filter((item) => item.checked).length;
+
+  // Styles
+  const pad = { padding: 15, fontSize: 18 };
+  const listItemStyle = {
+    fontSize: 16,
+    marginBottom: 5,
+    lineHeight: '1.6em',
+  };
+  const completedStyle = { ...listItemStyle, color: 'green' };
+  const inProgressStyle = { ...listItemStyle, color: 'orange' };
+
+  if (isLoading) {
+    return <div className="min-h-screen flex items-center justify-center">Loading bucket list...</div>;
+  }
+
+  if (error) {
+    return <div className="min-h-screen flex items-center justify-center text-red-500">Error: {error}</div>;
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-orange-100 dark:bg-black p-8">
-      <div className="mb-8">
-        <AuroraText className="text-5xl md:text-7xl font-bold drop-shadow-lg">
-          Under Development
-        </AuroraText>
+    <div className="container mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold mb-8">My Bucket List</h1>
+      <div className="mb-6 text-lg">
+        I was inspired by Chip Hyuen's{' '}
+        <a href="https://huyenchip.com/list-100/" target="_blank" rel="noreferrer" className="text-blue-600 underline">List 100</a>{' '}
+        to create and maintain this list. This list is a collection of moments that I want to experience before I drop off the face of this planet.<br />
+        <span className="font-semibold">Current status: {done} / {total}</span>
       </div>
-      <div className="mb-8 w-full flex justify-center">
-        
-      </div>
-      
-      <div className="mb-8">
-        <Image src={"https://placehold.co/600x400?text=Hello+World"} alt="AI generated" className="rounded-2xl shadow-2xl w-72 md:w-96" width={100} height={100}/>
-      </div>
-      <div className="text-lg text-black dark:text-gray-300">We&apos;re working on something amazing. Check back soon!</div>
+      <ol className="list-decimal pl-6">
+        {items.map((item, index) => (
+          <li
+            key={item.id}
+            style={item.checked ? completedStyle : (item.value > 0 ? inProgressStyle : listItemStyle)}
+            
+          >
+            {item.goal} {item.icon && <span>{item.icon}</span>}
+            {item.checked && ' ✅'}
+            {item.value > 0 && (
+              <span className="ml-2 text-sm text-gray-500">({item.value})</span>
+            )}
+            {item.link && (
+              <a href={item.link} target="_blank" rel="noreferrer" className="ml-2 text-blue-500 hover:underline">🏷️</a>
+            )}
+          </li>
+        ))}
+      </ol>
     </div>
-  )
+  );
 }
-
-export default BucketList
