@@ -3,7 +3,15 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { HoverEffect } from '@/components/ui/card-hover-effect';
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalTrigger,
+} from '@/components/ui/animated-modal';
+import { useStoreWebsite } from '@/store/storeWebsite';
 
 interface Product {
   id: string;
@@ -11,61 +19,12 @@ interface Product {
   description: string;
   icon: string;
   type: 'AI Agents' | 'Automation Scripts';
-  onSale?: boolean;
+  verified?: boolean;
 }
 
-const mockProducts: Product[] = [
-  {
-    id: '1',
-    title: 'Template',
-    description: 'Tesatea Scrion with some additional information that makes this card bigger than the others and shows how the dynamic sizing works.',
-    icon: '/path-to-icon.svg',
-    type: 'AI Agents',
-    onSale: true
-  },
-  {
-    id: '2',
-    title: 'AI/guts',
-    description: 'Acce platian Acce platianAcce platianAcce platcce platianAcce platianAcce platian',
-    icon: '/path-to-icon.svg',
-    type: 'AI Agents',
-    onSale: true
-  },
-  {
-    id: '3',
-    title: 'Template',
-    description: 'Tesatea Scrion',
-    icon: '/path-to-icon.svg',
-    type: 'Automation Scripts',
-    onSale: true
-  },
-  {
-    id: '4',
-    title: 'AI/guts',
-    description: 'Acce platian',
-    icon: '/path-to-icon.svg',
-    type: 'AI Agents',
-    onSale: true
-  },
-  {
-    id: '5',
-    title: 'Template',
-    description: 'Tesatea Scrion',
-    icon: '/path-to-icon.svg',
-    type: 'AI Agents',
-    onSale: true
-  },
-  {
-    id: '6',
-    title: 'AI/guts',
-    description: 'Acce platian',
-    icon: '/path-to-icon.svg',
-    type: 'AI Agents',
-    onSale: true
-  },
-];
+function ProductCard({ product, onSelect }: { product: any, onSelect: (product: any) => void }) {
+  const [isHovered, setIsHovered] = React.useState(false);
 
-function ProductCard({ product }: { product: Product }) {
   // Determine card size based on content length
   const getCardSize = (description: string) => {
     const length = description.length;
@@ -74,74 +33,152 @@ function ProductCard({ product }: { product: Product }) {
     return 'col-span-1 row-span-1';
   };
 
+  // tags badges
+  const tags = product.tags || [];
   return (
     <div 
       className={cn(
-        "bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow",
-        getCardSize(product.description),
+        "relative bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm transition-all duration-200",
+        getCardSize(product.summary),
         "flex flex-col"
       )}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex items-start justify-between mb-4">
-        <div className="h-12 w-12 rounded-lg bg-purple-100 flex items-center justify-center">
-          <img src={product.icon} alt={product.title} className="h-8 w-8" />
-        </div>
-        {product.onSale && (
-          <span className="text-sm text-gray-500 dark:text-gray-400">Sale</span>
+      <AnimatePresence>
+        {isHovered && (
+          <motion.span
+            className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.15 } }}
+            exit={{ opacity: 0, transition: { duration: 0.15, delay: 0.2 } }}
+          />
         )}
-      </div>
-      <h3 className="text-lg font-semibold mb-1 dark:text-white">{product.title}</h3>
-      <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 flex-grow">{product.description}</p>
-      <div className="flex justify-between items-center mt-auto">
-        <span className="text-sm text-gray-500">Sale</span>
-        <Button 
-          variant="outline" 
-          className="hover:bg-purple-50 dark:hover:bg-gray-800 dark:text-white dark:border-gray-700"
-        >
-          View Details
-        </Button>
+      </AnimatePresence>
+      <div className="relative z-10">
+        <div className="flex items-start justify-between mb-4">
+          <div className="h-12 w-12 rounded-lg bg-purple-100 flex items-center justify-center">
+            <Image src={product.icon} alt={product.title} className="h-8 w-8" width={32} height={32} unoptimized />
+          </div>
+          {product.verified && (
+            <Image src="/images/website/verify.png" alt="Verified" className="h-6 w-6 ml-2" width={24} height={24} title="Verified" unoptimized />
+          )}
+        </div>
+        <h3 className="text-lg font-semibold mb-1 dark:text-white">{product.title}</h3>
+        <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 flex-grow">{product.summary}</p>
+        <div className="flex flex-wrap gap-2 mb-2">
+          {tags.map((tag: string) => (
+            <span key={tag} className="bg-pink-200 text-pink-800 text-xs font-semibold px-2 py-1 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="flex justify-between items-center mt-auto">
+          <span className="text-sm text-gray-500">{tags[0] || ''}</span>
+          <div onClick={() => onSelect(product)}>
+            <ModalTrigger className="bg-black dark:bg-white dark:text-black text-white flex justify-center items-center group/modal-btn relative overflow-hidden rounded-md px-4 py-2 cursor-pointer">
+              <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
+                View Details
+              </span>
+              <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
+                👁️
+              </div>
+            </ModalTrigger>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
 function Store() {
-  const [selectedType, setSelectedType] = React.useState<'AI Agents' | 'Automation Scripts' | null>(null);
+  const [selectedType, setSelectedType] = React.useState<string | null>(null);
+  const [selectedProduct, setSelectedProduct] = React.useState<any | null>(null);
+  const { storeItems, isLoading, error, fetchStoreData } = useStoreWebsite();
 
-  const filteredProducts = selectedType 
-    ? mockProducts.filter(product => product.type === selectedType)
-    : mockProducts;
+  React.useEffect(() => {
+    fetchStoreData();
+  }, [fetchStoreData]);
+
+  // Map Notion data to UI fields
+  const mappedProducts = storeItems.map((item) => {
+    const p = item.properties;
+    return {
+      id: item.id,
+      title: p.title?.title?.[0]?.plain_text || '',
+      type: p.type?.select?.name || '',
+      summary: p.summary?.rich_text?.[0]?.plain_text || '',
+      description: p.description?.rich_text?.[0]?.plain_text || '',
+      icon: p.icon?.rich_text?.[0]?.plain_text || '/path-to-icon.svg',
+      link: p.link?.url || '',
+      verified: p.verified?.select?.name?.toLowerCase() === 'yes',
+      tags: p.tags?.multi_select?.map((t) => t.name) || [],
+    };
+  });
+
+  const filteredProducts = selectedType
+    ? mappedProducts.filter(product => product.type === selectedType)
+    : mappedProducts;
 
   return (
-    <div className="container mx-auto px-4 py-8 my-16">
-      {/* Filter Section */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-4 dark:text-white">Filter by Type</h2>
-        <div className="flex gap-4">
-          <Button
-            variant={selectedType === 'AI Agents' ? 'default' : 'outline'}
-            onClick={() => setSelectedType(selectedType === 'AI Agents' ? null : 'AI Agents')}
-            className="dark:border-gray-700"
-          >
-            🤖 AI Agents
-          </Button>
-          <Button
-            variant={selectedType === 'Automation Scripts' ? 'default' : 'outline'}
-            onClick={() => setSelectedType(selectedType === 'Automation Scripts' ? null : 'Automation Scripts')}
-            className="dark:border-gray-700"
-          >
-            🔄 Automation Scripts
-          </Button>
+    <Modal>
+      <div className="container mx-auto px-4 py-8 my-16">
+        {/* Filter Section */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 dark:text-white">Featured Types 🏷️</h2>
+          <div className="flex gap-4">
+            {[...new Set(mappedProducts.map(p => p.type))].filter(Boolean).map(type => (
+              <Button
+                key={type}
+                variant={selectedType === type ? 'default' : 'outline'}
+                onClick={() => setSelectedType(selectedType === type ? null : type)}
+                className="dark:border-gray-700"
+              >
+                {type}
+              </Button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Dynamic Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-min">
-        {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        {/* Loading and Error States */}
+        {isLoading && <div className="text-center py-8">Loading...</div>}
+        {error && <div className="text-center text-red-500 py-8">{error}</div>}
+
+        {/* Dynamic Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-min">
+          {filteredProducts.map(product => (
+            <ProductCard key={product.id} product={product} onSelect={setSelectedProduct} />
+          ))}
+        </div>
+
+        {/* Animated Modal */}
+        <ModalBody className="!p-0">
+          <AnimatePresence>
+            {selectedProduct && (
+              <ModalContent>
+                <div className="flex flex-col items-center justify-center gap-4">
+                  <Image src={selectedProduct.icon} alt={selectedProduct.title} width={64} height={64} unoptimized />
+                  <h3 className="text-2xl font-bold mb-2 dark:text-white">{selectedProduct.title}</h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-base mb-4 text-center">{selectedProduct.description}</p>
+                  {selectedProduct.verified && (
+                    <Image src="/images/website/verify.png" alt="Verified" className="h-6 w-6" width={24} height={24} title="Verified" unoptimized />
+                  )}
+                  <a
+                    href={selectedProduct.link}
+                    download
+                    className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 text-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download
+                  </a>
+                </div>
+              </ModalContent>
+            )}
+          </AnimatePresence>
+        </ModalBody>
       </div>
-    </div>
+    </Modal>
   );
 }
 
