@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { Client } from '@notionhq/client';
 
 // Use server-side environment variables (without NEXT_PUBLIC_ prefix)
-const notionApiKey = process.env.NOTION_PROJECT_API_KEY || process.env.NEXT_PUBLIX_NOTION_BUCKETLIST_API;
+const notionApiKey = process.env.NOTION_PROJECT_API_KEY || process.env.NEXT_PUBLIC_NOTION_BUCKETLIST_API;
 const notionDatabaseId = process.env.NOTION_PROJECT_DATABASE_ID || process.env.NEXT_PUBLIC_NOTION_BUCKETLIST_DATABASE_ID;
 
 export async function GET() {
