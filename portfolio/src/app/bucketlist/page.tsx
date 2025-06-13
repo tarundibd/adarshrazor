@@ -9,6 +9,13 @@ export default function BucketList() {
     fetchBucketListData();
   }, [fetchBucketListData]);
 
+  useEffect(() => {
+    if (error) {
+      console.error("BucketList error:", error);
+    }
+    console.log("BucketList data:", bucketList);
+  }, [bucketList, error]);
+
   // Extract and flatten the data for easier rendering
   const items = bucketList.map((item) => {
     return {
