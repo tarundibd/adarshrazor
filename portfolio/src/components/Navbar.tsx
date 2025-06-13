@@ -78,6 +78,9 @@ export function Navbar({ className }: { className?: string }) {
                 <ThemeToggle />
             </div>  
         </MenuItem>
+        <div className="px-4">
+        <HoveredLink href="/store">Store ⚡</HoveredLink>
+        </div>
       </Menu>
     </div>
   );
