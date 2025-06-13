@@ -39,6 +39,14 @@ export interface NotionUrl {
   url: string;
 }
 
+export interface NotionCheckbox {
+  checkbox: boolean;
+}
+
+export interface NotionNumber {
+  number: number;
+}
+
 export interface BlogPost {
   id: string;
   properties: {
@@ -99,6 +107,18 @@ export interface Changelog {
   };
   created_time: string;
   last_edited_time: string;
+}
+
+export interface BucketList {
+  id: string;
+  properties: {
+    no?: NotionNumber;
+    goal?: NotionTitle;
+    checked?: NotionCheckbox;
+    value?: NotionNumber;
+    link?: NotionUrl;
+    icon?: NotionRichText;
+  };
 }
 
 export interface NotionDatabase {
