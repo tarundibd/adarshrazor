@@ -25,7 +25,6 @@ export default function BucketList() {
   const done = items.filter((item) => item.checked).length;
 
   // Styles
-  const pad = { padding: 15, fontSize: 18 };
   const listItemStyle = {
     fontSize: 16,
     marginBottom: 5,
@@ -46,13 +45,13 @@ export default function BucketList() {
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold mb-8">My Bucket List</h1>
       <div className="mb-6 text-lg">
-        I was inspired by Chip Hyuen's{' '}
+        I was inspired by Chip Hyuen&apos;s{' '}
         <a href="https://huyenchip.com/list-100/" target="_blank" rel="noreferrer" className="text-blue-600 underline">List 100</a>{' '}
         to create and maintain this list. This list is a collection of moments that I want to experience before I drop off the face of this planet.<br />
         <span className="font-semibold">Current status: {done} / {total}</span>
       </div>
       <ol className="list-decimal pl-6">
-        {items.map((item, index) => (
+        {items.map((item) => (
           <li
             key={item.id}
             style={item.checked ? completedStyle : (item.value > 0 ? inProgressStyle : listItemStyle)}
