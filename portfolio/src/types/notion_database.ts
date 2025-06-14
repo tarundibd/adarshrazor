@@ -54,9 +54,10 @@ export interface BlogPost {
       files: NotionFile[];
     };
     Title?: NotionTitle;
-    Description?: NotionRichText;
+    Content?: NotionRichText;
     Date?: NotionDate;
     Status?: NotionSelect;
+    summary?: NotionRichText;
   };
 }
 
