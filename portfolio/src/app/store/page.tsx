@@ -225,7 +225,7 @@ function Store() {
           <AnimatePresence>
             {selectedProduct && (
               <ModalContent>
-                <div className="flex flex-col items-center justify-center gap-4">
+                <div className="flex flex-col items-center justify-center gap-4 overflow-y-auto max-h-[80vh] p-6">
                   <Image src={selectedProduct.icon} alt={selectedProduct.title} width={64} height={64} unoptimized />
                   <div className="flex items-center justify-center gap-2">
                     <h3 className="text-2xl font-bold mb-2 dark:text-white">{selectedProduct.title}</h3>
@@ -233,7 +233,7 @@ function Store() {
                       <Image src="/images/website/verify.png" alt="Verified" className="h-6 w-6" width={24} height={24} title="Verified" unoptimized />
                     )}
                   </div>
-                  <p className="text-gray-500 dark:text-gray-400 text-base mb-2 text-center">{selectedProduct.summary}</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 flex-grow text-center">{selectedProduct.summary}</p>
                   {selectedProduct.image && (
                     <Image src={selectedProduct.image} alt={selectedProduct.title + ' image'} width={400} height={220} className="rounded-xl object-cover w-full max-w-md" unoptimized />
                   )}
