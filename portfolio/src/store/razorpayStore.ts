@@ -92,9 +92,10 @@ export const useRazorpayStore = create<RazorpayState>((set, get) => ({
 
       const razorpay = new window.Razorpay(razorpayOptions);
 
-      razorpay.on('payment.failed', (response: any) => {
-        set({ error: 'Payment failed' });
-        reject(new Error('Payment failed'));
+      razorpay.on('payment.failed', (error: unknown) => {
+        const errorMessage = (error as { description?: string })?.description || 'Payment failed';
+        set({ error: errorMessage });
+        reject(new Error(errorMessage));
       });
 
       razorpay.open();

@@ -49,7 +49,7 @@ export default function BlogPost() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4 dark:text-white">Post Not Found</h1>
-          <p className="text-gray-600 dark:text-gray-400">The blog post you're looking for doesn't exist or isn't published.</p>
+          <p className="text-gray-600 dark:text-gray-400">The blog post you&apos;re looking for doesn&apos;t exist or isn&apos;t published.</p>
         </div>
       </div>
     );

@@ -1,8 +1,9 @@
 import { useCallback } from 'react';
 import { useRazorpayStore } from '@/store/razorpayStore';
+import type { RazorpayResponse } from '@/types/razorpay';
 
 interface UsePaymentProps {
-  onSuccess?: (response: any) => void;
+  onSuccess?: (response: RazorpayResponse) => void;
   onError?: (error: Error) => void;
 }
 

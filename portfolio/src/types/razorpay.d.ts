@@ -25,7 +25,7 @@ interface RazorpayResponse {
 interface RazorpayInstance {
   open: () => void;
   close: () => void;
-  on: (event: string, handler: (response: any) => void) => void;
+  on: (event: string, handler: (response: unknown) => void) => void;
 }
 
 declare global {
