@@ -13,15 +13,6 @@ import {
 } from '@/components/ui/animated-modal';
 import { useStoreWebsite } from '@/store/storeWebsite';
 
-interface Product {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  type: 'AI Agents' | 'Automation Scripts';
-  verified?: boolean;
-}
-
 function ProductCard({ product, onSelect }: { product: any, onSelect: (product: any) => void }) {
   const [isHovered, setIsHovered] = React.useState(false);
 
@@ -94,6 +85,7 @@ function ProductCard({ product, onSelect }: { product: any, onSelect: (product: 
 function Store() {
   const [selectedType, setSelectedType] = React.useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = React.useState<any | null>(null);
+  const [search, setSearch] = React.useState('');
   const { storeItems, isLoading, error, fetchStoreData } = useStoreWebsite();
 
   React.useEffect(() => {
@@ -109,20 +101,42 @@ function Store() {
       type: p.type?.select?.name || '',
       summary: p.summary?.rich_text?.[0]?.plain_text || '',
       description: p.description?.rich_text?.[0]?.plain_text || '',
-      icon: p.icon?.rich_text?.[0]?.plain_text || '/path-to-icon.svg',
-      link: p.link?.url || '',
+      icon: p.icon?.files?.[0]?.file?.url || '/placeholder.svg',
+      link: p.link?.files?.[0]?.file?.url || '',
+      image: p.image?.files?.[0]?.file?.url || '',
       verified: p.verified?.select?.name?.toLowerCase() === 'yes',
       tags: p.tags?.multi_select?.map((t) => t.name) || [],
     };
   });
 
-  const filteredProducts = selectedType
-    ? mappedProducts.filter(product => product.type === selectedType)
-    : mappedProducts;
+  // Filter by type and search
+  const filteredProducts = mappedProducts.filter(product => {
+    const matchesType = selectedType ? product.type === selectedType : true;
+    const matchesSearch = product.title.toLowerCase().includes(search.toLowerCase());
+    return matchesType && matchesSearch;
+  });
 
   return (
     <Modal>
       <div className="container mx-auto px-4 py-8 my-16">
+        {/* Local Search */}
+        <div className="flex justify-center mb-8">
+          <div className="relative w-full max-w-md">
+            <input
+              type="text"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder="Search products..."
+              className="w-full pl-12 pr-4 py-3 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500"
+            />
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="inline-block">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.35-4.35" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+          </div>
+        </div>
         {/* Filter Section */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 dark:text-white">Featured Types 🏷️</h2>
@@ -158,11 +172,18 @@ function Store() {
               <ModalContent>
                 <div className="flex flex-col items-center justify-center gap-4">
                   <Image src={selectedProduct.icon} alt={selectedProduct.title} width={64} height={64} unoptimized />
-                  <h3 className="text-2xl font-bold mb-2 dark:text-white">{selectedProduct.title}</h3>
-                  <p className="text-gray-500 dark:text-gray-400 text-base mb-4 text-center">{selectedProduct.description}</p>
-                  {selectedProduct.verified && (
-                    <Image src="/images/website/verify.png" alt="Verified" className="h-6 w-6" width={24} height={24} title="Verified" unoptimized />
+                  <div className="flex items-center justify-center gap-2">
+                    <h3 className="text-2xl font-bold mb-2 dark:text-white">{selectedProduct.title}</h3>
+                    {selectedProduct.verified && (
+                      <Image src="/images/website/verify.png" alt="Verified" className="h-6 w-6" width={24} height={24} title="Verified" unoptimized />
+                    )}
+                  </div>
+                  <p className="text-gray-500 dark:text-gray-400 text-base mb-2 text-center">{selectedProduct.summary}</p>
+                  {selectedProduct.image && (
+                    <Image src={selectedProduct.image} alt={selectedProduct.title + ' image'} width={400} height={220} className="rounded-xl object-cover w-full max-w-md" unoptimized />
                   )}
+                  <p className="text-gray-400 dark:text-gray-300 text-sm mb-4 text-center">{selectedProduct.description}</p>
+                  
                   <a
                     href={selectedProduct.link}
                     download

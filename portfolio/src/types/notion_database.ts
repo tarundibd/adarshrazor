@@ -140,8 +140,9 @@ export interface StoreItem {
     title?: NotionTitle;
     summary?: NotionRichText;
     description?: NotionRichText;
-    icon?: NotionRichText;
-    link?: NotionUrl;
+    icon?: { files: NotionFile[] };
+    link?: { files: NotionFile[] };
+    image?: { files: NotionFile[] };
     verified?: NotionSelect;
     tags?: NotionMultiSelect;
   };
