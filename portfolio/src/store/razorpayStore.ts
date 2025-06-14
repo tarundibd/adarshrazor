@@ -76,7 +76,7 @@ export const useRazorpayStore = create<RazorpayState>((set, get) => ({
       await get().loadRazorpayScript();
     }
 
-    const apiKey = process.env.NEXT_PUBLIC_RAZOR_PAY_API_KEY;
+    const apiKey = process.env.RAZORPAY_KEY_ID;
     if (!apiKey) {
       throw new Error('Razorpay API key not found');
     }
