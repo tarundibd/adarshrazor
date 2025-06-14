@@ -10,6 +10,7 @@ import { useBlogStore } from '@/store/blogStore';
 import { useProjectStore } from '@/store/projectStore';
 import { HoverBorderGradient } from '../ui/hover-border-gradient'
 import {NotificationList} from "@/components/homepage/Notification";
+import Link from 'next/link';
 
 // Dynamically import the Globe component with no SSR
 const DynamicGlobe = dynamic(() => Promise.resolve(Globe), { ssr: false });
@@ -203,7 +204,7 @@ export const SkeletonOne = ({ headerImage }: { headerImage?: string }) => {
             />
             
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/blog:opacity-100 transition-opacity duration-300 bg-black/20">
-              <a href="/blog">
+              <Link href="/blog">
                 <HoverBorderGradient 
                   containerClassName="rounded-full" 
                   as="button" 
@@ -211,7 +212,7 @@ export const SkeletonOne = ({ headerImage }: { headerImage?: string }) => {
                   gradientColor="#f83232">
                   <span>Read more...</span>
                 </HoverBorderGradient>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
