@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
+import { usePayment } from '@/hooks/usePayment';
 import {
   Modal,
   ModalBody,
@@ -100,7 +101,47 @@ function Store() {
   const [selectedType, setSelectedType] = React.useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = React.useState<MappedProduct | null>(null);
   const [search, setSearch] = React.useState('');
-  const { storeItems, isLoading, error, fetchStoreData } = useStoreWebsite();
+  const [donationAmount, setDonationAmount] = React.useState<number>(0);
+  const [showDonationInput, setShowDonationInput] = React.useState(false);
+  
+  const { storeItems, isLoading: storeLoading, error: storeError, fetchStoreData } = useStoreWebsite();
+  
+  // Add payment hook
+  const { 
+    handlePayment, 
+    isLoading: paymentLoading, 
+    error: paymentError 
+  } = usePayment({
+    onSuccess: (response) => {
+      console.log('Payment successful:', response);
+      alert('Thank you for your donation!');
+      setShowDonationInput(false);
+      setDonationAmount(0);
+    },
+    onError: (error) => {
+      console.error('Payment error:', error);
+      alert(error.message);
+    },
+  });
+
+  // Handle donation
+  const handleDonation = async (product: MappedProduct) => {
+    if (!donationAmount || donationAmount <= 0) {
+      alert('Please enter a valid donation amount');
+      return;
+    }
+
+    try {
+      await handlePayment(
+        donationAmount,
+        product.title,
+        `Donation for ${product.title}`
+      );
+    } catch (error) {
+      // Error is already handled by onError callback
+      console.error('Payment failed:', error);
+    }
+  };
 
   React.useEffect(() => {
     fetchStoreData();
@@ -169,8 +210,8 @@ function Store() {
         </div>
 
         {/* Loading and Error States */}
-        {isLoading && <div className="text-center py-8">Loading...</div>}
-        {error && <div className="text-center text-red-500 py-8">{error}</div>}
+        {(storeLoading || paymentLoading) && <div className="text-center py-8">Loading...</div>}
+        {(storeError || paymentError) && <div className="text-center text-red-500 py-8">{storeError || paymentError}</div>}
 
         {/* Dynamic Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-min">
@@ -198,15 +239,57 @@ function Store() {
                   )}
                   <p className="text-gray-400 dark:text-gray-300 text-sm mb-4 text-center">{selectedProduct.description}</p>
                   
-                  <a
-                    href={selectedProduct.link}
-                    download
-                    className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 text-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Download
-                  </a>
+                  <div className='flex flex-col gap-4 w-full max-w-md'>
+                    {showDonationInput ? (
+                      <div className="flex flex-col gap-2">
+                        <input
+                          type="number"
+                          value={donationAmount}
+                          onChange={(e) => setDonationAmount(Number(e.target.value))}
+                          placeholder="Enter donation amount (INR)"
+                          className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                          min="1"
+                          disabled={paymentLoading}
+                        />
+                        <div className="flex gap-2">
+                          <button
+                            onClick={() => handleDonation(selectedProduct)}
+                            disabled={paymentLoading}
+                            className="flex-1 px-6 py-2 bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black rounded-md dark:hover:bg-gray-200 transition-colors duration-200 disabled:opacity-50"
+                          >
+                            {paymentLoading ? 'Processing...' : 'Proceed to Pay'}
+                          </button>
+                          <button
+                            onClick={() => {
+                              setShowDonationInput(false);
+                              setDonationAmount(0);
+                            }}
+                            disabled={paymentLoading}
+                            className="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 disabled:opacity-50"
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => setShowDonationInput(true)}
+                        disabled={paymentLoading}
+                        className="w-full px-6 py-2 bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black rounded-md dark:hover:bg-gray-200 transition-colors duration-200 disabled:opacity-50"
+                      >
+                        Donate 💸
+                      </button>
+                    )}
+                    <a
+                      href={selectedProduct.link}
+                      download
+                      className="w-full px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 text-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Download
+                    </a>
+                  </div>
                 </div>
               </ModalContent>
             )}
