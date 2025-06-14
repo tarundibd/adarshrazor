@@ -13,7 +13,21 @@ import {
 } from '@/components/ui/animated-modal';
 import { useStoreWebsite } from '@/store/storeWebsite';
 
-function ProductCard({ product, onSelect }: { product: any, onSelect: (product: any) => void }) {
+// Define mapped product type
+interface MappedProduct {
+  id: string;
+  title: string;
+  type: string;
+  summary: string;
+  description: string;
+  icon: string;
+  link: string;
+  image: string;
+  verified: boolean;
+  tags: string[];
+}
+
+function ProductCard({ product, onSelect }: { product: MappedProduct, onSelect: (product: MappedProduct) => void }) {
   const [isHovered, setIsHovered] = React.useState(false);
 
   // Determine card size based on content length
@@ -67,7 +81,7 @@ function ProductCard({ product, onSelect }: { product: any, onSelect: (product: 
         <div className="flex justify-between items-center mt-auto">
           <span className="text-sm text-gray-500">{tags[0] || ''}</span>
           <div onClick={() => onSelect(product)}>
-            <ModalTrigger className="bg-black dark:bg-white dark:text-black text-white flex justify-center items-center group/modal-btn relative overflow-hidden rounded-md px-4 py-2 cursor-pointer">
+            <ModalTrigger className="bg-green-600 dark:bg-white dark:text-black text-white flex justify-center items-center group/modal-btn relative overflow-hidden rounded-md px-4 py-2 cursor-pointer">
               <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
                 View Details
               </span>
@@ -84,7 +98,7 @@ function ProductCard({ product, onSelect }: { product: any, onSelect: (product: 
 
 function Store() {
   const [selectedType, setSelectedType] = React.useState<string | null>(null);
-  const [selectedProduct, setSelectedProduct] = React.useState<any | null>(null);
+  const [selectedProduct, setSelectedProduct] = React.useState<MappedProduct | null>(null);
   const [search, setSearch] = React.useState('');
   const { storeItems, isLoading, error, fetchStoreData } = useStoreWebsite();
 
