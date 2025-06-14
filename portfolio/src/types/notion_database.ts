@@ -131,3 +131,19 @@ export interface NotionDatabase {
   Date: string; // ISO 8601 format
   Status: string;
 }
+
+export interface StoreItem {
+  id: string;
+  properties: {
+    no?: NotionNumber;
+    type?: NotionSelect;
+    title?: NotionTitle;
+    summary?: NotionRichText;
+    description?: NotionRichText;
+    icon?: { files: NotionFile[] };
+    link?: { files: NotionFile[] };
+    image?: { files: NotionFile[] };
+    verified?: NotionSelect;
+    tags?: NotionMultiSelect;
+  };
+}
