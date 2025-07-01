@@ -120,7 +120,8 @@ function Store() {
   const [search, setSearch] = React.useState('');
   const [donationAmount, setDonationAmount] = React.useState<number>(0);
   const [showDonationInput, setShowDonationInput] = React.useState(false);
-  const [rawJson, setRawJson] = React.useState<any>(null);
+  const [rawJson, setRawJson] = React.useState<WorkflowJson | null>(null);
+  const [jsonError, setJsonError] = React.useState<string | null>(null);
   const [jsonLoading, setJsonLoading] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
   const [productsWithComplexity, setProductsWithComplexity] = React.useState<MappedProduct[]>([]);
@@ -231,13 +232,21 @@ function Store() {
   React.useEffect(() => {
     if (selectedProduct && selectedProduct.link) {
       setJsonLoading(true);
+      setJsonError(null);
       fetch(selectedProduct.link)
         .then(res => res.json())
-        .then(data => setRawJson(data))
-        .catch(() => setRawJson({ error: "Failed to fetch JSON" }))
+        .then((data: WorkflowJson) => {
+          setRawJson(data);
+          setJsonError(null);
+        })
+        .catch(() => {
+          setRawJson(null);
+          setJsonError("Failed to fetch JSON");
+        })
         .finally(() => setJsonLoading(false));
     } else {
       setRawJson(null);
+      setJsonError(null);
     }
   }, [selectedProduct]);
 
@@ -365,7 +374,7 @@ function Store() {
                         <div className="uppercase text-xs text-gray-400 font-semibold mb-1">Statistics</div>
                         <div className="flex flex-wrap gap-6 mb-2">
                           <div><span className="font-bold">Status:</span> {selectedProduct.verified ? "Verified" : "Not Verified"}</div>
-                          <div><span className="font-bold">Trigger:</span> {rawJson && Array.isArray(rawJson.nodes) ? ((rawJson.nodes as WorkflowNode[]).find((n) => /trigger/i.test(n.type ?? ''))?.type || 'Unknown') : 'Unknown'}</div>
+                          <div><span className="font-bold">Trigger:</span> {rawJson && Array.isArray(rawJson.nodes) ? (rawJson.nodes.find((n) => /trigger/i.test(n.type ?? ''))?.type || 'Unknown') : 'Unknown'}</div>
                         </div>
                         <div className="flex flex-wrap gap-6 mb-2">
                           <div><span className="font-bold">Complexity:</span> {rawJson && Array.isArray(rawJson.nodes) ? (rawJson.nodes.length <= 5 ? 'low' : rawJson.nodes.length <= 10 ? 'medium' : 'high') : 'Unknown'}</div>
@@ -382,7 +391,7 @@ function Store() {
                         <div className="uppercase text-xs text-gray-400 font-semibold mb-1">Integrations</div>
                         <div className="flex flex-wrap gap-2">
                           {rawJson && Array.isArray(rawJson.nodes) ? (
-                            [...new Set((rawJson.nodes as WorkflowNode[]).map((n) => n.type?.split(".").pop() || n.type))].map((integration) => (
+                            [...new Set(rawJson.nodes.map((n) => n.type?.split(".").pop() || n.type))].map((integration) => (
                               <span key={integration as string} className="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">{integration as string}</span>
                             ))
                           ) : (
@@ -449,6 +458,8 @@ function Store() {
                     <div className="flex flex-col items-center justify-center gap-4 overflow-y-auto max-h-[80vh] p-6 w-full">
                       {jsonLoading ? (
                         <div className="text-gray-400">Loading JSON...</div>
+                      ) : jsonError ? (
+                        <div className="text-red-400">{jsonError}</div>
                       ) : rawJson ? (
                         <>
                           <div className="w-full flex justify-end mb-2">
