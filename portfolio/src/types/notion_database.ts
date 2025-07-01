@@ -148,3 +148,16 @@ export interface StoreItem {
     tags?: NotionMultiSelect;
   };
 }
+
+export interface n8nStoreItem {
+  id: string;
+  properties: {
+    no?: NotionNumber;
+    summary?: NotionRichText;
+    category?: NotionSelect;
+    description?: NotionRichText;
+    icon?: { files: NotionFile[] };
+    links: string;
+    verified?: NotionSelect;
+  };
+}
