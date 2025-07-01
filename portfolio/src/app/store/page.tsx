@@ -36,6 +36,10 @@ interface MappedProduct {
   complexity: string;
 }
 
+// Type for workflow JSON node
+type WorkflowNode = { type?: string; [key: string]: unknown };
+type WorkflowJson = { nodes?: WorkflowNode[] };
+
 function ProductCard({ product, onSelect }: { product: MappedProduct, onSelect: (product: MappedProduct) => void }) {
   const [isHovered, setIsHovered] = React.useState(false);
 
@@ -197,7 +201,7 @@ function Store() {
           if (!product.link) return { ...product, complexity: '' };
           try {
             const res = await fetch(product.link);
-            const data = await res.json();
+            const data: WorkflowJson = await res.json();
             const nodeCount = Array.isArray(data.nodes) ? data.nodes.length : 0;
             let complexity = '';
             if (nodeCount <= 5) complexity = 'low';
@@ -213,7 +217,7 @@ function Store() {
       setComplexityOptions([...new Set(results.map(p => p.complexity).filter(Boolean))]);
     }
     fetchAllComplexities();
-  }, [JSON.stringify(mappedProducts)]);
+  }, [mappedProducts]);
 
   // Filter by type, trigger, complexity, and search (using productsWithComplexity)
   const filteredProducts = productsWithComplexity.filter(product => {
@@ -361,7 +365,7 @@ function Store() {
                         <div className="uppercase text-xs text-gray-400 font-semibold mb-1">Statistics</div>
                         <div className="flex flex-wrap gap-6 mb-2">
                           <div><span className="font-bold">Status:</span> {selectedProduct.verified ? "Verified" : "Not Verified"}</div>
-                          <div><span className="font-bold">Trigger:</span> {rawJson && Array.isArray(rawJson.nodes) ? (rawJson.nodes.find((n: any) => /trigger/i.test(n.type))?.type || 'Unknown') : 'Unknown'}</div>
+                          <div><span className="font-bold">Trigger:</span> {rawJson && Array.isArray(rawJson.nodes) ? ((rawJson.nodes as WorkflowNode[]).find((n) => /trigger/i.test(n.type ?? ''))?.type || 'Unknown') : 'Unknown'}</div>
                         </div>
                         <div className="flex flex-wrap gap-6 mb-2">
                           <div><span className="font-bold">Complexity:</span> {rawJson && Array.isArray(rawJson.nodes) ? (rawJson.nodes.length <= 5 ? 'low' : rawJson.nodes.length <= 10 ? 'medium' : 'high') : 'Unknown'}</div>
@@ -378,9 +382,9 @@ function Store() {
                         <div className="uppercase text-xs text-gray-400 font-semibold mb-1">Integrations</div>
                         <div className="flex flex-wrap gap-2">
                           {rawJson && Array.isArray(rawJson.nodes) ? (
-                            [...new Set(rawJson.nodes.map((n: any) => n.type?.split(".").pop() || n.type))].map((integration => (
+                            [...new Set((rawJson.nodes as WorkflowNode[]).map((n) => n.type?.split(".").pop() || n.type))].map((integration) => (
                               <span key={integration as string} className="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">{integration as string}</span>
-                            )))
+                            ))
                           ) : (
                             <span className="text-gray-400 text-xs">None</span>
                           )}
