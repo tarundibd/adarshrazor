@@ -105,7 +105,7 @@ function Filters({
                 <option key={c} value={c}>{c}</option>
               ))}
             </select>
-          </div>
+        </div>
           <div className="flex gap-2 items-center">
             <span className="text-sm text-gray-500">Category:</span>
             <select
@@ -117,7 +117,7 @@ function Filters({
                 <option key={cat} value={cat}>{cat}</option>
               ))}
             </select>
-          </div>
+        </div>
           <div className="flex gap-2 items-center">
             <Switch checked={activeOnly} onCheckedChange={setActiveOnly} />
             <span className="text-sm text-gray-500">Active only</span>
@@ -334,7 +334,7 @@ function WorkflowModal({ open, onClose, workflow }: any) {
             </TabsContent>
             <TabsContent value="diagram">
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-xs overflow-x-auto max-h-64">
-                <Mermaid chartDefinition={enriched.diagram} />
+                <pre>{enriched.diagram}</pre>
               </div>
             </TabsContent>
           </Tabs>
@@ -432,8 +432,8 @@ export default function N8n() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {mapped.map((workflow: any) => (
                 <WorkflowCard key={workflow.id} workflow={workflow} onClick={() => setSelectedWorkflow(workflow)} />
-              ))}
-            </div>
+            ))}
+          </div>
           )}
         </div>
         <WorkflowModal
