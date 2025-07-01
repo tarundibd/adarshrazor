@@ -126,6 +126,7 @@ function Store() {
   const [copied, setCopied] = React.useState(false);
   const [productsWithComplexity, setProductsWithComplexity] = React.useState<MappedProduct[]>([]);
   const [complexityOptions, setComplexityOptions] = React.useState<string[]>([]);
+  const [verifiedOnly, setVerifiedOnly] = React.useState(false);
   
   const { storeItems, isLoading: storeLoading, error: storeError, fetchStoreData } = useStoreWebsite();
   
@@ -226,7 +227,8 @@ function Store() {
     const matchesTrigger = selectedTrigger ? product.trigger === selectedTrigger : true;
     const matchesComplexity = selectedComplexity ? product.complexity === selectedComplexity : true;
     const matchesSearch = product.title.toLowerCase().includes(search.toLowerCase());
-    return matchesType && matchesTrigger && matchesComplexity && matchesSearch;
+    const matchesVerified = verifiedOnly ? product.verified : true;
+    return matchesType && matchesTrigger && matchesComplexity && matchesSearch && matchesVerified;
   });
 
   React.useEffect(() => {
@@ -253,6 +255,7 @@ function Store() {
   return (
     <Modal>
       <div className="container mx-auto px-4 py-8 my-16">
+        <h1 className="text-6xl font-bold text-center mb-8 text-orange-600">⚡ N8N Workflows</h1>
         {/* Local Search */}
         <div className="flex justify-center mb-8">
           <div className="relative w-full max-w-md">
@@ -260,7 +263,7 @@ function Store() {
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
-              placeholder="Search products..."
+              placeholder="Search workflows ⚛"
               className="w-full pl-12 pr-4 py-3 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500"
             />
             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none">
@@ -272,7 +275,7 @@ function Store() {
           </div>
         </div>
         {/* Filter Section */}
-        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end">
+        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end items-center">
           <div>
             <h2 className="text-2xl font-bold mb-4 dark:text-white">Filter Types 🏷️</h2>
             <DropdownMenu>
@@ -294,7 +297,7 @@ function Store() {
             </DropdownMenu>
           </div>
           <div>
-            <span className="block text-sm font-semibold mb-1 dark:text-white">Trigger</span>
+        
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="min-w-[180px] justify-between">
@@ -314,7 +317,7 @@ function Store() {
             </DropdownMenu>
           </div>
           <div>
-            <span className="block text-sm font-semibold mb-1 dark:text-white">Complexity</span>
+            
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="min-w-[180px] justify-between">
@@ -332,6 +335,19 @@ function Store() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+          </div>
+          {/* Verified Only Checkbox (inline with filters) */}
+          <div className="flex items-center h-12 pl-4">
+            <input
+              type="checkbox"
+              id="verifiedOnly"
+              checked={verifiedOnly}
+              onChange={e => setVerifiedOnly(e.target.checked)}
+              className="form-checkbox h-5 w-5 text-blue-600 transition duration-150 ease-in-out"
+            />
+            <label htmlFor="verifiedOnly" className="text-sm text-gray-700 dark:text-gray-300 select-none cursor-pointer ml-2">
+              Verified Only
+            </label>
           </div>
         </div>
 
@@ -442,12 +458,25 @@ function Store() {
                             Donate 💸
                           </button>
                         )}
+                        {/* Download JSON button */}
                         <a
-                          href={selectedProduct.link}
-                          download
-                          className="w-full px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 text-center"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href="#"
+                          onClick={e => {
+                            e.preventDefault();
+                            if (!rawJson) return;
+                            const blob = new Blob([JSON.stringify(rawJson, null, 2)], { type: "application/json" });
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement("a");
+                            a.href = url;
+                            a.download = (selectedProduct?.title || "workflow") + ".json";
+                            document.body.appendChild(a);
+                            a.click();
+                            setTimeout(() => {
+                              document.body.removeChild(a);
+                              URL.revokeObjectURL(url);
+                            }, 0);
+                          }}
+                          className="w-full px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 text-center block"
                         >
                           Download
                         </a>
