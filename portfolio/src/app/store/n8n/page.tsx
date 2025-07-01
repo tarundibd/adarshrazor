@@ -7,7 +7,6 @@ import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useStoreWebsite } from "@/store/n8nstore";
 import { AnimatePresence, motion } from "framer-motion";
-import Mermaid from 'react-mermaid';
 import Image from "next/image";
 
 // Mock stats and categories for now
