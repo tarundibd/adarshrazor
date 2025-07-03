@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import NavClass from "@/components/Navbar";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { StickyBanner } from "@/components/ui/sticky-banner";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,6 +52,8 @@ export default function RootLayout({
             <SmoothCursor/>
             </div>
             {children}
+            <Analytics />
+
           </div>
         </ThemeProvider>
       </body>
