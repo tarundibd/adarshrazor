@@ -25,9 +25,15 @@ export const TracingBeam = ({
   const [svgHeight, setSvgHeight] = useState(0);
 
   useEffect(() => {
-    if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight);
-    }
+    if (!contentRef.current) return;
+    // Use ResizeObserver to update svgHeight when content changes
+    const observer = new window.ResizeObserver(() => {
+      setSvgHeight(contentRef.current?.offsetHeight || 0);
+    });
+    observer.observe(contentRef.current);
+    // Initial set
+    setSvgHeight(contentRef.current.offsetHeight);
+    return () => observer.disconnect();
   }, []);
 
   const y1 = useSpring(

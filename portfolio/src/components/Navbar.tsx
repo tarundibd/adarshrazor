@@ -18,20 +18,15 @@ export function Navbar({ className }: { className?: string }) {
   
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl md:mx-auto z-50 mx-2", className)}
+      className={cn("fixed top-10 inset-x-0 max-w-2xl md:mx-auto z-50 mt-4", className)}
     >
       <Menu setActive={setActive}>
         <HoveredLink href="/">Home</HoveredLink>
-        <MenuItem setActive={setActive} active={active} item="Experience">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/experience">Industry</HoveredLink>
-            <HoveredLink href="/experience">Personal</HoveredLink>
-          </div>
-        </MenuItem>
+        <HoveredLink href="/experience">Experience</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Projects">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/projects">Standalone</HoveredLink>
-            <HoveredLink href="/projects">Mini-Projects</HoveredLink>
+            <HoveredLink href="/projects/mini">Mini-Projects</HoveredLink>
             <HoveredLink href="/projects">Requested 📞</HoveredLink>
           </div>
         </MenuItem>

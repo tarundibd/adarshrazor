@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Projects() {
   const { projects, isLoading, error, fetchProjectData } = useProjectStore();
-  const [displayProjects, setDisplayProjects] = useState<Project[]>([]);
+  const [minorProjects, setMinorProjects] = useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   
   useEffect(() => {
@@ -18,31 +18,31 @@ export default function Projects() {
   // Helper function to sort projects by date (newest first)
   const sortProjectsByDate = (projectsArray: Project[]) => {
     return [...projectsArray].sort((a, b) => {
+      // Get date from the date property (as seen in the Notion response)
       const dateA = a?.properties?.date?.date?.start || '';
       const dateB = b?.properties?.date?.date?.start || '';
+      
       if (!dateA && !dateB) return 0;
-      if (!dateA) return 1;
-      if (!dateB) return -1;
+      if (!dateA) return 1; // B comes first if A has no date
+      if (!dateB) return -1; // A comes first if B has no date
+      
+      // Compare dates - newest first
       return new Date(dateB).getTime() - new Date(dateA).getTime();
     });
   };
   
-  // Only keep hot and major projects, with hot first
+  // Only keep minor projects (or default to minor if type is not specified)
   useEffect(() => {
     if (projects && projects.length > 0) {
-      const hot: Project[] = [];
-      const major: Project[] = [];
+      console.log("Projects in projects page:", projects);
+      const minor: Project[] = [];
       projects.forEach(project => {
         const projectType = project?.properties?.type?.select?.name?.toLowerCase() || '';
-        if (projectType === 'hot') {
-          hot.push(project);
-        } else if (projectType === 'major') {
-          major.push(project);
+        if (projectType === 'minor') {
+          minor.push(project);
         }
       });
-      const sortedHot = sortProjectsByDate(hot);
-      const sortedMajor = sortProjectsByDate(major);
-      setDisplayProjects([...sortedHot, ...sortedMajor]);
+      setMinorProjects(sortProjectsByDate(minor));
     }
   }, [projects]);
   
@@ -57,25 +57,17 @@ export default function Projects() {
     const liveUrl = (properties['appLink'] as { url?: string })?.url || null;
     return { projectName, description, imageUrl, githubUrl, liveUrl };
   };
-  
+
   // Animated Project Card
   const ProjectCard = ({ project }: { project: Project }) => {
     const { projectName, description, imageUrl } = getProjectDetails(project);
     const projectType = project?.properties?.type?.select?.name?.toLowerCase() || '';
-    // Determine gradient classes based on project type
-    const gradientHover =
-      projectType === 'hot'
-        ? 'group-hover:bg-gradient-to-r group-hover:from-red-500 group-hover:to-pink-500 group-hover:text-white'
-        : 'group-hover:bg-gradient-to-r group-hover:from-green-500 group-hover:to-emerald-500 group-hover:text-white';
     return (
       <motion.div
         whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(0,0,0,0.12)' }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-        className={`border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden shadow cursor-pointer bg-white dark:bg-gray-900 group`}
-        onClick={() => {
-          console.log('Selected project object:', project);
-          setSelectedProject(project);
-        }}
+        className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden shadow cursor-pointer bg-white dark:bg-gray-900 group"
+        onClick={() => setSelectedProject(project)}
       >
         {imageUrl && (
           <div className="relative w-full h-48">
@@ -89,23 +81,23 @@ export default function Projects() {
             />
           </div>
         )}
-        <div className={`p-6 transition-colors duration-300 ${gradientHover}`}>
+        <div className="p-6 transition-colors duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:text-white">
           <div className="flex justify-between items-start mb-2">
             <h2 className="text-xl font-semibold">
               {projectName}
             </h2>
-            <Badge className={`${projectType === 'hot' ? 'bg-red-600' : 'bg-green-600'} text-white`}>
+            <Badge className={`bg-blue-600 text-white`}>
               {projectType || 'project'}
             </Badge>
           </div>
-          <p className={`text-gray-600 dark:text-gray-300 mb-2 line-clamp-3 group-hover:text-white`}>
+          <p className="text-gray-600 dark:text-gray-300 mb-2 line-clamp-3 group-hover:text-white">
             {description}
           </p>
         </div>
       </motion.div>
     );
   };
-  
+
   // Modal for project details
   const ProjectModal = ({ project, onClose }: { project: Project, onClose: () => void }) => {
     const { projectName, description, imageUrl, githubUrl, liveUrl } = getProjectDetails(project);
@@ -157,7 +149,7 @@ export default function Projects() {
                   whileHover={{ scale: 1.08, boxShadow: '0 4px 16px rgba(0,0,0,0.18)' }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  📄Github Docs
+                  GithubDocs
                 </motion.a>
               )}
               {liveUrl && (
@@ -169,7 +161,7 @@ export default function Projects() {
                   whileHover={{ scale: 1.08, boxShadow: '0 4px 16px rgba(37,99,235,0.18)' }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  🔗App Link
+                  App Link
                 </motion.a>
               )}
             </div>
@@ -189,12 +181,12 @@ export default function Projects() {
   
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8">My Projects</h1>
-      {displayProjects.length === 0 ? (
-        <p>No projects found.</p>
+      <h1 className="text-4xl font-bold mb-8">My Mini Projects</h1>
+      {(minorProjects.length === 0) ? (
+        <p>No mini projects found.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayProjects.map(project => (
+          {minorProjects.map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
